@@ -44,8 +44,8 @@ export default function HomePage() {
         <FadeIn delay={0.22}>
           <div className="max-w-[950px]">
             <p className="text-[clamp(15px,1.25vw,18px)] font-light text-sub leading-[1.7]">
-              5+ years building digital products for{' '}
-              <strong className="text-text font-medium">2M+ users</strong> across
+              <strong className="text-text font-medium">Lead Product Designer</strong> with  5+ years building digital products for{' '}
+              <strong className="text-text font-medium">2M+ users</strong> <br />across
               Fintech, SaaS, CRM, Crypto, AI and marketplace.
             </p>
             <p className="text-[clamp(15px,1.25vw,18px)] font-light text-sub leading-[1.7] mt-0.5">
