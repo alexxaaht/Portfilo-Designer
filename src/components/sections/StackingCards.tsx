@@ -93,7 +93,7 @@ function StickyCard({ project, index, total }: { project: Project; index: number
 
       {/* ── Right: image ── */}
       <div
-        className="relative overflow-hidden min-h-[280px] md:min-h-0"
+        className="relative overflow-hidden rounded-2xl isolate min-h-[280px] md:min-h-0" // Добавил rounded-2xl и isolate
         style={{ background: '#111110' }}
       >
         {cover ? (
