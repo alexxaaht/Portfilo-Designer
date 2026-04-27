@@ -3,6 +3,8 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import CaseNavbar from '@/components/CaseNavbar'
 import FadeUp from '@/components/FadeUp'
+import CaseFooter from '@/components/CaseFooter'
+
 
 export const metadata: Metadata = {
   title: 'Safe — Elvin Garaev',
@@ -50,7 +52,7 @@ export default function SafePage() {
 
       {/* ── COVER ────────────────────────────────────────────────── */}
       <div style={{ maxWidth: 1160, margin: '0 auto', padding: '0 52px' }}>
-        <Image src="/images/misc/04-safe.png" alt="Safe — all screens overview" width={1920} height={900} style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14 }} />
+        <Image src="/images/misc/4-safe.png" alt="Safe — all screens overview" width={1920} height={900} style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14 }} />
       </div>
 
       {/* ── 01 OVERVIEW ──────────────────────────────────────────── */}
@@ -230,7 +232,7 @@ export default function SafePage() {
         </div>
       </div>
 
-      <NextCase title="CryptoSwift" subtitle="Crypto Payment Platform for Merchants" href="/work/cryptoswift" />
+      <CaseFooter nextTitle="CryptoSwift" nextSubtitle="Crypto Payment Platform for Merchants" nextHref="/work/cryptoswift" />
     </>
   )
 }
@@ -249,7 +251,7 @@ function Em({ children }: { children: React.ReactNode }) {
   return <em style={{ fontStyle: 'italic', fontWeight: 300, color: sub }}>{children}</em>
 }
 function P({ children, mt }: { children: React.ReactNode; mt?: boolean }) {
-  return <p style={{ fontSize: 16, fontWeight: 300, lineHeight: 1.9, color: sub, marginTop: mt ? 20 : 0 }}>{children}</p>
+  return <p style={{ fontSize: 17, fontWeight: 300, lineHeight: 1.9, color: 'rgba(210,204,194,0.72)', marginTop: mt ? 20 : 0 }}>{children}</p>
 }
 function S({ num, children }: { num: string; children: React.ReactNode }) {
   return (
@@ -281,26 +283,4 @@ function ImgCard({ src, alt, caption }: { src: string; alt: string; caption: str
     </>
   )
 }
-function NextCase({ title, subtitle, href }: { title: string; subtitle: string; href: string }) {
-  return (
-    <div style={{ borderTop: `1px solid ${line}` }}>
-      <div style={{ padding: '80px 52px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', maxWidth: 1160, margin: '0 auto' }}>
-        <div>
-          <div style={{ fontSize: 11, letterSpacing: '.1em', textTransform: 'uppercase' as const, color: dim, marginBottom: 8 }}>Next case</div>
-          <div style={{ fontSize: 24, fontWeight: 600, letterSpacing: '-.02em', color: T }}>{title} →</div>
-          <div style={{ fontSize: 14, color: sub, marginTop: 4 }}>{subtitle}</div>
-        </div>
-        <div className="flex gap-3 items-center">
-          {/* Кнопка All cases */}
-          <Link href="/" className="inline-flex items-center gap-1.5 text-[13px] text-sub border border-white/10 rounded-full px-6 py-[11px] transition-all duration-200 hover:text-text hover:border-white/25">
-            ← All cases
-          </Link>
-          {/* Кнопка View case */}
-          <Link href={href} className="inline-flex items-center gap-2.5 border border-white/20 rounded-full px-7 py-3 text-[13px] text-text transition-all duration-200 hover:bg-white/5 hover:border-white/40 hover:-translate-y-0.5 active:scale-95">
-            View case ↗
-          </Link>
-        </div>
-      </div>
-    </div>
-  )
-}
+

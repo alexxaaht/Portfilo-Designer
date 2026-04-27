@@ -3,6 +3,8 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import CaseNavbar from '@/components/CaseNavbar'
 import FadeUp from '@/components/FadeUp'
+import CaseFooter from '@/components/CaseFooter'
+
 
 export const metadata: Metadata = {
   title: 'IFREQ — Elvin Garaev',
@@ -45,7 +47,7 @@ export default function IfreqPage() {
 
       {/* COVER — full bleed hero image from the case */}
       <div style={{ maxWidth: 1160, margin: '0 auto', padding: '0 52px' }}>
-        <Image src="/images/misc/03-ifreq.png" alt="IFREQ" width={1920} height={900} style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14 }} />
+        <Image src="/images/misc/3-ifreq.png" alt="IFREQ" width={1920} height={900} style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14 }} />
       </div>
 
       {/* APP STORE BLOCK */}
@@ -237,8 +239,7 @@ export default function IfreqPage() {
         </div>
       </S>
 
-      <NC title="Safe — Goal-Based Savings" subtitle="inside Ukrsib Online" href="/work/safe" />
-
+      <CaseFooter nextTitle="Safe" nextSubtitle="Goal-Based Savings inside Ukrsib Online" nextHref="/work/safe" />
 
     </>
   )
@@ -264,7 +265,7 @@ function Em({ children }: { children: React.ReactNode }) {
   return <em style={{ fontStyle: 'italic', fontWeight: 300, color: 'rgba(210,204,194,0.5)' }}>{children}</em>
 }
 function P({ children, mt }: { children: React.ReactNode; mt?: boolean }) {
-  return <p style={{ fontSize: 16, fontWeight: 300, lineHeight: 1.9, color: 'rgba(210,204,194,0.5)', maxWidth: '100%', marginTop: mt ? 20 : 0 }}>{children}</p>
+  return <p style={{ fontSize: 17, fontWeight: 300, lineHeight: 1.9, color: 'rgba(210,204,194,0.72)', marginTop: mt ? 20 : 0 }}>{children}</p>
 }
 function B({ children }: { children: React.ReactNode }) {
   return <strong style={{ color: '#E5E0D8', fontWeight: 500 }}>{children}</strong>
@@ -312,36 +313,6 @@ function Stats({ items }: { items: { n: string; d: string }[] }) {
           <div style={{ fontSize: 12, fontWeight: 300, color: 'rgba(210,204,194,0.5)', lineHeight: 1.6 }}>{s.d}</div>
         </div>
       ))}
-    </div>
-  )
-}
-function NC({ title, subtitle, href }: { title: string; subtitle: string; href: string }) {
-  return (
-    <div style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}>
-      <div style={{ padding: '80px 52px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', maxWidth: 1160, margin: '0 auto' }}>
-        <div>
-          <div style={{ fontSize: 11, letterSpacing: '.1em', textTransform: 'uppercase', color: 'rgba(210,204,194,0.22)', marginBottom: 8 }}>Next case</div>
-          <div style={{ fontSize: 24, fontWeight: 600, letterSpacing: '-.02em', color: '#E5E0D8' }}>{title} →</div>
-          <div style={{ fontSize: 14, color: 'rgba(210,204,194,0.5)', marginTop: 4 }}>{subtitle}</div>
-        </div>
-        <div className="flex gap-3 items-center">
-          {/* Кнопка All cases */}
-          <Link
-            href="/"
-            className="inline-flex items-center gap-1.5 text-[13px] text-sub border border-white/10 rounded-full px-6 py-[11px] transition-all duration-200 hover:text-text hover:border-white/25"
-          >
-            ← All cases
-          </Link>
-
-          {/* Кнопка View case */}
-          <Link
-            href={href}
-            className="inline-flex items-center gap-2.5 border border-white/20 rounded-full px-7 py-3 text-[13px] text-text transition-all duration-200 hover:bg-white/5 hover:border-white/40 hover:-translate-y-0.5 active:scale-95"
-          >
-            View case ↗
-          </Link>
-        </div>
-      </div>
     </div>
   )
 }

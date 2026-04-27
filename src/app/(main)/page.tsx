@@ -127,7 +127,7 @@ export default function HomePage() {
             rel="noopener noreferrer"
             className="text-[14px] text-sub hover:text-text transition-colors border border-line hover:border-line2 rounded-full px-6 py-3"
           >
-            Telegram →
+            Telegram ↗
           </a>
         </div>
       </section>

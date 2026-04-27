@@ -3,6 +3,8 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import CaseNavbar from '@/components/CaseNavbar'
 import FadeUp from '@/components/FadeUp'
+import CaseFooter from '@/components/CaseFooter'
+
 
 export const metadata: Metadata = {
   title: 'P3 Marine — Elvin Garaev',
@@ -35,7 +37,7 @@ export default function P3MarinePage() {
       </div>
 
       <div style={{ maxWidth: 1160, margin: '0 auto', padding: '0 52px' }}>
-        <Image src="/images/misc/02-p3wealth.png" alt="P3 Marine Key Benefits" width={1920} height={900} style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14 }} />
+        <Image src="/images/misc/7-marine.png" alt="P3 Marine Key Benefits" width={1920} height={900} style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14 }} />
       </div>
 
       <S num="01 · Overview">
@@ -165,8 +167,7 @@ export default function P3MarinePage() {
         </div>
       </S>
 
-      <NC title="Safe — Goal-Based Savings" subtitle="inside Ukrsib Online" href="/work/safe" />
-    </>
+      <CaseFooter nextTitle="UkrSibBank" nextSubtitle="Omnichannel CRM" nextHref="/work/ukrsibbank" />    </>
   )
 }
 
@@ -184,11 +185,12 @@ function S({ num, children }: { num: string; children: React.ReactNode }) {
 }
 function H2({ children }: { children: React.ReactNode }) { return <h2 style={{ fontSize: 26, fontWeight: 600, letterSpacing: '-.03em', lineHeight: 1.3, color: '#E5E0D8', marginBottom: 20, maxWidth: 680 }}>{children}</h2> }
 function Em({ children }: { children: React.ReactNode }) { return <em style={{ fontStyle: 'italic', fontWeight: 300, color: 'rgba(210,204,194,0.5)' }}>{children}</em> }
-function P({ children, mt }: { children: React.ReactNode; mt?: boolean }) { return <p style={{ fontSize: 16, fontWeight: 300, lineHeight: 1.9, color: 'rgba(210,204,194,0.5)', marginTop: mt ? 20 : 0 }}>{children}</p> }
+function P({ children, mt }: { children: React.ReactNode; mt?: boolean }) {
+  return <p style={{ fontSize: 17, fontWeight: 300, lineHeight: 1.9, color: 'rgba(210,204,194,0.72)', marginTop: mt ? 20 : 0 }}>{children}</p>
+}
 function B({ children }: { children: React.ReactNode }) { return <strong style={{ color: '#E5E0D8', fontWeight: 500 }}>{children}</strong> }
 function Ins({ label, children }: { label: string; children: React.ReactNode }) { return (<div style={{ borderLeft: '2px solid rgba(255,255,255,0.2)', padding: '20px 28px', margin: '32px 0', background: 'rgba(255,255,255,0.02)', borderRadius: '0 10px 10px 0' }}><div style={{ fontSize: 10, letterSpacing: '.1em', textTransform: 'uppercase', color: 'rgba(210,204,194,0.22)', marginBottom: 8 }}>{label}</div><div style={{ fontSize: 16, fontWeight: 300, fontStyle: 'italic', color: '#E5E0D8', lineHeight: 1.7 }}>{children}</div></div>) }
 function Think({ label, children }: { label: string; children: React.ReactNode }) { return (<div style={{ background: '#1A1A18', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 14, padding: 32, margin: '32px 0' }}><div style={{ fontSize: 10, letterSpacing: '.1em', textTransform: 'uppercase', color: 'rgba(210,204,194,0.22)', marginBottom: 12 }}>{label}</div><div style={{ fontSize: 15, fontWeight: 300, lineHeight: 1.85, color: 'rgba(210,204,194,0.5)' }}>{children}</div></div>) }
 function Quote({ author, children }: { author: string; children: React.ReactNode }) { return (<div style={{ borderLeft: '3px solid rgba(255,255,255,0.2)', padding: '24px 28px', margin: '32px 0' }}><div style={{ fontSize: 18, fontWeight: 300, fontStyle: 'italic', color: '#E5E0D8', lineHeight: 1.65, marginBottom: 10 }}>{children}</div><div style={{ fontSize: 12, color: 'rgba(210,204,194,0.22)' }}>{author}</div></div>) }
 function Img({ src, alt, cap }: { src: string; alt: string; cap: string }) { return (<><div style={{ borderRadius: 14, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.07)', margin: '32px 0' }}><Image src={src} alt={alt} width={1160} height={700} style={{ width: '100%', height: 'auto', display: 'block' }} /></div>{cap && <div style={{ fontSize: 12, fontWeight: 300, color: 'rgba(210,204,194,0.22)', marginTop: 10, lineHeight: 1.6 }}>{cap}</div>}</>) }
 function Stats({ items }: { items: { n: string; d: string }[] }) { return (<div style={{ display: 'grid', gridTemplateColumns: `repeat(${items.length},1fr)`, gap: 2, marginTop: 44 }}>{items.map(s => (<div key={s.n} style={{ background: '#1A1A18', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 14, padding: '30px 26px' }}><div style={{ fontSize: 44, fontWeight: 600, letterSpacing: '-.04em', color: '#E5E0D8', lineHeight: 1, marginBottom: 8 }}>{s.n}</div><div style={{ fontSize: 12, fontWeight: 300, color: 'rgba(210,204,194,0.5)', lineHeight: 1.6 }}>{s.d}</div></div>))}</div>) }
-function NC({ title, subtitle, href }: { title: string; subtitle: string; href: string }) { return (<div style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}><div style={{ padding: '80px 52px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', maxWidth: 1160, margin: '0 auto' }}><div><div style={{ fontSize: 11, letterSpacing: '.1em', textTransform: 'uppercase', color: 'rgba(210,204,194,0.22)', marginBottom: 8 }}>Next case</div><div style={{ fontSize: 24, fontWeight: 600, letterSpacing: '-.02em', color: '#E5E0D8' }}>{title} →</div><div style={{ fontSize: 14, color: 'rgba(210,204,194,0.5)', marginTop: 4 }}>{subtitle}</div></div><div style={{ display: 'flex', gap: 12, alignItems: 'center' }}><Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 13, color: 'rgba(210,204,194,0.22)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 100, padding: '11px 24px' }}>← All cases</Link><Link href={href} style={{ display: 'inline-flex', alignItems: 'center', gap: 10, border: '1px solid rgba(255,255,255,0.13)', borderRadius: 100, padding: '12px 28px', fontSize: 13, color: '#E5E0D8' }}>View case ↗</Link></div></div></div>) }

@@ -30,6 +30,7 @@ export default function HeroPhoto() {
             src="/images/misc/00-Elvin-Garaev.jpg"
             alt="Elvin Garaev"
             fill
+            sizes="300px"
             className="object-cover object-top"
             style={{ filter: 'brightness(.85) contrast(1.1)' }}
             priority

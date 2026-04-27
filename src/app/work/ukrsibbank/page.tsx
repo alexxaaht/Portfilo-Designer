@@ -3,6 +3,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import CaseNavbar from '@/components/CaseNavbar'
 import FadeUp from '@/components/FadeUp'
+import CaseFooter from '@/components/CaseFooter'
 
 export const metadata: Metadata = {
   title: 'UkrSibBank CRM — Elvin Garaev',
@@ -55,7 +56,7 @@ export default function UkrSibBankPage() {
 
       {/* ── COVER ────────────────────────────────────────────────── */}
       <div style={{ maxWidth: 1160, margin: '0 auto', padding: '0 52px' }}>
-        <Image src="/images/misc/01-ukrsib.png" alt="Manager Workplace" width={1920} height={900} style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14 }} />
+        <Image src="/images/misc/1-ukrsib.png" alt="Manager Workplace" width={1920} height={900} style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14 }} />
       </div>
 
       {/* ── 01 OVERVIEW ──────────────────────────────────────────── */}
@@ -298,21 +299,8 @@ export default function UkrSibBankPage() {
           ))}
         </div>
       </div>
-
       {/* ── NEXT CASE ────────────────────────────────────────────── */}
-      <div style={{ borderTop: `1px solid ${line}` }}>
-        <div style={{ padding: '80px 52px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', maxWidth: 1160, margin: '0 auto' }}>
-          <div>
-            <div style={{ fontSize: 11, letterSpacing: '.1em', textTransform: 'uppercase', color: dim, marginBottom: 8 }}>Next case</div>
-            <div style={{ fontSize: 24, fontWeight: 600, letterSpacing: '-.02em', color: T }}>P3 Wealth × BlackRock →</div>
-            <div style={{ fontSize: 14, color: sub, marginTop: 4 }}>Capital Management Platform</div>
-          </div>
-          <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-            <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 13, color: dim, border: `1px solid ${line}`, borderRadius: 100, padding: '11px 24px' }}>← All cases</Link>
-            <Link href="/work/p3-wealth" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, border: `1px solid ${line2}`, borderRadius: 100, padding: '12px 28px', fontSize: 13, color: T }}>View case ↗</Link>
-          </div>
-        </div>
-      </div>
+      <CaseFooter nextTitle="P3 Wealth × BlackRock" nextSubtitle="Capital Management Platform" nextHref="/work/p3-wealth" />
     </>
   )
 }
@@ -348,7 +336,7 @@ function S({ num, children }: { num: string; children: React.ReactNode }) {
   )
 }
 function P({ children, mt }: { children: React.ReactNode; mt?: boolean }) {
-  return <p style={{ fontSize: 16, fontWeight: 300, lineHeight: 1.9, color: sub, marginTop: mt ? 20 : 0 }}>{children}</p>
+  return <p style={{ fontSize: 17, fontWeight: 300, lineHeight: 1.9, color: 'rgba(210,204,194,0.72)', marginTop: mt ? 20 : 0 }}>{children}</p>
 }
 
 function ImgCard({ src, alt, caption }: { src: string; alt: string; caption: string }) {
