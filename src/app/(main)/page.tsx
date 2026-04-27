@@ -59,9 +59,9 @@ export default function HomePage() {
 
         <a
           href="#work"
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 w-11 h-11 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-[#D2CCC2]/45 no-underline transition-all duration-200 hover:border-white/30 hover:text-[#E5E0D8] hover:-translate-x-1/2 hover:translate-y-1 z-10"
+          className="absolute bottom-16 left-1/2 -translate-x-1/2 w-14 h-14 rounded-full border border-white/20 bg-white/10 flex items-center justify-center text-[#F2F0EC]/70 no-underline transition-all duration-200 hover:border-white/40 hover:text-[#F2F0EC] hover:-translate-x-1/2 hover:translate-y-1 z-10"
         >
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <svg width="20" height="20" viewBox="0 0 16 16" fill="none">
             <path
               d="M8 3v10M3.5 9l4.5 4 4.5-4"
               stroke="currentColor"

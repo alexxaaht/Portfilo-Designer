@@ -33,7 +33,7 @@ export default function P3WealthPage() {
         <h1 style={{ fontSize: 'clamp(36px,5vw,60px)', fontWeight: 600, letterSpacing: '-.03em', lineHeight: 1.05, color: T, marginBottom: 40, maxWidth: 820 }}>
           P3 Wealth × BlackRock —<br /><em style={{ fontStyle: 'italic', fontWeight: 300, color: sub }}>Capital Management Platform</em>
         </h1>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', border: `1px solid ${line}`, borderRadius: 14, overflow: 'hidden', maxWidth: 760 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', border: `1px solid ${line}`, borderRadius: 14, overflow: 'hidden', width: '100%' }}>
           {[{ l: 'Role', v: 'UX/UI Designer' }, { l: 'Timeline', v: '2023–2024' }, { l: 'Platform', v: 'Web · Desktop' }, { l: 'Partner', v: 'BlackRock' }].map((m, i, a) => (
             <div key={m.l} style={{ padding: '18px 22px', borderRight: i < a.length - 1 ? `1px solid ${line}` : 'none' }}>
               <div style={{ fontSize: 10, letterSpacing: '.08em', textTransform: 'uppercase', color: dim, marginBottom: 5 }}>{m.l}</div>
