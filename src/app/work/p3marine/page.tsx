@@ -37,7 +37,7 @@ export default function P3MarinePage() {
       </div>
 
       <div style={{ maxWidth: 1160, margin: '0 auto', padding: '0 52px' }}>
-        <Image src="/images/misc/7-marine.png" alt="P3 Marine Key Benefits" width={1920} height={900} style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14 }} />
+        <Image src="/images/p3marine/00-P3-Marine-—-Key-Benefits.png" alt="P3 Marine Key Benefits" width={1920} height={900} style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14 }} />
       </div>
 
       <S num="01 · Overview">

@@ -91,25 +91,27 @@ function StickyCard({ project, index, total }: { project: Project; index: number
         </div>
       </div>
 
-      <div className="relative overflow-hidden min-h-[340px] md:min-h-0" style={{ background: '#111110' }}>
-        <div className="absolute inset-0 pt-10 md:pt-12 pr-8 md:pr-14 pb-10 md:pb-12 pl-4 md:pl-0">
-          <div className="relative w-full h-full overflow-hidden rounded-2xl bg-[#1A1A18]/20">
-            {cover ? (
-              <Image
-                src={cover}
-                alt={project.title}
-                fill
-                priority={index === 0}
-                className="object-cover object-top group-hover:scale-[1.05] transition-transform duration-700 ease-out"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-            ) : (
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-[11px] uppercase text-dim" style={{ letterSpacing: '0.1em' }}>No preview</span>
-              </div>
-            )}
+      {/* ── Right: image ── */}
+      <div
+        className="relative overflow-hidden min-h-[280px] md:min-h-0"
+        style={{ background: '#111110' }}
+      >
+        {cover ? (
+          <Image
+            src={cover}
+            alt={project.title}
+            fill
+            priority={index === 0}
+            className="object-contain group-hover:scale-[1.03] transition-transform duration-700 ease-out"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="text-[11px] uppercase text-dim" style={{ letterSpacing: '0.1em' }}>
+              No preview
+            </span>
           </div>
-        </div>
+        )}
       </div>
     </motion.div>
   )

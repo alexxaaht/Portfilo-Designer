@@ -56,7 +56,7 @@ export default function UkrSibBankPage() {
 
       {/* ── COVER ────────────────────────────────────────────────── */}
       <div style={{ maxWidth: 1160, margin: '0 auto', padding: '0 52px' }}>
-        <Image src="/images/misc/1-ukrsib.png" alt="Manager Workplace" width={1920} height={900} style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14 }} />
+        <Image src="/images/ukrsibbank/11-UkrSibBank-Business-final-design.png" alt="Manager Workplace" width={1920} height={900} style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14 }} />
       </div>
 
       {/* ── 01 OVERVIEW ──────────────────────────────────────────── */}
@@ -317,17 +317,18 @@ function SecNum({ children }: { children: React.ReactNode }) {
 }
 
 function H2({ children }: { children: React.ReactNode }) {
-  return <h2 style={{ fontSize: 26, fontWeight: 600, letterSpacing: '-.03em', lineHeight: 1.3, color: T, marginBottom: 20, maxWidth: 680 }}>{children}</h2>
+  return <h2 style={{ fontSize: 30, fontWeight: 600, letterSpacing: '-.03em', lineHeight: 1.25, color: '#F2F0EC', marginBottom: 20, maxWidth: 680 }}>{children}</h2>
 }
 
 function Em({ children }: { children: React.ReactNode }) {
-  return <em style={{ fontStyle: 'italic', fontWeight: 300, color: sub }}>{children}</em>
+  return <em style={{ fontStyle: 'italic', fontWeight: 300, color: 'rgba(210,204,194,0.7)' }}>{children}</em>
 }
+
 function S({ num, children }: { num: string; children: React.ReactNode }) {
   return (
     <FadeUp>
       <div style={{ padding: '80px 52px', maxWidth: 1160, margin: '0 auto', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
-        <div style={{ fontSize: 11, letterSpacing: '.1em', textTransform: 'uppercase', color: 'rgba(210,204,194,0.22)', marginBottom: 20, display: 'flex', alignItems: 'center', gap: 10 }}>
+        <div style={{ fontSize: 12, letterSpacing: '.1em', textTransform: 'uppercase', color: 'rgba(210,204,194,0.22)', marginBottom: 20, display: 'flex', alignItems: 'center', gap: 10 }}>
           <span style={{ display: 'block', width: 24, height: 1, background: 'rgba(255,255,255,0.13)' }} />{num}
         </div>
         {children}
@@ -336,9 +337,11 @@ function S({ num, children }: { num: string; children: React.ReactNode }) {
   )
 }
 function P({ children, mt }: { children: React.ReactNode; mt?: boolean }) {
-  return <p style={{ fontSize: 17, fontWeight: 300, lineHeight: 1.9, color: 'rgba(210,204,194,0.72)', marginTop: mt ? 20 : 0 }}>{children}</p>
+  return <p style={{ fontSize: 17, fontWeight: 300, lineHeight: 1.85, color: 'rgba(220,216,208,0.75)', marginTop: mt ? 20 : 0 }}>{children}</p>
 }
-
+function B({ children }: { children: React.ReactNode }) {
+  return <strong style={{ color: '#F2F0EC', fontWeight: 500 }}>{children}</strong>
+}
 function ImgCard({ src, alt, caption }: { src: string; alt: string; caption: string }) {
   return (
     <>

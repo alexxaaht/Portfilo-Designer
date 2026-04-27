@@ -47,7 +47,7 @@ export default function IfreqPage() {
 
       {/* COVER — full bleed hero image from the case */}
       <div style={{ maxWidth: 1160, margin: '0 auto', padding: '0 52px' }}>
-        <Image src="/images/misc/3-ifreq.png" alt="IFREQ" width={1920} height={900} style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14 }} />
+        <Image src="/images/ifreq/01-IFREQ-—-Turn-Data-Into-Progress.png" alt="IFREQ" width={1920} height={900} style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14 }} />
       </div>
 
       {/* APP STORE BLOCK */}

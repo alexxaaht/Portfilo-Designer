@@ -39,7 +39,7 @@ export default function XgoPage() {
 
       {/* Cover — Mobile App overview */}
       <div style={{ maxWidth: 1160, margin: '0 auto', padding: '0 52px' }}>
-        <Image src="/images/misc/6-xgo.png" alt="XGo Wallet Mobile App" width={1920} height={900} style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14 }} />
+        <Image src="/images/xgo/00-XGo-Wallet-Mobile-App.png" alt="XGo Wallet Mobile App" width={1920} height={900} style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14 }} />
       </div>
 
       <S num="01 · Overview">
@@ -159,21 +159,34 @@ function S({ num, children }: { num: string; children: React.ReactNode }) {
     </FadeUp>
   )
 }
-function H2({ children }: { children: React.ReactNode }) { return <h2 style={{ fontSize: 26, fontWeight: 600, letterSpacing: '-.03em', lineHeight: 1.3, color: '#E5E0D8', marginBottom: 20, maxWidth: 680 }}>{children}</h2> }
-function Em({ children }: { children: React.ReactNode }) { return <em style={{ fontStyle: 'italic', fontWeight: 300, color: 'rgba(210,204,194,0.5)' }}>{children}</em> }
-function P({ children, mt }: { children: React.ReactNode; mt?: boolean }) {
-  return <p style={{ fontSize: 17, fontWeight: 300, lineHeight: 1.9, color: 'rgba(210,204,194,0.72)', marginTop: mt ? 20 : 0 }}>{children}</p>
+function H2({ children }: { children: React.ReactNode }) {
+  return <h2 style={{ fontSize: 30, fontWeight: 600, letterSpacing: '-.03em', lineHeight: 1.25, color: '#F2F0EC', marginBottom: 20, maxWidth: 680 }}>{children}</h2>
 }
-function B({ children }: { children: React.ReactNode }) { return <strong style={{ color: '#E5E0D8', fontWeight: 500 }}>{children}</strong> }
+function Em({ children }: { children: React.ReactNode }) {
+  return <em style={{ fontStyle: 'italic', fontWeight: 300, color: 'rgba(210,204,194,0.7)' }}>{children}</em>
+}
+function P({ children, mt }: { children: React.ReactNode; mt?: boolean }) {
+  return <p style={{ fontSize: 17, fontWeight: 300, lineHeight: 1.85, color: 'rgba(220,216,208,0.75)', marginTop: mt ? 20 : 0 }}>{children}</p>
+}
+function B({ children }: { children: React.ReactNode }) {
+  return <strong style={{ color: '#F2F0EC', fontWeight: 500 }}>{children}</strong>
+}
 function Ins({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div style={{ borderLeft: '2px solid rgba(255,255,255,0.2)', padding: '20px 28px', margin: '32px 0', background: 'rgba(255,255,255,0.02)', borderRadius: '0 10px 10px 0' }}>
-      <div style={{ fontSize: 10, letterSpacing: '.1em', textTransform: 'uppercase', color: ACC, marginBottom: 8 }}>{label}</div>
-      <div style={{ fontSize: 16, fontWeight: 300, fontStyle: 'italic', color: '#E5E0D8', lineHeight: 1.7 }}>{children}</div>
+      <div style={{ fontSize: 11, letterSpacing: '.1em', textTransform: 'uppercase' as const, color: 'rgba(210,204,194,0.5)', marginBottom: 8 }}>{label}</div>
+      <div style={{ fontSize: 17, fontWeight: 300, fontStyle: 'italic', color: '#F2F0EC', lineHeight: 1.7 }}>{children}</div>
     </div>
   )
 }
-function Think({ label, children }: { label: string; children: React.ReactNode }) { return (<div style={{ background: '#1A1A18', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 14, padding: 32, margin: '32px 0' }}><div style={{ fontSize: 10, letterSpacing: '.1em', textTransform: 'uppercase', color: 'rgba(210,204,194,0.22)', marginBottom: 12 }}>{label}</div><div style={{ fontSize: 15, fontWeight: 300, lineHeight: 1.85, color: 'rgba(210,204,194,0.5)' }}>{children}</div></div>) }
+function Think({ label, children }: { label: string; children: React.ReactNode }) {
+  return (
+    <div style={{ background: '#1A1A18', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 14, padding: 32, margin: '32px 0' }}>
+      <div style={{ fontSize: 11, letterSpacing: '.1em', textTransform: 'uppercase' as const, color: 'rgba(210,204,194,0.4)', marginBottom: 12 }}>{label}</div>
+      <div style={{ fontSize: 16, fontWeight: 300, lineHeight: 1.85, color: 'rgba(220,216,208,0.75)' }}>{children}</div>
+    </div>
+  )
+}
 function Quote({ author, children }: { author: string; children: React.ReactNode }) { return (<div style={{ borderLeft: '3px solid rgba(255,255,255,0.2)', padding: '24px 28px', margin: '32px 0' }}><div style={{ fontSize: 18, fontWeight: 300, fontStyle: 'italic', color: '#E5E0D8', lineHeight: 1.65, marginBottom: 10 }}>{children}</div><div style={{ fontSize: 12, color: 'rgba(210,204,194,0.22)' }}>{author}</div></div>) }
 function Img({ src, alt, cap }: { src: string; alt: string; cap: string }) { return (<><div style={{ borderRadius: 14, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.07)', margin: '32px 0' }}><Image src={src} alt={alt} width={1160} height={700} style={{ width: '100%', height: 'auto', display: 'block' }} /></div>{cap && <div style={{ fontSize: 12, fontWeight: 300, color: 'rgba(210,204,194,0.22)', marginTop: 10, lineHeight: 1.6 }}>{cap}</div>}</>) }
 function Stats({ items }: { items: { n: string; d: string }[] }) {
