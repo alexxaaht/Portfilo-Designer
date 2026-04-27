@@ -36,7 +36,7 @@ export default function Navbar() {
           </li>
           <li>
             <a
-              href="mailto:e.garaev.dg@gmail.com"
+              href="mailto:e.garaev.dg55@gmail.com"
               className="text-[16px] text-sub hover:text-text transition-colors duration-200"
             >
               Email ↗

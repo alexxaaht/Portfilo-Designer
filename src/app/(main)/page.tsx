@@ -108,10 +108,10 @@ export default function HomePage() {
 
         <div className="flex flex-wrap gap-3 justify-center">
           <a
-            href="mailto:e.garaev.dg@gmail.com"
+            href="mailto:e.garaev.dg55@gmail.com"
             className="text-[14px] font-medium text-bg bg-text hover:opacity-90 transition-opacity rounded-full px-6 py-3"
           >
-            e.garaev.dg@gmail.com ↗
+            e.garaev.dg55@gmail.com ↗
           </a>
           <a
             href="https://www.linkedin.com/in/elvin-garaev-4798ba255/"
