@@ -43,7 +43,7 @@ export default function P3WealthPage() {
 
       {/* COVER */}
       <div style={{ maxWidth: 1160, margin: '0 auto', padding: '0 52px' }}>
-        <Image src="/images/p3-wealth/00-P3-Wealth-—-End-to-end-platform.png" alt="P3 Wealth platform" width={1920} height={900} style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14 }} />
+        <Image src="/images/misc/02-p3wealth.png" alt="P3 Wealth platform" width={1920} height={900} style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14 }} />
       </div>
 
       {/* 01 OVERVIEW */}
@@ -258,9 +258,22 @@ function NC({ title, subtitle, href }: { title: string; subtitle: string; href: 
           <div style={{ fontSize: 24, fontWeight: 600, letterSpacing: '-.02em', color: '#E5E0D8' }}>{title} →</div>
           <div style={{ fontSize: 14, color: 'rgba(210,204,194,0.5)', marginTop: 4 }}>{subtitle}</div>
         </div>
-        <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-          <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 13, color: 'rgba(210,204,194,0.22)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 100, padding: '11px 24px' }}>← All cases</Link>
-          <Link href={href} style={{ display: 'inline-flex', alignItems: 'center', gap: 10, border: '1px solid rgba(255,255,255,0.13)', borderRadius: 100, padding: '12px 28px', fontSize: 13, color: '#E5E0D8' }}>View case ↗</Link>
+        <div className="flex gap-3 items-center">
+          {/* Кнопка All cases */}
+          <Link
+            href="/"
+            className="inline-flex items-center gap-1.5 text-[13px] text-sub border border-white/10 rounded-full px-6 py-[11px] transition-all duration-200 hover:text-text hover:border-white/25"
+          >
+            ← All cases
+          </Link>
+
+          {/* Кнопка View case */}
+          <Link
+            href={href}
+            className="inline-flex items-center gap-2.5 border border-white/20 rounded-full px-7 py-3 text-[13px] text-text transition-all duration-200 hover:bg-white/5 hover:border-white/40 hover:-translate-y-0.5 active:scale-95"
+          >
+            View case ↗
+          </Link>
         </div>
       </div>
     </div>

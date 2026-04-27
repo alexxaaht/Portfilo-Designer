@@ -7,7 +7,10 @@ export default function Navbar() {
       style={{ background: 'rgba(17,17,16,0.94)', backdropFilter: 'blur(20px)' }}
     >
       <div className="px-8 md:px-14 h-full flex items-center justify-between">
-        <Link href="/" className="text-[18px] font-semibold text-text hover:text-sub transition-colors duration-200">
+        <Link
+          href="/"
+          className="italic text-[24px]  font-bold text-text hover:text-sub transition-colors duration-200"
+        >
           EG
         </Link>
         <ul className="flex gap-7 list-none">
@@ -28,7 +31,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="text-[16px] text-sub hover:text-text transition-colors duration-200"
             >
-              Telegram →
+              Telegram ↗
             </a>
           </li>
           <li>

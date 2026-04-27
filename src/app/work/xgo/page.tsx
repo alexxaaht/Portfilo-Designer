@@ -37,7 +37,7 @@ export default function XgoPage() {
 
       {/* Cover — Mobile App overview */}
       <div style={{ maxWidth: 1160, margin: '0 auto', padding: '0 52px' }}>
-        <Image src="/images/xgo/00-XGo-Wallet-Mobile-App.png" alt="XGo Wallet Mobile App" width={1920} height={900} style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14 }} />
+        <Image src="/images/misc/06-xgo-new.png" alt="XGo Wallet Mobile App" width={1920} height={900} style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14 }} />
       </div>
 
       <S num="01 · Overview">

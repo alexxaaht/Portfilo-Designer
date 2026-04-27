@@ -107,7 +107,7 @@ function StickyCard({
           </p>
 
           {/* Description */}
-          <p className="text-[16px] font-light leading-relaxed max-w-sm"
+          <p className="text-[16px] font-light leading-relaxed max-w-lg"
             style={{ color: 'var(--sub)' }}>
             {project.desc}
           </p>

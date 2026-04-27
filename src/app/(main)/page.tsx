@@ -8,7 +8,7 @@ export default function HomePage() {
   return (
     <>
       {/* ── Hero ──────────────────────────────────────────────── */}
-<section className="min-h-screen px-8 md:px-14 pt-[120px] pb-16 relative flex flex-col justify-center overflow-hidden">
+      <section className="min-h-screen px-8 md:px-14 pt-[120px] pb-16 relative flex flex-col justify-center overflow-hidden">
         {/* Photo — absolute right, bigger, with hover animation */}
         <HeroPhoto />
 
@@ -17,9 +17,9 @@ export default function HomePage() {
           <span
             className="block font-bold uppercase leading-[0.88]"
             style={{
-              fontSize:      'clamp(68px, 9.8vw, 138px)',
+              fontSize: 'clamp(68px, 9.8vw, 138px)',
               letterSpacing: '-0.04em',
-              color:         'var(--text)',
+              color: 'var(--text)',
             }}
           >
             Elvin Garaev
@@ -31,9 +31,9 @@ export default function HomePage() {
           <span
             className="block font-bold uppercase leading-[0.88] mb-12"
             style={{
-              fontSize:      'clamp(68px, 9.8vw, 138px)',
+              fontSize: 'clamp(68px, 9.8vw, 138px)',
               letterSpacing: '-0.04em',
-              color:         'rgba(178,174,168,0.28)',
+              color: 'rgba(178, 174, 168, 0.40)',
             }}
           >
             Product Designer
@@ -56,10 +56,25 @@ export default function HomePage() {
             </p>
           </div>
         </FadeIn>
+
+        <a
+          href="#work"
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 w-11 h-11 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-[#D2CCC2]/45 no-underline transition-all duration-200 hover:border-white/30 hover:text-[#E5E0D8] hover:-translate-x-1/2 hover:translate-y-1 z-10"
+        >
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path
+              d="M8 3v10M3.5 9l4.5 4 4.5-4"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </a>
       </section>
 
       {/* ── Work list ─────────────────────────────────────────── */}
-      <section>
+      <section id="work">
         {/* Section header */}
         <div className="flex items-center justify-between px-8 md:px-14 py-5 border-y border-line">
           <span className="text-[12px] uppercase text-dim" style={{ letterSpacing: '0.1em' }}>
@@ -79,9 +94,9 @@ export default function HomePage() {
         <h2
           className="font-bold uppercase leading-[0.9] mb-7"
           style={{
-            fontSize:      'clamp(40px, 6.5vw, 96px)',
+            fontSize: 'clamp(40px, 6.5vw, 96px)',
             letterSpacing: '-0.03em',
-            color:         'var(--text)',
+            color: 'var(--text)',
           }}
         >
           Let&apos;s build something great

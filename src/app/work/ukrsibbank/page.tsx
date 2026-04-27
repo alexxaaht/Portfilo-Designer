@@ -55,7 +55,7 @@ export default function UkrSibBankPage() {
 
       {/* ── COVER ────────────────────────────────────────────────── */}
       <div style={{ maxWidth: 1160, margin: '0 auto', padding: '0 52px' }}>
-        <Image src="/images/ukrsibbank/00-Manager-Workplace.png" alt="Manager Workplace" width={1920} height={900} style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14 }} />
+        <Image src="/images/misc/01-ukrsib.png" alt="Manager Workplace" width={1920} height={900} style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14 }} />
       </div>
 
       {/* ── 01 OVERVIEW ──────────────────────────────────────────── */}

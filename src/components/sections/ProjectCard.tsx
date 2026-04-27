@@ -5,18 +5,18 @@ import type { Project } from '@/lib/types'
 
 // Maps slug to the first/cover image in public/images
 const COVER_IMAGES: Record<string, string> = {
-  'p3-wealth':   '/images/misc/02-p3wealth.png',
-  'ifreq':       '/images/misc/03-ifreq.png',
-  'safe':        '/images/misc/04-safe.png',
+  'p3-wealth': '/images/misc/02-p3wealth.png',
+  'ifreq': '/images/misc/03-ifreq.png',
+  'safe': '/images/misc/04-safe.png',
   'cryptoswift': '/images/misc/05-crypto.png',
-  'xgo':         '/images/misc/06-xgo.png',
-  'p3marine':    '/images/misc/07-marine.png',
-  'ukrsibbank':  '/images/misc/01-ukrsib.png',
+  'xgo': '/images/misc/06-xgo-new.png',
+  'p3marine': '/images/misc/07-marine.png',
+  'ukrsibbank': '/images/misc/01-ukrsib.png',
 }
 
 interface ProjectCardProps {
   project: Project
-  total:   number
+  total: number
 }
 
 export default function ProjectCard({ project, total }: ProjectCardProps) {
@@ -66,7 +66,7 @@ export default function ProjectCard({ project, total }: ProjectCardProps) {
             src={cover}
             alt={project.title}
             fill
-            className="object-cover object-top opacity-70 group-hover:opacity-90 transition-opacity duration-500 group-hover:scale-[1.02] transition-transform"
+            className="object-cover object-top opacity-70 group-hover:opacity-90 transition-all duration-500 group-hover:scale-[1.02]"
             sizes="280px"
           />
         </div>
