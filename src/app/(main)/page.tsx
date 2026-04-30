@@ -44,15 +44,13 @@ export default function HomePage() {
         <FadeIn delay={0.22}>
           <div className="max-w-[950px]">
             <p className="text-[clamp(15px,1.25vw,18px)] font-light text-sub leading-[1.7]">
-              5+ years building digital products for{' '}
-              <strong className="text-text font-medium">2M+ users</strong> across
-              Fintech, SaaS, CRM, Crypto, AI and marketplace.
+              <strong className="text-text font-medium">Lead Product Designer</strong> with 5+ years building digital products for{' '}
+              <strong className="text-text font-medium">2M+ users</strong> <br className="hidden md:block" />
+              across Fintech, SaaS, CRM, Crypto, AI and marketplace.
             </p>
             <p className="text-[clamp(15px,1.25vw,18px)] font-light text-sub leading-[1.7] mt-0.5">
-              Collaborated with{' '}
-              <strong className="text-text font-medium">BlackRock</strong> and{' '}
-              <strong className="text-text font-medium">BNP Paribas Group</strong>.
-              Lead teams end-to-end — from research to final handoff.
+              Collaborated with <strong className="text-text font-medium">BlackRock</strong> and{' '}
+              <strong className="text-text font-medium">BNP Paribas Group</strong>. Lead teams end-to-end — from research to final handoff.
             </p>
           </div>
         </FadeIn>
