@@ -11,7 +11,7 @@ export default function CaseNavbar({ title }: CaseNavbarProps) {
       style={{ background: 'rgba(19,19,18,0.92)', backdropFilter: 'blur(18px)' }}
     >
       <Link
-        href="/"
+        href="/#work"
         className="text-[14px] text-sub hover:text-text transition-colors duration-200 flex items-center gap-1.5"
       >
         ← All cases

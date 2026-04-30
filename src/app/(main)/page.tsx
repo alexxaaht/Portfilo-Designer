@@ -72,7 +72,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Work list ─────────────────────────────────────────── */}
-      <section id="work">
+      <section id="work" className="scroll-mt-20">
         {/* Section header */}
         <div className="flex items-center justify-between px-8 md:px-14 py-5 border-y border-line">
           <span className="text-[12px] uppercase text-dim" style={{ letterSpacing: '0.1em' }}>
