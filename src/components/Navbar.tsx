@@ -3,12 +3,21 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
 
+  // ─── Логика полоски прогресса ───────────────────────────────────────
+  const { scrollYProgress } = useScroll()
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  })
+
+  // ─── Обработка клика по логотипу ────────────────────────────────────
   const handleLogoClick = (e: React.MouseEvent) => {
     if (pathname === '/') {
       e.preventDefault()
@@ -23,7 +32,7 @@ export default function Navbar() {
   const links = [
     { name: 'LinkedIn ↗', href: 'https://www.linkedin.com/in/elvin-garaev-4798ba255/' },
     { name: 'Telegram ↗', href: 'https://t.me/el13xx' },
-    { name: 'Email ↗', href: 'mailto:e.garaev.dg@gmail.com' },
+    { name: 'Email ↗', href: 'e.garaev.dg55@gmail.com' },
   ]
 
   return (
@@ -32,13 +41,15 @@ export default function Navbar() {
       style={{ background: 'rgba(17,17,16,0.94)', backdropFilter: 'blur(20px)' }}
     >
       <div className="px-8 md:px-14 h-full flex items-center justify-between relative z-[60]">
+        {/* Логотип */}
         <Link
           href="/"
-          onClick={handleLogoClick} // Привязываем новую функцию
+          onClick={handleLogoClick}
           className="italic text-[24px] font-bold text-text hover:text-sub transition-colors duration-200"
         >
           EG
         </Link>
+
         {/* Десктопное меню */}
         <ul className="hidden md:flex gap-7 list-none">
           {links.map((link) => (
@@ -55,7 +66,7 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Кнопка бургера (только для мобилок) */}
+        {/* Кнопка бургера (Mobile) */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="flex flex-col gap-1.5 md:hidden p-2"
@@ -76,6 +87,12 @@ export default function Navbar() {
         </button>
       </div>
 
+      {/* Полоска прогресса скролла */}
+      <motion.div
+        className="absolute bottom-[-1px] left-0 right-0 h-[2px] bg-white origin-left z-[70]"
+        style={{ scaleX }}
+      />
+
       {/* Мобильное выпадающее меню */}
       <AnimatePresence>
         {isOpen && (
@@ -94,7 +111,7 @@ export default function Navbar() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setIsOpen(false)}
-                    className="text-[24px] font-medium text-text hover:text-sub"
+                    className="text-[24px] font-medium text-text hover:text-sub transition-colors duration-200"
                   >
                     {link.name}
                   </a>

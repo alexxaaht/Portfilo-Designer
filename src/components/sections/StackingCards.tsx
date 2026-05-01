@@ -54,23 +54,11 @@ function StickyCard({ project, index, total }: { project: Project; index: number
 
   const inner = (
     <motion.div
-      style={{ scale }}
-      className="group w-full flex flex-col md:grid md:grid-cols-2 min-h-[520px] overflow-hidden"
+      style={{ scale: isDesktop ? scale : 1 }}
+      className="group w-full flex flex-col md:grid md:grid-cols-2 min-h-fit md:min-h-[520px] overflow-hidden bg-[#111110]"
     >
-      {/* 1. МОБИЛЬНАЯ ШАПКА (Инфо: Номер + Теги) */}
-      <div className="flex flex-col px-6 pt-10 pb-4 md:hidden" style={{ background: '#111110' }}>
-        <span className="text-[11px] text-dim font-medium mb-4" style={{ letterSpacing: '0.06em' }}>
-          {project.num} / {String(total).padStart(2, '0')}
-        </span>
-        <div className="flex flex-wrap gap-2">
-          {project.tags.map((tag) => <Tag key={tag} label={tag} />)}
-        </div>
-      </div>
-
-      {/* 2. ИЗОБРАЖЕНИЕ (Сверху на мобилках, справа на десктопе) */}
-      <div
-        className="relative overflow-hidden bg-[#111110] w-full aspect-[16/10] md:aspect-auto md:h-auto p-0 md:py-10 md:pl-10 md:pr-0"
-      >
+      {/* 1. ИЗОБРАЖЕНИЕ: По всей ширине на мобилке, справа на десктопе */}
+      <div className="relative overflow-hidden w-full aspect-video md:aspect-auto md:h-auto md:py-10 md:pl-10">
         {cover ? (
           <div className="relative w-full h-full overflow-hidden rounded-none md:rounded-l-[24px]">
             <Image
@@ -79,68 +67,73 @@ function StickyCard({ project, index, total }: { project: Project; index: number
               fill
               priority={index === 0}
               className="
-                object-contain object-top 
-                md:object-contain md:object-center
-                transition-transform duration-700 ease-out 
-                md:group-hover:scale-[1.03] 
-                will-change-transform
-              "
+    object-contain object-top     /* БЫЛО: object-cover. СТАЛО: object-contain */
+    md:object-contain md:object-center 
+    transition-transform duration-700 ease-out 
+    md:group-hover:scale-[1.03] 
+    will-change-transform
+  "
               sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
         ) : (
-          <div className="absolute inset-0 flex items-center justify-center">
+          <div className="absolute inset-0 flex items-center justify-center bg-white/5">
             <span className="text-[11px] uppercase text-dim">No preview</span>
           </div>
         )}
       </div>
 
-      {/* 3. ТЕКСТОВЫЙ КОНТЕНТ (Слева на десктопе, снизу на мобилках) */}
-      <div className="flex flex-col justify-between px-6 md:px-14 py-8 md:py-12 md:order-first" style={{ background: '#111110' }}>
+      {/* 2. КОНТЕНТ */}
+      <div className="flex flex-col justify-between px-6 md:px-14 pt-2 pb-8 md:py-12 md:order-first">
         <div>
-          {/* ДЕСКТОПНАЯ ШАПКА (Скрыта на мобилках) */}
-          <div className="hidden md:block">
-            <div className="flex items-center justify-between mb-6">
-              <span className="text-[11px] text-dim font-medium" style={{ letterSpacing: '0.06em' }}>
-                {project.num} / {String(total).padStart(2, '0')}
-              </span>
-            </div>
-            <div className="flex flex-wrap gap-2 mb-6">
-              {project.tags.map((tag) => <Tag key={tag} label={tag} />)}
+          {/* Header Info */}
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-[11px] text-dim font-medium" style={{ letterSpacing: '0.06em' }}>
+              {project.num} / {String(total).padStart(2, '0')}
+            </span>
+            {/* Теги на десктопе */}
+            <div className="hidden md:flex flex-wrap gap-2">
+              {project.tags.slice(0, 2).map((tag) => <Tag key={tag} label={tag} />)}
             </div>
           </div>
 
-          <h2 className="font-semibold text-text leading-tight mb-4" style={{ fontSize: 'clamp(24px, 2.4vw, 32px)', letterSpacing: '-0.02em' }}>
+          {/* Теги на мобилке */}
+          <div className="flex flex-wrap gap-2 mb-6 md:hidden">
+            {project.tags.map((tag) => <Tag key={tag} label={tag} />)}
+          </div>
+
+          <h2 className="font-semibold text-text leading-tight mb-3 md:mb-4" style={{ fontSize: 'clamp(24px, 2.4vw, 32px)', letterSpacing: '-0.02em' }}>
             {project.title}
           </h2>
-          <p className="text-[17px] md:text-[18px] font-light text-gray-200 leading-relaxed mb-3 max-w-sm">
+          <p className="text-[16px] md:text-[18px] font-light text-gray-200 leading-relaxed mb-4 max-w-sm">
             {project.subtitle}
           </p>
-          <p className="text-[15px] md:text-[16px] font-light leading-relaxed max-w-lg" style={{ color: 'var(--sub)' }}>
+          <p className="text-[14px] md:text-[16px] font-light leading-relaxed max-w-lg text-sub mb-10 md:mb-0">
             {project.desc}
           </p>
         </div>
 
-        {/* НИЖНЯЯ ПАНЕЛЬ С КНОПКОЙ */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between mt-10 pt-8 border-t border-line gap-6">
-          <p className="text-[12px] text-dim" style={{ letterSpacing: '0.03em' }}>
+        {/* НИЖНЯЯ ПАНЕЛЬ (Без полосы на мобилке) */}
+        <div className="mt-auto pt-0 md:pt-6 md:border-t md:border-line flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <p className="text-[11px] md:text-[12px] text-dim uppercase" style={{ letterSpacing: '0.05em' }}>
             {project.company} · {project.period}
           </p>
 
           {project.hasCase ? (
-            <div className="flex items-center justify-center md:justify-end w-full md:w-auto">
+            <div className="w-full md:w-auto">
               <span className="
-      text-[13px] text-text px-6 py-3 rounded-full 
-      bg-white/5 border border-white/10 
-      md:bg-transparent md:border-none md:p-0 md:text-sub 
-      group-hover:text-text transition-all duration-200
-    ">
-                View case ↗
+                flex items-center justify-center w-full md:w-auto
+                text-[13px] font-medium text-text px-8 py-4 rounded-full 
+                bg-white/[0.05] border border-white/10 
+                md:bg-transparent md:border-none md:p-0 md:text-sub 
+                group-hover:bg-white/[0.08] md:group-hover:text-text transition-all duration-200
+              ">
+                View case <span className="ml-2">↗</span>
               </span>
             </div>
           ) : (
             <div className="flex justify-center md:justify-end w-full md:w-auto">
-              <span className="text-[12px] text-dim italic">Under NDA</span>
+              <span className="text-[12px] text-dim italic opacity-50">Under NDA</span>
             </div>
           )}
         </div>
@@ -155,9 +148,8 @@ function StickyCard({ project, index, total }: { project: Project; index: number
         position: isDesktop ? 'sticky' : 'relative',
         top: isDesktop ? STICKY_TOP : 0,
         zIndex: index + 1,
-        background: '#111110',
       }}
-      className="border-t border-white/[0.07] mb-8 md:mb-0"
+      className="border-t border-white/[0.07] pb-24 md:pb-0 bg-[#111110]"
     >
       {project.hasCase ? (
         <Link href={`/work/${project.slug}`} className="block focus:outline-none">
