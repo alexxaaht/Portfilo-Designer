@@ -67,12 +67,12 @@ function StickyCard({ project, index, total }: { project: Project; index: number
               fill
               priority={index === 0}
               className="
-    object-contain object-top     /* БЫЛО: object-cover. СТАЛО: object-contain */
-    md:object-contain md:object-center 
-    transition-transform duration-700 ease-out 
-    md:group-hover:scale-[1.03] 
-    will-change-transform
-  "
+              object-contain object-top     
+              md:object-contain md:object-center 
+              transition-transform duration-700 ease-out 
+              md:group-hover:scale-[1.03] 
+              -change-transform
+              "
               sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>

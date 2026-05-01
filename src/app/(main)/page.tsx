@@ -1,10 +1,15 @@
+'use client' 
+
 import Image from 'next/image'
 import FadeIn from '@/components/animations/FadeIn'
 import HeroPhoto from '@/components/sections/HeroPhoto'
 import StackingCards from '@/components/sections/StackingCards'
 import { projects } from '@/lib/projects'
+import { useEffect } from 'react'
 
 export default function HomePage() {
+
+
   return (
     <>
       {/* ── Hero ──────────────────────────────────────────────── */}
