@@ -88,7 +88,7 @@ export default function Navbar() {
 
       {/* Полоска прогресса скролла */}
       <motion.div
-        className="absolute bottom-[-1px] left-0 right-0 h-[2px] bg-zinc-400 origin-left z-[70]"
+        className="absolute bottom-[-1px] left-0 right-0 h-[2px] bg-zinc-600 origin-left z-[70]"
         style={{ scaleX }}
       />
 
