@@ -56,13 +56,21 @@ export function Img({ src, alt, cap }: { src: string; alt: string; cap: string }
   )
 }
 
-export function Stats({ items }: { items: { n: string; d: string }[] }) {
+function Stats({ items }: { items: { n: string; d: string }[] }) {
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: `repeat(${items.length},1fr)`, gap: 2, marginTop: 44 }}>
+    // grid-cols-1 для мобилок, md:grid-cols-3 для десктопа
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 mt-10 md:mt-12">
       {items.map(s => (
-        <div key={s.n} style={{ background: '#1A1A18', border: `1px solid ${line}`, borderRadius: 14, padding: '30px 26px' }}>
-          <div style={{ fontSize: 44, fontWeight: 600, letterSpacing: '-.04em', color: '#F2F0EC', lineHeight: 1, marginBottom: 8 }}>{s.n}</div>
-          <div style={{ fontSize: 13, fontWeight: 300, color: 'rgba(220,216,208,0.75)', lineHeight: 1.6 }}>{s.d}</div>
+        <div
+          key={s.n}
+          className="bg-[#1A1A18] border border-white/[0.08] rounded-2xl p-7 md:p-9"
+        >
+          <div className="text-[40px] md:text-[46px] font-semibold tracking-tighter text-[#F2F0EC] leading-none mb-3">
+            {s.n}
+          </div>
+          <div className="text-[13px] md:text-[14px] font-light text-[#DCD8D0]/85 leading-relaxed">
+            {s.d}
+          </div>
         </div>
       ))}
     </div>

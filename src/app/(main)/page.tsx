@@ -1,10 +1,46 @@
+'use client'
+
 import Image from 'next/image'
 import FadeIn from '@/components/animations/FadeIn'
 import HeroPhoto from '@/components/sections/HeroPhoto'
 import StackingCards from '@/components/sections/StackingCards'
+import Link from 'next/link'
 import { projects } from '@/lib/projects'
+import { useEffect, useRef } from 'react'
 
 export default function HomePage() {
+  const heroRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    const nav = window.performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+    const isReload = nav?.type === 'reload';
+
+    if (isReload) {
+      window.scrollTo(0, 0);
+      if (window.location.hash === '#work') {
+        window.history.replaceState(null, '', window.location.pathname);
+      }
+      return;
+    }
+
+    if (window.location.hash === '#work') {
+      window.history.replaceState(null, '', window.location.pathname);
+
+      const element = document.getElementById('work');
+      if (!element) return;
+
+      const timer = setTimeout(() => {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }, 0); 
+
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+
   return (
     <>
       {/* ── Hero ──────────────────────────────────────────────── */}
@@ -44,20 +80,18 @@ export default function HomePage() {
         <FadeIn delay={0.22}>
           <div className="max-w-[950px]">
             <p className="text-[clamp(15px,1.25vw,18px)] font-light text-sub leading-[1.7]">
-              <strong className="text-text font-medium">Lead Product Designer</strong> with  5+ years building digital products for{' '}
-              <strong className="text-text font-medium">2M+ users</strong> <br />across
-              Fintech, SaaS, CRM, Crypto, AI and marketplace.
+              <strong className="text-text font-medium">Lead Product Designer</strong> with 5+ years building digital products for{' '}
+              <strong className="text-text font-medium">2M+ users</strong> <br className="hidden md:block" />
+              across Fintech, SaaS, CRM, Crypto, AI and marketplace.
             </p>
             <p className="text-[clamp(15px,1.25vw,18px)] font-light text-sub leading-[1.7] mt-0.5">
-              Collaborated with{' '}
-              <strong className="text-text font-medium">BlackRock</strong> and{' '}
-              <strong className="text-text font-medium">BNP Paribas Group</strong>.
-              Lead teams end-to-end — from research to final handoff.
+              Collaborated with <strong className="text-text font-medium">BlackRock</strong> and{' '}
+              <strong className="text-text font-medium">BNP Paribas Group</strong>. Lead teams end-to-end — from research to final handoff.
             </p>
           </div>
         </FadeIn>
 
-        <a
+        <Link
           href="#work"
           className="absolute bottom-16 left-1/2 -translate-x-1/2 w-14 h-14 rounded-full border border-white/20 bg-white/10 flex items-center justify-center text-[#F2F0EC]/70 no-underline transition-all duration-200 hover:border-white/40 hover:text-[#F2F0EC] hover:-translate-x-1/2 hover:translate-y-1 z-10"
         >
@@ -70,11 +104,11 @@ export default function HomePage() {
               strokeLinejoin="round"
             />
           </svg>
-        </a>
+        </Link>
       </section>
 
       {/* ── Work list ─────────────────────────────────────────── */}
-      <section id="work">
+      <section id="work" className="scroll-mt-20 relative">
         {/* Section header */}
         <div className="flex items-center justify-between px-8 md:px-14 py-5 border-y border-line">
           <span className="text-[12px] uppercase text-dim" style={{ letterSpacing: '0.1em' }}>

@@ -5,50 +5,55 @@ import CaseNavbar from '@/components/CaseNavbar'
 import FadeUp from '@/components/FadeUp'
 import CaseFooter from '@/components/CaseFooter'
 
-
 export const metadata: Metadata = {
   title: 'P3 Wealth × BlackRock — Elvin Garaev',
   description: 'Capital Management Platform — UX/UI design for regulated fintech with BlackRock integration.',
 }
 
+// ОБНОВЛЕННЫЕ ПЕРЕМЕННЫЕ (СВЕТЛЕЕ И КОНТРАСТНЕЕ)
 const bg2 = '#1A1A18'
-const T = '#E5E0D8'
-const sub = 'rgba(210,204,194,0.5)'
-const dim = 'rgba(210,204,194,0.22)'
-const line = 'rgba(255,255,255,0.07)'
-const line2 = 'rgba(255,255,255,0.13)'
+const T = '#F2F0EC' // Основной текст: яркий белый
+const sub = 'rgba(220,216,208,0.85)' // Подзаголовки: 85% яркости (был 0.5)
+const dim = 'rgba(210,204,194,0.55)' // Служебный текст: 55% яркости (был 0.22)
+const line = 'rgba(255,255,255,0.08)'
+const line2 = 'rgba(255,255,255,0.15)'
 
 export default function P3WealthPage() {
   return (
     <>
       <CaseNavbar title="Elvin Garaev" />
 
-      {/* HERO */}
-      <div style={{ maxWidth: 1160, margin: '0 auto', padding: '100px 52px 56px', borderBottom: `1px solid ${line}` }}>
-        <div style={{ display: 'flex', gap: 8, marginBottom: 28, flexWrap: 'wrap' }}>
+      {/* ── HERO ─────────────────────────────────────────────────── */}
+      <div style={{ maxWidth: 1160, margin: '0 auto', padding: '120px 52px 64px', borderBottom: `1px solid ${line}` }}>
+        <div style={{ display: 'flex', gap: 10, marginBottom: 32, flexWrap: 'wrap' }}>
           {['Fintech', 'Investments', 'B2B', 'BlackRock', 'Web Platform'].map(t => (
-            <span key={t} style={{ fontSize: 11, letterSpacing: '.06em', textTransform: 'uppercase', color: sub, background: 'rgba(255,255,255,0.04)', border: `1px solid ${line}`, borderRadius: 100, padding: '4px 12px' }}>{t}</span>
+            <span key={t} style={{ fontSize: 13, letterSpacing: '.06em', textTransform: 'uppercase', color: sub, background: 'rgba(255,255,255,0.05)', border: `1px solid ${line}`, borderRadius: 100, padding: '5px 14px' }}>{t}</span>
           ))}
         </div>
-        <h1 style={{ fontSize: 'clamp(36px,5vw,60px)', fontWeight: 600, letterSpacing: '-.03em', lineHeight: 1.05, color: T, marginBottom: 40, maxWidth: 820 }}>
+        <h1 style={{ fontSize: 'clamp(38px,5vw,62px)', fontWeight: 600, letterSpacing: '-.03em', lineHeight: 1.05, color: T, marginBottom: 48, maxWidth: 820 }}>
           P3 Wealth × BlackRock —<br /><em style={{ fontStyle: 'italic', fontWeight: 300, color: sub }}>Capital Management Platform</em>
         </h1>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', border: `1px solid ${line}`, borderRadius: 14, overflow: 'hidden', width: '100%' }}>
-          {[{ l: 'Role', v: 'UX/UI Designer' }, { l: 'Timeline', v: '2023–2024' }, { l: 'Platform', v: 'Web · Desktop' }, { l: 'Partner', v: 'BlackRock' }].map((m, i, a) => (
-            <div key={m.l} style={{ padding: '18px 22px', borderRight: i < a.length - 1 ? `1px solid ${line}` : 'none' }}>
-              <div style={{ fontSize: 10, letterSpacing: '.08em', textTransform: 'uppercase', color: dim, marginBottom: 5 }}>{m.l}</div>
-              <div style={{ fontSize: 13, fontWeight: 500, color: T, lineHeight: 1.3 }}>{m.v}</div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', border: `1px solid ${line}`, borderRadius: 16, overflow: 'hidden', width: '100%' }}>
+          {[
+            { l: 'Role', v: 'UX/UI Designer' },
+            { l: 'Timeline', v: '2023–2024' },
+            { l: 'Platform', v: 'Web · Desktop' },
+            { l: 'Partner', v: 'BlackRock' }
+          ].map((m, i, a) => (
+            <div key={m.l} style={{ padding: '22px 26px', borderRight: i < a.length - 1 ? `1px solid ${line}` : 'none' }}>
+              <div style={{ fontSize: 12, letterSpacing: '.08em', textTransform: 'uppercase', color: dim, marginBottom: 6 }}>{m.l}</div>
+              <div style={{ fontSize: 15, fontWeight: 500, color: T, lineHeight: 1.3 }}>{m.v}</div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* COVER */}
+      {/* ── COVER ────────────────────────────────────────────────── */}
       <div style={{ maxWidth: 1160, margin: '0 auto', padding: '0 52px' }}>
-        <Image src="/images/p3-wealth/00-P3-Wealth-—-End-to-end-platform.png" alt="P3 Wealth platform" width={1920} height={900} style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14 }} />
+        <Image src="/images/p3-wealth/00-P3-Wealth-—-End-to-end-platform.png" alt="P3 Wealth platform" width={1920} height={900} style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 16 }} priority />
       </div>
 
-      {/* 01 OVERVIEW */}
+      {/* ── 01 OVERVIEW ──────────────────────────────────────────── */}
       <S num="01 · Overview">
         <H2>Professional investors deserve<br /><Em>a professional-grade experience</Em></H2>
         <P>P3 Wealth is a regulated capital management platform for high-net-worth investors and financial institutions managing third-party funds. When we started this project, the platform existed — but the UX didn't. <B>Fund data from BlackRock was accessible, but buried.</B> Onboarding existed, but it was painful. The role system existed, but it treated a retail investor and an institutional fund manager as if they were the same person.</P>
@@ -61,7 +66,7 @@ export default function P3WealthPage() {
         ]} />
       </S>
 
-      {/* 02 RESEARCH */}
+      {/* ── 02 RESEARCH ──────────────────────────────────────────── */}
       <S num="02 · Research — Understanding the Real User">
         <H2>The user we thought we had<br /><Em>and the user we actually had</Em></H2>
         <P>Before personas, we made an assumption that turned out to be wrong. We assumed our primary users were sophisticated, experienced investors who would prioritise data density and feature depth. <B>The research told a different story.</B></P>
@@ -71,7 +76,7 @@ export default function P3WealthPage() {
         <Quote author="— Ivan, Professional investor persona, BARVA.TECH research sessions">"I need to see exactly where my money is, what it's doing, and what I can do about it — without calling anyone to explain."</Quote>
       </S>
 
-      {/* 03 PROCESS */}
+      {/* ── 03 PROCESS ───────────────────────────────────────────── */}
       <S num="03 · Process — From Hypothesis to Production">
         <H2>Five stages, one<br /><Em>consistent thread</Em></H2>
         <P>Every stage of this process was driven by the same question: <B>does this reduce cognitive load or add to it?</B> In a financial platform, that question has to be asked about every element — every label, every number format, every action button.</P>
@@ -84,76 +89,79 @@ export default function P3WealthPage() {
         ]} />
       </S>
 
-      {/* 04 DESIGN SYSTEM */}
+      {/* ── 04 DESIGN SYSTEM ─────────────────────────────────────── */}
       <S num="04 · Design System">
         <H2>A system built for<br /><Em>trust, not aesthetics</Em></H2>
         <P>The design system for P3 Wealth wasn't designed to look good — it was designed to communicate reliability. Every component decision was filtered through one question: <B>does this make the user feel more or less confident in the platform?</B></P>
         <P mt>Button states matter more in financial products than almost anywhere else. A "disabled" button without explanation creates anxiety — "why can't I do this?" A "disabled" button with an inline explanation creates understanding — "I can't do this yet because X." We designed explicit states for every scenario where an action was unavailable.</P>
-        <div style={{ background: bg2, border: `1px solid ${line}`, borderRadius: 14, overflow: 'hidden', margin: '32px 0' }}>
+        <div style={{ background: bg2, border: `1px solid ${line}`, borderRadius: 16, overflow: 'hidden', margin: '40px 0' }}>
           <Image src="/images/p3-wealth/02-P3-Wealth-Design-System.png" alt="Design System" width={1160} height={700} style={{ width: '100%', height: 'auto', display: 'block' }} />
-          <div style={{ padding: '14px 20px', borderTop: `1px solid ${line}`, display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+          <div style={{ padding: '18px 24px', borderTop: `1px solid ${line}`, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
             {['Input Fields — all states', 'Buttons — Light & Dark variants', 'Dropdowns', 'Alert Messages', 'Phone Number Components', 'Simplon Norm / Mono typography'].map(t => (
-              <span key={t} style={{ fontSize: 11, color: dim, background: 'rgba(255,255,255,0.04)', border: `1px solid ${line}`, borderRadius: 100, padding: '3px 10px' }}>{t}</span>
+              <span key={t} style={{ fontSize: 13, color: dim, background: 'rgba(255,255,255,0.05)', border: `1px solid ${line}`, borderRadius: 100, padding: '5px 14px' }}>{t}</span>
             ))}
           </div>
         </div>
         <Think label="Why Simplon Mono for numbers">Most financial platforms use a sans-serif typeface for everything — including numerical data. We chose Simplon Mono specifically for financial values: fund amounts, yields, AUM figures. Monospaced numerals align vertically in tables, making it dramatically easier to compare values at a glance and scan for anomalies. <B>Typography in financial design is a functional decision, not a stylistic one.</B></Think>
       </S>
 
-      {/* 05 FINAL DESIGN */}
+      {/* ── 05 FINAL DESIGN ──────────────────────────────────────── */}
       <S num="05 · Final Design — Live in Production">
         <H2>Screens that shipped<br /><Em>and are used by real investors</Em></H2>
         <P>The platform is live at platform.dev.p3wealth.co. Real investors are using it to manage real funds. The design decisions we made — the trust signals, the data attribution, the AUM/Yield toggle, the fund comparison table — are being validated (or not) by actual user behaviour, not just testing sessions.</P>
         <Img src="/images/p3-wealth/03-Dashboard.png" alt="Dashboard" cap='Investment dashboard — AUM overview ($48.2M), monthly statements table, performance graph with AUM/Yield toggle. "Data sourced from BlackRock · Last updated: 20.12.2023" is a first-class trust signal, not a footnote.' />
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, margin: '32px 0' }}>
-          <div style={{ background: bg2, border: `1px solid ${line}`, borderRadius: 14, padding: 28 }}>
-            <div style={{ fontSize: 10, letterSpacing: '.1em', textTransform: 'uppercase', color: 'rgba(255,100,100,0.5)', marginBottom: 10 }}>First version of the graph</div>
-            <div style={{ fontSize: 14, fontWeight: 300, color: sub, lineHeight: 1.7 }}>Tabbed interface — "AUM" tab and "Yield" tab. Tested poorly: users weren't sure if clicking would change something or navigate somewhere. The tab metaphor created ambiguity about state vs navigation.</div>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, margin: '40px 0' }}>
+          <div style={{ background: bg2, border: `1px solid ${line}`, borderRadius: 16, padding: 32 }}>
+            <div style={{ fontSize: 12, letterSpacing: '.1em', textTransform: 'uppercase', color: 'rgba(255,100,100,0.7)', marginBottom: 14 }}>First version of the graph</div>
+            <div style={{ fontSize: 16, fontWeight: 300, color: sub, lineHeight: 1.7 }}>Tabbed interface — "AUM" tab and "Yield" tab. Tested poorly: users weren't sure if clicking would change something or navigate somewhere. The tab metaphor created ambiguity about state vs navigation.</div>
           </div>
-          <div style={{ background: bg2, border: `1px solid ${line}`, borderRadius: 14, padding: 28 }}>
-            <div style={{ fontSize: 10, letterSpacing: '.1em', textTransform: 'uppercase', color: 'rgba(100,200,100,0.5)', marginBottom: 10 }}>Shipped version</div>
-            <div style={{ fontSize: 14, fontWeight: 300, color: sub, lineHeight: 1.7 }}><strong style={{ color: T, fontWeight: 500 }}>Toggle control with clear active state.</strong> Users immediately understood they were switching the view, not navigating away. One small component change that removed a consistent point of confusion in every testing session.</div>
+          <div style={{ background: bg2, border: `1px solid ${line}`, borderRadius: 16, padding: 32 }}>
+            <div style={{ fontSize: 12, letterSpacing: '.1em', textTransform: 'uppercase', color: 'rgba(100,200,100,0.7)', marginBottom: 14 }}>Shipped version</div>
+            <div style={{ fontSize: 16, fontWeight: 300, color: sub, lineHeight: 1.7 }}><strong style={{ color: T, fontWeight: 500 }}>Toggle control with clear active state.</strong> Users immediately understood they were switching the view, not navigating away. One small component change that removed a consistent point of confusion in every testing session.</div>
           </div>
         </div>
         <Img src="/images/p3-wealth/04-Funds-page.png" alt="Funds page" cap="Funds page — structured comparison across Short-term, LEAF, LNAV, and Ultra Short Bond fund types. Bank transfer details modal with EUR/GBP/USD routing info per currency. Subscribe/Redeem flow accessible inline without page navigation." />
       </S>
 
-      {/* 06 KEY DECISIONS */}
+      {/* ── 06 KEY DECISIONS ─────────────────────────────────────── */}
       <S num="06 · Key Design Decisions">
         <H2>What we solved and<br /><Em>how we got there</Em></H2>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginTop: 32 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginTop: 40 }}>
           {[
             { wide: true, ic: '🪜', t: 'Multi-step onboarding with visible end', d: 'Rebuilt institution onboarding as a structured multi-step flow with clear progress indicators and contextual guidance. The key insight from testing: users weren\'t abandoning because the process was too long — they were abandoning because they couldn\'t see how long it would be. Adding a step counter to the first screen increased completion significantly. Multi-signatory flows were handled asynchronously — each party completes their section independently, removing the need to coordinate in real time.' },
             { wide: false, ic: '🔑', t: 'Permission-invisible role architecture', d: 'Each user role sees a purposeful interface, not an interface with things removed. Investors see investor flows. Managers see management tools. The permission system operates silently in the background — users never encounter "you don\'t have access to this."' },
             { wide: false, ic: '📈', t: 'Trust-first data presentation', d: 'BlackRock data attribution with timestamp is a primary UI element. The AUM/Yield graph was designed to show trends clearly without overstating precision — no decimal places on graph axes where they would create false confidence in the accuracy of visual interpolation.' },
             { wide: false, ic: '⚖️', t: 'Compliance as context, not interruption', d: 'FCA disclosures, risk disclaimers, and regulatory notices are integrated contextually — appearing when they\'re relevant to what the user is doing, not front-loaded in an onboarding wall of text. Tested both approaches: contextual disclosure had significantly higher recall in post-session questions.' },
           ].map(s => (
-            <div key={s.t} style={{ gridColumn: s.wide ? 'span 2' : undefined, background: bg2, border: `1px solid ${line}`, borderRadius: 14, padding: 28 }}>
-              <div style={{ fontSize: 20, marginBottom: 12 }}>{s.ic}</div>
-              <div style={{ fontSize: 16, fontWeight: 500, color: T, marginBottom: 8 }}>{s.t}</div>
-              <div style={{ fontSize: 13, fontWeight: 300, color: sub, lineHeight: 1.75 }}>{s.d}</div>
+            <div key={s.t} style={{ gridColumn: s.wide ? 'span 2' : undefined, background: bg2, border: `1px solid ${line}`, borderRadius: 16, padding: 32 }}>
+              <div style={{ fontSize: 24, marginBottom: 14, color: T }}>{s.ic}</div>
+              <div style={{ fontSize: 18, fontWeight: 500, color: T, marginBottom: 10 }}>{s.t}</div>
+              <div style={{ fontSize: 15, fontWeight: 300, color: sub, lineHeight: 1.75 }}>{s.d}</div>
             </div>
           ))}
         </div>
       </S>
 
-      {/* 07 IMPACT */}
+      {/* ── 07 IMPACT ────────────────────────────────────────────── */}
       <S num="07 · Impact & What I Learned">
         <H2>Shipped, live,<br /><Em>and still learning</Em></H2>
         <P>The platform launched and is in active use. The design held up — but more importantly, the process held up. The decisions we made early in research about trust and legibility proved to be the right frame for every downstream design decision.</P>
         <Ins label="The thing I'd tell myself at the start">In regulated financial products, the user's relationship with risk is the central UX problem. Not the interface. Not the flows. The moment a user feels uncertain about what something means or what an action will do — that's a trust breakdown, and trust is harder to rebuild in financial products than anywhere else. Design for certainty first. Design for efficiency second.</Ins>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 12, marginTop: 44 }}>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 16, marginTop: 52 }}>
           {[
             { n: '↑30', su: '%', d: 'Onboarding completion after redesigning multi-step institution setup with visible progress' },
             { n: '4', su: ' roles', d: 'User permission levels — each with a purposeful, tailored interface rather than a restricted one' },
             { n: '$48M', su: '+', d: 'AUM tracked live on the platform — sourced from BlackRock with daily update timestamps' },
-            { n: '3', su: ' currencies', d: 'EUR, GBP, USD — full per-currency routing, cut-off times and bank details in the subscription flow' },
+            { n: '3', su: ' cur.', d: 'EUR, GBP, USD — full per-currency routing, cut-off times and bank details in the subscription flow' },
             { n: '✦', su: '', d: 'Platform live in production — real investors, real funds, real decisions made through a UI we designed' },
             { n: '0', su: '', d: 'Compliance violations in the design — every FCA requirement met contextually without degrading UX' },
           ].map(s => (
-            <div key={s.n + s.su} style={{ background: bg2, border: `1px solid ${line}`, borderRadius: 14, padding: 28 }}>
-              <div style={{ fontSize: 42, fontWeight: 600, letterSpacing: '-.03em', color: T, lineHeight: 1, marginBottom: 10 }}>{s.n}<span style={{ fontSize: 22, color: sub }}>{s.su}</span></div>
-              <div style={{ fontSize: 12, fontWeight: 300, color: sub, lineHeight: 1.65 }}>{s.d}</div>
+            <div key={s.n + s.su} style={{ background: bg2, border: `1px solid ${line}`, borderRadius: 16, padding: 32 }}>
+              <div style={{ fontSize: 46, fontWeight: 600, letterSpacing: '-.03em', color: T, lineHeight: 1, marginBottom: 12 }}>
+                {s.n}<span style={{ fontSize: 24, color: sub }}>{s.su}</span>
+              </div>
+              <div style={{ fontSize: 14, fontWeight: 300, color: sub, lineHeight: 1.65 }}>{s.d}</div>
             </div>
           ))}
         </div>
@@ -164,87 +172,99 @@ export default function P3WealthPage() {
   )
 }
 
-// helpers
+// ── Хелперы (Отредактированы для размера и яркости) ──────────────────────────
+
 function S({ num, children }: { num: string; children: React.ReactNode }) {
   return (
     <FadeUp>
-      <div style={{ padding: '80px 52px', maxWidth: 1160, margin: '0 auto', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
-        <div style={{ fontSize: 11, letterSpacing: '.1em', textTransform: 'uppercase', color: 'rgba(210,204,194,0.22)', marginBottom: 20, display: 'flex', alignItems: 'center', gap: 10 }}>
-          <span style={{ display: 'block', width: 24, height: 1, background: 'rgba(255,255,255,0.13)' }} />{num}
+      <div style={{ padding: '100px 52px', maxWidth: 1160, margin: '0 auto', borderBottom: `1px solid ${line}` }}>
+        <div style={{ fontSize: 13, letterSpacing: '.12em', textTransform: 'uppercase', color: dim, marginBottom: 24, display: 'flex', alignItems: 'center', gap: 12 }}>
+          <span style={{ display: 'block', width: 30, height: 1, background: line2 }} />
+          {num}
         </div>
         {children}
       </div>
     </FadeUp>
   )
 }
+
 function H2({ children }: { children: React.ReactNode }) {
-  return <h2 style={{ fontSize: 26, fontWeight: 600, letterSpacing: '-.03em', lineHeight: 1.3, color: '#E5E0D8', marginBottom: 20, maxWidth: 680 }}>{children}</h2>
+  return <h2 style={{ fontSize: 28, fontWeight: 600, letterSpacing: '-.03em', lineHeight: 1.25, color: '#F2F0EC', marginBottom: 24, maxWidth: 720 }}>{children}</h2>
 }
+
 function Em({ children }: { children: React.ReactNode }) {
-  return <em style={{ fontStyle: 'italic', fontWeight: 300, color: 'rgba(210,204,194,0.5)' }}>{children}</em>
+  return <em style={{ fontStyle: 'italic', fontWeight: 300, color: 'rgba(210,204,194,0.85)' }}>{children}</em>
 }
+
 function P({ children, mt }: { children: React.ReactNode; mt?: boolean }) {
-  return <p style={{ fontSize: 17, fontWeight: 300, lineHeight: 1.9, color: 'rgba(210,204,194,0.72)', marginTop: mt ? 20 : 0 }}>{children}</p>
+  return <p style={{ fontSize: 19, fontWeight: 300, lineHeight: 1.85, color: 'rgba(220,216,208,0.85)', marginTop: mt ? 24 : 0 }}>{children}</p>
 }
+
 function B({ children }: { children: React.ReactNode }) {
-  return <strong style={{ color: '#E5E0D8', fontWeight: 500 }}>{children}</strong>
+  return <strong style={{ color: '#F2F0EC', fontWeight: 500 }}>{children}</strong>
 }
+
 function Ins({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div style={{ borderLeft: '2px solid rgba(255,255,255,0.2)', padding: '20px 28px', margin: '32px 0', background: 'rgba(255,255,255,0.02)', borderRadius: '0 10px 10px 0' }}>
-      <div style={{ fontSize: 10, letterSpacing: '.1em', textTransform: 'uppercase', color: 'rgba(210,204,194,0.22)', marginBottom: 8 }}>{label}</div>
-      <div style={{ fontSize: 16, fontWeight: 300, fontStyle: 'italic', color: '#E5E0D8', lineHeight: 1.7 }}>{children}</div>
+    <div style={{ borderLeft: '2px solid rgba(255,255,255,0.3)', padding: '24px 32px', margin: '40px 0', background: 'rgba(255,255,255,0.03)', borderRadius: '0 12px 12px 0' }}>
+      <div style={{ fontSize: 12, letterSpacing: '.1em', textTransform: 'uppercase', color: dim, marginBottom: 10 }}>{label}</div>
+      <div style={{ fontSize: 18, fontWeight: 300, fontStyle: 'italic', color: T, lineHeight: 1.7 }}>{children}</div>
     </div>
   )
 }
+
 function Think({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div style={{ background: '#1A1A18', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 14, padding: 32, margin: '32px 0' }}>
-      <div style={{ fontSize: 10, letterSpacing: '.1em', textTransform: 'uppercase', color: 'rgba(210,204,194,0.22)', marginBottom: 12 }}>{label}</div>
-      <div style={{ fontSize: 15, fontWeight: 300, lineHeight: 1.85, color: 'rgba(210,204,194,0.5)' }}>{children}</div>
+    <div style={{ background: '#1A1A18', border: `1px solid ${line}`, borderRadius: 16, padding: 36, margin: '40px 0' }}>
+      <div style={{ fontSize: 12, letterSpacing: '.1em', textTransform: 'uppercase', color: dim, marginBottom: 16 }}>{label}</div>
+      <div style={{ fontSize: 17, fontWeight: 300, lineHeight: 1.85, color: sub }}>{children}</div>
     </div>
   )
 }
+
 function Quote({ author, children }: { author: string; children: React.ReactNode }) {
   return (
-    <div style={{ borderLeft: '3px solid rgba(255,255,255,0.2)', padding: '24px 28px', margin: '32px 0' }}>
-      <div style={{ fontSize: 18, fontWeight: 300, fontStyle: 'italic', color: '#E5E0D8', lineHeight: 1.65, marginBottom: 10 }}>{children}</div>
-      <div style={{ fontSize: 12, color: 'rgba(210,204,194,0.22)' }}>{author}</div>
+    <div style={{ borderLeft: '3px solid rgba(255,255,255,0.3)', padding: '28px 36px', margin: '40px 0' }}>
+      <div style={{ fontSize: 20, fontWeight: 300, fontStyle: 'italic', color: T, lineHeight: 1.65, marginBottom: 12 }}>{children}</div>
+      <div style={{ fontSize: 14, color: dim }}>{author}</div>
     </div>
   )
 }
+
 function Img({ src, alt, cap }: { src: string; alt: string; cap: string }) {
   return (
     <>
-      <div style={{ borderRadius: 14, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.07)', margin: '32px 0' }}>
+      <div style={{ borderRadius: 16, overflow: 'hidden', border: `1px solid ${line}`, margin: '40px 0' }}>
         <Image src={src} alt={alt} width={1160} height={700} style={{ width: '100%', height: 'auto', display: 'block' }} />
       </div>
-      {cap && <div style={{ fontSize: 12, fontWeight: 300, color: 'rgba(210,204,194,0.22)', marginTop: 10, lineHeight: 1.6 }}>{cap}</div>}
+      {cap && <div style={{ fontSize: 14, fontWeight: 300, color: dim, marginTop: 14, lineHeight: 1.6 }}>{cap}</div>}
     </>
   )
 }
+
 function Stats({ items }: { items: { n: string; d: string }[] }) {
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: `repeat(${items.length},1fr)`, gap: 2, marginTop: 44 }}>
+    <div style={{ display: 'grid', gridTemplateColumns: `repeat(${items.length},1fr)`, gap: 16, marginTop: 52 }}>
       {items.map(s => (
-        <div key={s.n} style={{ background: '#1A1A18', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 14, padding: '30px 26px' }}>
-          <div style={{ fontSize: 44, fontWeight: 600, letterSpacing: '-.04em', color: '#E5E0D8', lineHeight: 1, marginBottom: 8 }}>{s.n}</div>
-          <div style={{ fontSize: 12, fontWeight: 300, color: 'rgba(210,204,194,0.5)', lineHeight: 1.6 }}>{s.d}</div>
+        <div key={s.n} style={{ background: '#1A1A18', border: `1px solid ${line}`, borderRadius: 16, padding: '36px 30px' }}>
+          <div style={{ fontSize: 46, fontWeight: 600, letterSpacing: '-.04em', color: T, lineHeight: 1, marginBottom: 12 }}>{s.n}</div>
+          <div style={{ fontSize: 14, fontWeight: 300, color: sub, lineHeight: 1.6 }}>{s.d}</div>
         </div>
       ))}
     </div>
   )
 }
+
 function Steps({ items }: { items: { n: string; t: string; d: string; i: string }[] }) {
   return (
-    <div style={{ marginTop: 44 }}>
+    <div style={{ marginTop: 52 }}>
       {items.map((s, i, a) => (
-        <div key={s.n} style={{ display: 'grid', gridTemplateColumns: '52px 1fr', gap: 20, padding: '32px 0', borderTop: '1px solid rgba(255,255,255,0.07)', borderBottom: i === a.length - 1 ? '1px solid rgba(255,255,255,0.07)' : 'none' }}>
-          <div style={{ fontSize: 12, fontWeight: 500, color: 'rgba(210,204,194,0.22)', paddingTop: 3 }}>{s.n}</div>
+        <div key={s.n} style={{ display: 'grid', gridTemplateColumns: '60px 1fr', gap: 24, padding: '40px 0', borderTop: `1px solid ${line}`, borderBottom: i === a.length - 1 ? `1px solid ${line}` : 'none' }}>
+          <div style={{ fontSize: 14, fontWeight: 500, color: dim, paddingTop: 4 }}>{s.n}</div>
           <div>
-            <div style={{ fontSize: 17, fontWeight: 600, color: '#E5E0D8', marginBottom: 10, letterSpacing: '-.01em' }}>{s.t}</div>
-            <div style={{ fontSize: 15, fontWeight: 300, color: 'rgba(210,204,194,0.5)', lineHeight: 1.8 }}>{s.d}</div>
-            {s.i && <div style={{ marginTop: 14, fontSize: 14, fontWeight: 300, fontStyle: 'italic', color: 'rgba(210,204,194,0.4)', lineHeight: 1.6, borderTop: '1px solid rgba(255,255,255,0.07)', paddingTop: 14 }}>{s.i}</div>}
+            <div style={{ fontSize: 19, fontWeight: 600, color: T, marginBottom: 12, letterSpacing: '-.01em' }}>{s.t}</div>
+            <div style={{ fontSize: 17, fontWeight: 300, color: sub, lineHeight: 1.8 }}>{s.d}</div>
+            {s.i && <div style={{ marginTop: 18, fontSize: 16, fontWeight: 300, fontStyle: 'italic', color: 'rgba(210,204,194,0.45)', lineHeight: 1.6, borderTop: `1px solid ${line}`, paddingTop: 18 }}>{s.i}</div>}
           </div>
         </div>
       ))}
