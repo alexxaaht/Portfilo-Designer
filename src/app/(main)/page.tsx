@@ -11,7 +11,6 @@ import { useEffect, useRef } from 'react'
 export default function HomePage() {
   const heroRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    // 1. Отключаем попытки браузера восстановить скролл самому
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
@@ -19,27 +18,28 @@ export default function HomePage() {
     const nav = window.performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
     const isReload = nav?.type === 'reload';
 
-    // 2. Логика для перезагрузки (F5)
     if (isReload) {
       window.scrollTo(0, 0);
-      // Чистим хеш ТОЛЬКО при перезагрузке
       if (window.location.hash === '#work') {
         window.history.replaceState(null, '', window.location.pathname);
       }
+      return;
     }
-    // 3. Логика для перехода по кнопке "All cases"
-    else if (window.location.hash === '#work') {
-      const element = document.getElementById('work');
-      if (element) {
-        // Используем setTimeout, чтобы дать template.tsx время "продышаться"
-        const timer = setTimeout(() => {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }, 150); // 150ms — золотая середина для плавности
 
-        return () => clearTimeout(timer);
-      }
+    if (window.location.hash === '#work') {
+      window.history.replaceState(null, '', window.location.pathname);
+
+      const element = document.getElementById('work');
+      if (!element) return;
+
+      const timer = setTimeout(() => {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }, 0); 
+
+      return () => clearTimeout(timer);
     }
   }, []);
+
 
   return (
     <>

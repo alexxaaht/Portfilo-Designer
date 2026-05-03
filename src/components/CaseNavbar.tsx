@@ -10,7 +10,7 @@ interface CaseNavbarProps {
 export default function CaseNavbar({ title }: CaseNavbarProps) {
   // ─── Логика полоски прогресса ───────────────────────────────────────
   const { scrollYProgress } = useScroll()
-  
+
   // "Пружинная" анимация для инерционного движения
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -24,12 +24,11 @@ export default function CaseNavbar({ title }: CaseNavbarProps) {
       style={{ background: 'rgba(19,19,18,0.92)', backdropFilter: 'blur(18px)' }}
     >
       {/* Ссылка назад на главную к блоку проектов */}
-      <Link
-        href="/#work" 
+      <a href="/#work"
         className="text-[14px] text-sub hover:text-text transition-colors duration-200 flex items-center gap-1.5"
       >
         ← All cases
-      </Link>
+      </a>
 
       {/* Заголовок кейса */}
       <span className="text-[14px] font-medium text-text">{title}</span>
