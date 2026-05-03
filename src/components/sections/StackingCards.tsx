@@ -87,18 +87,14 @@ function StickyCard({ project, index, total }: { project: Project; index: number
       <div className="flex flex-col justify-between px-6 md:px-14 pt-2 pb-8 md:py-12 md:order-first">
         <div>
           {/* Header Info */}
-          <div className="flex items-center justify-between mb-2">
+          <div className="flex items-center justify-between mb-4">
             <span className="text-[11px] text-dim font-medium" style={{ letterSpacing: '0.06em' }}>
               {project.num} / {String(total).padStart(2, '0')}
             </span>
-            {/* Теги на десктопе */}
-            <div className="hidden md:flex flex-wrap gap-2">
-              {project.tags.slice(0, 2).map((tag) => <Tag key={tag} label={tag} />)}
-            </div>
           </div>
 
-          {/* Теги на мобилке */}
-          <div className="flex flex-wrap gap-2 mb-6 md:hidden">
+          {/* Теги — всегда под счётчиком */}
+          <div className="flex flex-wrap gap-2 mb-6">
             {project.tags.map((tag) => <Tag key={tag} label={tag} />)}
           </div>
 

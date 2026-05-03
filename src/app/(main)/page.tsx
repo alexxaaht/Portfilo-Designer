@@ -11,30 +11,31 @@ import { useEffect, useRef } from 'react'
 export default function HomePage() {
   const heroRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    // 1. Отключаем автоматику браузера
+    // 1. Отключаем попытки браузера восстановить скролл самому
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
 
-    const navs = window.performance.getEntriesByType('navigation') as PerformanceNavigationTiming[];
-    const isReload = navs.length > 0 && navs[0].type === 'reload';
+    const nav = window.performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+    const isReload = nav?.type === 'reload';
 
-    // 2. Логика для перезагрузки
+    // 2. Логика для перезагрузки (F5)
     if (isReload) {
       window.scrollTo(0, 0);
-      // Убираем хеш, чтобы он не сработал ложно при следующем переходе
+      // Чистим хеш ТОЛЬКО при перезагрузке
       if (window.location.hash === '#work') {
         window.history.replaceState(null, '', window.location.pathname);
       }
     }
-    // 3. Логика для перехода с другой страницы (All cases)
+    // 3. Логика для перехода по кнопке "All cases"
     else if (window.location.hash === '#work') {
-      const target = document.getElementById('work');
-      if (target) {
-        // Увеличиваем задержку до 200мс, чтобы template.tsx точно закончил монтаж
+      const element = document.getElementById('work');
+      if (element) {
+        // Используем setTimeout, чтобы дать template.tsx время "продышаться"
         const timer = setTimeout(() => {
-          target.scrollIntoView({ behavior: 'smooth' });
-        }, 200);
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 150); // 150ms — золотая середина для плавности
+
         return () => clearTimeout(timer);
       }
     }

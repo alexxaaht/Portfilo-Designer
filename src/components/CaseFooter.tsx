@@ -48,7 +48,7 @@ export default function CaseFooter({ nextTitle, nextSubtitle, nextHref }: CaseFo
 
           {/* All cases */}
           <Link
-            href="/#work"
+            href="/#work" 
             style={{ ...btnBase, color: dim, border: `1px solid rgba(255,255,255,0.07)` }}
             onMouseEnter={e => {
               const el = e.currentTarget

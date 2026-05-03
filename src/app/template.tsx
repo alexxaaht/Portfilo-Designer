@@ -1,25 +1,27 @@
+// src/app/template.tsx
 'use client'
 
 import { motion } from 'framer-motion'
+import { usePathname } from 'next/navigation'
 import { useEffect } from 'react'
 
 export default function Template({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname()
 
-  // Принудительный сброс скролла в 0 при каждом монтаже страницы
   useEffect(() => {
+    // Скроллим вверх ТОЛЬКО если в URL нет хеша #work
+    // Это позволит кнопке "All cases" довезти нас до нужного блока
     if (!window.location.hash.includes('#work')) {
       window.scrollTo(0, 0)
     }
-  }, [])
+  }, [pathname]) // Срабатывает при каждой смене пути
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 10 }} // Минимум движения (всего 10px вместо 100)
-      animate={{ opacity: 1, y: 0 }}
-      transition={{
-        duration: 0.4,
-        ease: [0.22, 1, 0.36, 1] // Плавная кривая (Bézier)
-      }}
+      key={pathname} // КРИТИЧНО: заставляет анимацию играть при переходе между кейсами
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.4, ease: 'easeInOut' }}
     >
       {children}
     </motion.div>

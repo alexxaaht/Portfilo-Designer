@@ -25,7 +25,7 @@ export default function CaseNavbar({ title }: CaseNavbarProps) {
     >
       {/* Ссылка назад на главную к блоку проектов */}
       <Link
-        href="/#work"
+        href="/#work" 
         className="text-[14px] text-sub hover:text-text transition-colors duration-200 flex items-center gap-1.5"
       >
         ← All cases
