@@ -26,7 +26,7 @@ export async function generateMetadata({
   if (!caseStudy) return {}
 
   return {
-    title:       `${caseStudy.title} — Elvin Garaev`,
+    title: `${caseStudy.title} — Elvin Garaev - Product Designer`,
     description: caseStudy.description,
   }
 }
