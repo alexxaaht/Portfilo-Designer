@@ -33,7 +33,6 @@ export default function CryptoSwiftPage() {
               <span key={t} style={{ fontSize: 12, letterSpacing: '.06em', textTransform: 'uppercase' as const, color: t === 'UX/UI Designer' ? ACCENT : sub, background: t === 'UX/UI Designer' ? `${ACCENT}18` : 'rgba(255,255,255,0.05)', border: `1px solid ${t === 'UX/UI Designer' ? `${ACCENT}40` : line}`, borderRadius: 100, padding: '5px 14px' }}>{t}</span>
             ))}
           </div>
-          <Image src="/images/cryptoswift/01-CryptoSwift-—-New-Sale-screen.png" alt="CryptoSwift" width={120} height={32} style={{ height: 32, width: 'auto', opacity: 0.8 }} />
         </div>
 
         <h1 style={{ fontSize: 'clamp(40px,6vw,68px)', fontWeight: 600, letterSpacing: '-.03em', lineHeight: 1.05, color: T, marginBottom: 48, maxWidth: 850 }}>
@@ -58,7 +57,7 @@ export default function CryptoSwiftPage() {
 
       {/* ── COVER ────────────────────────────────────────────────── */}
       <div style={{ maxWidth: 1160, margin: '0 auto', padding: '0 52px' }}>
-        <Image src="/images/misc/5-crypto.png" alt="CryptoSwift" width={1920} height={900} style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 16 }} priority />
+        <Image src="/images/cryptoswift/01-CryptoSwift-—-New-Sale-screen.png" alt="CryptoSwift" width={1920} height={900} style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 16 }} priority />
       </div>
 
       {/* ── 01 OVERVIEW ──────────────────────────────────────────── */}

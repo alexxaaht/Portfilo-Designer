@@ -4,7 +4,6 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion'
-
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
@@ -89,7 +88,7 @@ export default function Navbar() {
 
       {/* Полоска прогресса скролла */}
       <motion.div
-        className="absolute bottom-[-1px] left-0 right-0 h-[2px] bg-white origin-left z-[70]"
+        className="absolute bottom-[-1px] left-0 right-0 h-[2px] bg-zinc-400 origin-left z-[70]"
         style={{ scaleX }}
       />
 

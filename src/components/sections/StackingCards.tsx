@@ -25,7 +25,7 @@ interface StackingCardsProps {
 
 export default function StackingCards({ projects }: StackingCardsProps) {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col relative">
       {projects.map((project, i) => (
         <StickyCard key={project.slug} project={project} index={i} total={projects.length} />
       ))}

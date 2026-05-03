@@ -36,7 +36,7 @@ export default function CaseNavbar({ title }: CaseNavbarProps) {
 
       {/* Полоска прогресса скролла */}
       <motion.div
-        className="absolute bottom-[-1px] left-0 right-0 h-[2px] bg-white origin-left"
+        className="absolute bottom-[-1px] left-0 right-0 h-[2px] bg-zinc-500 origin-left"
         style={{ scaleX }}
       />
     </nav>

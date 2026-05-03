@@ -1,14 +1,44 @@
-'use client' 
+'use client'
 
 import Image from 'next/image'
 import FadeIn from '@/components/animations/FadeIn'
 import HeroPhoto from '@/components/sections/HeroPhoto'
 import StackingCards from '@/components/sections/StackingCards'
+import Link from 'next/link'
 import { projects } from '@/lib/projects'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 
 export default function HomePage() {
+  const heroRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    // 1. Отключаем автоматику браузера
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
 
+    const navs = window.performance.getEntriesByType('navigation') as PerformanceNavigationTiming[];
+    const isReload = navs.length > 0 && navs[0].type === 'reload';
+
+    // 2. Логика для перезагрузки
+    if (isReload) {
+      window.scrollTo(0, 0);
+      // Убираем хеш, чтобы он не сработал ложно при следующем переходе
+      if (window.location.hash === '#work') {
+        window.history.replaceState(null, '', window.location.pathname);
+      }
+    }
+    // 3. Логика для перехода с другой страницы (All cases)
+    else if (window.location.hash === '#work') {
+      const target = document.getElementById('work');
+      if (target) {
+        // Увеличиваем задержку до 200мс, чтобы template.tsx точно закончил монтаж
+        const timer = setTimeout(() => {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }, 200);
+        return () => clearTimeout(timer);
+      }
+    }
+  }, []);
 
   return (
     <>
@@ -60,7 +90,7 @@ export default function HomePage() {
           </div>
         </FadeIn>
 
-        <a
+        <Link
           href="#work"
           className="absolute bottom-16 left-1/2 -translate-x-1/2 w-14 h-14 rounded-full border border-white/20 bg-white/10 flex items-center justify-center text-[#F2F0EC]/70 no-underline transition-all duration-200 hover:border-white/40 hover:text-[#F2F0EC] hover:-translate-x-1/2 hover:translate-y-1 z-10"
         >
@@ -73,11 +103,11 @@ export default function HomePage() {
               strokeLinejoin="round"
             />
           </svg>
-        </a>
+        </Link>
       </section>
 
       {/* ── Work list ─────────────────────────────────────────── */}
-      <section id="work" className="scroll-mt-20">
+      <section id="work" className="scroll-mt-20 relative">
         {/* Section header */}
         <div className="flex items-center justify-between px-8 md:px-14 py-5 border-y border-line">
           <span className="text-[12px] uppercase text-dim" style={{ letterSpacing: '0.1em' }}>
