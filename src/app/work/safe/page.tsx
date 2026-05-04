@@ -39,7 +39,7 @@ export default function SafePage() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', border: `1px solid ${line}`, borderRadius: 16, overflow: 'hidden', width: '100%' }}>
           {[
             { l: 'Role',     v: 'Senior Product Designer' },
-            { l: 'Timeline', v: '2024–2025' },
+            { l: 'Timeline', v: '2024–2026' },
             { l: 'Platform', v: 'iOS · Android' },
             { l: 'Company',  v: 'UkrSibBank BNP Paribas' },
           ].map((m, i, a) => (

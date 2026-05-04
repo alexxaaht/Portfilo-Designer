@@ -26,7 +26,7 @@ export default function XgoPage() {
             <span key={t} style={{ fontSize: 12, letterSpacing: '.06em', textTransform: 'uppercase', color: t === 'Product Designer' ? ACC : sub, background: t === 'Product Designer' ? `${ACC}18` : 'rgba(255,255,255,0.05)', border: `1px solid ${t === 'Product Designer' ? `${ACC}40` : line}`, borderRadius: 100, padding: '5px 14px' }}>{t}</span>
           ))}
         </div>
-        <h1 style={{ fontSize: 'clamp(40px,6vw,68px)', fontWeight: 600, letterSpacing: '-.03em', lineHeight: 1.05, color: T, marginBottom: 20, maxWidth: 850 }}>
+        <h1 style={{ fontSize: 'clamp(40px,6vw,68px)', fontWeight: 600, letterSpacing: '-.03em', lineHeight: 1.05, color: T, marginBottom: 20, maxWidth: 1100 }}>
           XGo Wallet — Crypto & Fiat,<br /><em style={{ fontStyle: 'italic', fontWeight: 300, color: sub }}>designed for humans</em>
         </h1>
         <p style={{ fontSize: 18, fontWeight: 300, color: sub, maxWidth: 720, marginBottom: 48, lineHeight: 1.7 }}>A crypto wallet built from absolute zero — branding, research, full UX/UI. Designed for people who aren't crypto people. 5K+ downloads after launch.</p>

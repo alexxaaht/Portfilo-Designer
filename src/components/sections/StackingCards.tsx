@@ -101,7 +101,7 @@ function StickyCard({ project, index, total }: { project: Project; index: number
           <h2 className="font-semibold text-text leading-tight mb-3 md:mb-4" style={{ fontSize: 'clamp(24px, 2.4vw, 32px)', letterSpacing: '-0.02em' }}>
             {project.title}
           </h2>
-          <p className="text-[16px] md:text-[18px] font-light text-gray-200 leading-relaxed mb-4 max-w-sm">
+          <p className="text-[16px] md:text-[18px] font-light text-gray-200 leading-relaxed mb-4 max-w-lg">
             {project.subtitle}
           </p>
           <p className="text-[14px] md:text-[16px] font-light leading-relaxed max-w-lg text-sub mb-10 md:mb-0">

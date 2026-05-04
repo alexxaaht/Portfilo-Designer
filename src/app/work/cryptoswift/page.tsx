@@ -35,8 +35,8 @@ export default function CryptoSwiftPage() {
           </div>
         </div>
 
-        <h1 style={{ fontSize: 'clamp(40px,6vw,68px)', fontWeight: 600, letterSpacing: '-.03em', lineHeight: 1.05, color: T, marginBottom: 48, maxWidth: 850 }}>
-          CryptoSwift —<br />
+        <h1 style={{ fontSize: 'clamp(40px,6vw,68px)', fontWeight: 600, letterSpacing: '-.03em', lineHeight: 1.05, color: T, marginBottom: 48, maxWidth: 1100 }}>
+          CryptoSwift —
           <em style={{ fontStyle: 'italic', fontWeight: 300, color: sub }}>Crypto Payment Platform for Merchants</em>
         </h1>
 

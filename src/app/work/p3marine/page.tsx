@@ -26,7 +26,7 @@ export default function P3MarinePage() {
             <span key={t} style={{ fontSize: 12, letterSpacing: '.06em', textTransform: 'uppercase', color: t === 'UX/UI Designer' ? ACC : sub, background: t === 'UX/UI Designer' ? `${ACC}18` : 'rgba(255,255,255,0.05)', border: `1px solid ${t === 'UX/UI Designer' ? `${ACC}40` : line}`, borderRadius: 100, padding: '5px 14px' }}>{t}</span>
           ))}
         </div>
-        <h1 style={{ fontSize: 'clamp(40px,6vw,68px)', fontWeight: 600, letterSpacing: '-.03em', lineHeight: 1.05, color: T, marginBottom: 48, maxWidth: 850 }}>
+        <h1 style={{ fontSize: 'clamp(40px,6vw,68px)', fontWeight: 600, letterSpacing: '-.03em', lineHeight: 1.05, color: T, marginBottom: 48, maxWidth: 1100 }}>
           P3 Marine — Yacht Management<br /><em style={{ fontStyle: 'italic', fontWeight: 300, color: sub }}>Platform from Scratch</em>
         </h1>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', border: `1px solid ${line}`, borderRadius: 16, overflow: 'hidden', width: '100%' }}>

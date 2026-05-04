@@ -133,12 +133,8 @@ export default function HomePage() {
             color: 'var(--text)',
           }}
         >
-          Let&apos;s build something great
+          Let&apos;s build <br /> something great
         </h2>
-
-        <p className="text-[16px] font-light text-sub leading-relaxed mb-10">
-          Open to full-time roles and freelance projects in product design.
-        </p>
 
         <div className="flex flex-wrap gap-3 justify-center">
           <a

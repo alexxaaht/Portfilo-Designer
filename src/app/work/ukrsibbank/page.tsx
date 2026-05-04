@@ -39,7 +39,7 @@ export default function UkrSibBankPage() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', border: `1px solid ${line}`, borderRadius: 16, overflow: 'hidden', width: '100%' }}>
           {[
             { l: 'Role', v: 'Lead Product Designer' },
-            { l: 'Timeline', v: '2024–2025' },
+            { l: 'Timeline', v: '2024–2026' },
             { l: 'Platform', v: 'Web · Desktop' },
             { l: 'Status', v: 'In development' },
           ].map((m, i, a) => (
