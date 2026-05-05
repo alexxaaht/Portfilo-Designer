@@ -6,7 +6,6 @@ import { motion } from 'framer-motion'
 export default function HeroPhoto() {
   return (
     <motion.div
-      // Изменили top-[28%] на top-[18%], чтобы поднять выше
       className="absolute top-[10%] right-8 md:right-[160px] z-20 hidden lg:block"
       initial={{ opacity: 0, x: 20, rotate: -15 }}
       animate={{ opacity: 1, x: 0, rotate: -10 }}

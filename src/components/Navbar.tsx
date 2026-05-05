@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion'
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
@@ -31,7 +32,7 @@ export default function Navbar() {
   const links = [
     { name: 'LinkedIn ↗', href: 'https://www.linkedin.com/in/elvin-garaev-4798ba255/' },
     { name: 'Telegram ↗', href: 'https://t.me/el13xx' },
-    { name: 'Email ↗', href: 'e.garaev.dg55@gmail.com' },
+    { name: 'Email ↗', href: 'mailto:e.garaev.dg55@gmail.com' }, 
   ]
 
   return (
@@ -49,14 +50,13 @@ export default function Navbar() {
           EG
         </Link>
 
-        {/* Десктопное меню */}
         <ul className="hidden md:flex gap-7 list-none">
           {links.map((link) => (
             <li key={link.name}>
               <a
                 href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
+                target={link.href.startsWith('mailto:') ? undefined : "_blank"}
+                rel={link.href.startsWith('mailto:') ? undefined : "noopener noreferrer"}
                 className="text-[16px] text-sub hover:text-text transition-colors duration-200"
               >
                 {link.name}
@@ -107,8 +107,8 @@ export default function Navbar() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    target={link.href.startsWith('mailto:') ? undefined : "_blank"}
+                    rel={link.href.startsWith('mailto:') ? undefined : "noopener noreferrer"}
                     onClick={() => setIsOpen(false)}
                     className="text-[24px] font-medium text-text hover:text-sub transition-colors duration-200"
                   >

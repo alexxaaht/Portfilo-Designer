@@ -6,8 +6,7 @@ interface CaseHeroProps {
 }
 
 export default function CaseHero({ caseStudy }: CaseHeroProps) {
-  const { title, subtitle, description, tags, accentTag, accent, meta } = caseStudy
-
+  const { title, subtitle, description, tags, accentTag, accent } = caseStudy
   return (
     <section className="max-w-content mx-auto px-4 md:px-[52px] pt-[100px] pb-14 border-b border-line">
       {/* Tags */}
@@ -35,13 +34,13 @@ export default function CaseHero({ caseStudy }: CaseHeroProps) {
       {/* Meta grid */}
       <div
         className="grid border border-line rounded-[14px] overflow-hidden max-w-[760px]"
-        style={{ gridTemplateColumns: `repeat(${meta.length}, 1fr)` }}
+        style={{ gridTemplateColumns: `repeat(${caseStudy.infoGrid.length}, 1fr)` }}
       >
-        {meta.map((item, i) => (
+        {caseStudy.infoGrid.map((item: { label: string; value: string }, i: number) => (
           <div
             key={item.label}
             className="px-5 py-[18px]"
-            style={{ borderRight: i < meta.length - 1 ? '1px solid var(--line)' : 'none' }}
+            style={{ borderRight: i < caseStudy.infoGrid.length - 1 ? '1px solid var(--line)' : 'none' }}
           >
             <p
               className="text-[10px] uppercase mb-1.5"
@@ -54,7 +53,7 @@ export default function CaseHero({ caseStudy }: CaseHeroProps) {
             </p>
           </div>
         ))}
-      </div>
-    </section>
+    </div>
+    </section >
   )
 }
