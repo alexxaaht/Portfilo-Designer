@@ -8,28 +8,27 @@ import ScrollReveal from '@/components/animations/ScrollReveal'
 
 // Константы цветов
 const T = '#F2F0EC'
-const sub = 'rgba(220,216,208,0.8)'
-const dim = 'rgba(210,204,194,0.55)'
+const sub = 'rgba(220,216,208,0.9)'
+const dim = 'rgba(210,204,194,0.7)'
 const line = 'rgba(255,255,255,0.08)'
 const line2 = 'rgba(255,255,255,0.18)'
 
 // --- Хелперы ---
 
 const SecNum = ({ children }: { children: React.ReactNode }) => (
-  <div className="flex items-center gap-3 mb-6 text-[11px] md:text-[12px] uppercase tracking-[0.12em]" style={{ color: dim }}>
+  <div className="flex items-center gap-3 mb-6 text-[12px] md:text-[12px] uppercase tracking-[0.12em]" style={{ color: dim }}>
     <span className="block w-6 md:w-8 h-[1px]" style={{ background: line2 }} />
     {children}
   </div>
 )
 
 const H2 = ({ children }: { children: React.ReactNode }) => (
-  <h2 className="text-[28px] md:text-[34px] font-semibold leading-tight tracking-[-0.03em] mb-8 max-w-full md:max-w-[720px]" style={{ color: T }}>
-    {children}
+  <h2 className="text-[28px] md:text-[34px] font-semibold leading-tight tracking-[-0.03em] mb-8 w-full" style={{ color: T }}>    {children}
   </h2>
 )
 
 const P = ({ children, mt }: { children: React.ReactNode; mt?: boolean }) => (
-  <p className={`text-[17px] md:text-[18px] font-light leading-[1.6] md:leading-[1.85] ${mt ? 'mt-6' : 'mt-0'}`} style={{ color: 'rgba(220,216,208,0.85)' }}>
+  <p className={`text-[17px] md:text-[16px] font-light leading-[1.6] md:leading-[1.85] ${mt ? 'mt-6' : 'mt-0'}`} style={{ color: 'rgba(220,216,208,0.85)' }}>
     {children}
   </p>
 )
@@ -61,39 +60,34 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
       <CaseNavbar title="Elvin Garaev" />
 
       {/* ── HERO ── */}
-      <section className="max-w-[1160px] mx-auto px-6 md:px-[52px] pt-[100px] md:pt-[120px] pb-16 border-b" style={{ borderColor: line }}>
-        {/* Теги с подсветкой акцентного тега */}
-        <div className="flex flex-wrap gap-2.5 mb-8">
-          {project.tags.map(t => {
-            const isAccent = t === project.accentTag;
-            return (
-              <span
-                key={t}
-                className="text-[11px] md:text-[12px] uppercase tracking-wider rounded-full px-3.5 py-1.5 border transition-colors"
-                style={{
-                  color: isAccent ? project.accent : sub,
-                  background: isAccent ? `${project.accent}15` : 'rgba(255,255,255,0.05)',
-                  borderColor: isAccent ? `${project.accent}40` : line
-                }}
-              >
-                {t}
-              </span>
-            );
-          })}
-        </div>
+      <section className="max-w-[1160px] mx-auto px-6 md:px-[52px] pt-[100px] md:pt-[120px] pb-10 md:pb-12 border-b" style={{ borderColor: line }}>        <div className="flex flex-wrap gap-2.5 mb-8">
+        {project.tags.map(t => {
+          const isAccent = t === project.accentTag;
+          return (
+            <span
+              key={t}
+              className="text-[11px] md:text-[12px] uppercase tracking-wider rounded-full px-3.5 py-1.5 border transition-colors"
+              style={{
+                color: isAccent ? project.accent : sub,
+                background: isAccent ? `${project.accent}15` : 'rgba(255,255,255,0.05)',
+                borderColor: isAccent ? `${project.accent}40` : line
+              }}
+            >
+              {t}
+            </span>
+          );
+        })}
+      </div>
 
-        {/* Заголовок: убрали лишнее тире перед <br />, так как оно теперь в данных */}
-        <h1 className="text-[36px] md:text-[68px] font-semibold leading-[1.1] md:leading-[1.05] tracking-[-0.03em] mb-12 max-w-full md:max-w-[850px]" style={{ color: T }}>
+        <h1 className="text-[36px] md:text-[68px] font-semibold leading-[1.1] md:leading-[1.05] tracking-[-0.03em] mb-12 w-full" style={{ color: T }}>
           {project.title}<br />
           <em className="font-light italic" style={{ color: sub }}>{project.subtitle}</em>
         </h1>
 
-        {/* Описание под заголовком (как на скрине) */}
-        <p className="text-[17px] md:text-[19px] font-light leading-relaxed mb-12 max-w-[720px]" style={{ color: sub }}>
+        <p className="text-[17px] md:text-[19px] font-light leading-relaxed mb-12 max-w-[1100px]" style={{ color: sub }}>
           {project.description}
         </p>
 
-        {/* Сетка инфо */}
         <div className="grid grid-cols-2 md:grid-cols-4 rounded-2xl overflow-hidden w-full border" style={{ borderColor: line }}>
           {project.infoGrid.map((m, i, a) => (
             <div key={m.label} className={`p-5 md:p-6 border-line ${i % 2 === 0 ? 'border-r' : 'md:border-r'} ${i < 2 ? 'border-b md:border-b-0' : 'max-md:border-b-0'} last:border-r-0`} style={{ borderColor: line }}>
@@ -111,7 +105,7 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
 
       {/* ── SECTIONS ── */}
       {project.sections.map((section, sIdx) => (
-        <section key={sIdx} className="max-w-[1160px] mx-auto px-6 md:px-[52px] py-12 md:py-16 border-b last:border-none" style={{ borderColor: line }}>
+        <section key={sIdx} className="max-w-[1160px] mx-auto px-6 md:px-[52px] py-10 md:py-12 border-b last:border-none" style={{ borderColor: line }}>
           <ScrollReveal>
             <SecNum>{section.num} · {section.title}</SecNum>
             <H2>{parseContent(section.heading)}</H2>
@@ -126,28 +120,28 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
 
                   {/* Quote */}
                   {block.type === 'quote' && (
-                    <div className="bg-white/[0.02] border-l-2 border-white/20 p-10 md:p-16 my-16 rounded-r-3xl">
-                      <div className="text-[19px] md:text-[24px] font-light leading-relaxed italic mb-12" style={{ color: T }}>
+                    <div className="bg-white/[0.02] border-l-2 border-white/20 p-8 md:p-10 mt-12 mb-0 rounded-r-2xl">
+                      <div className="text-[16px] md:text-[16px] font-light leading-relaxed italic mb-6" style={{ color: '#F2F0EC' }}>
                         {block.text}
                       </div>
-                      <div className="text-[13px] md:text-[14px] flex items-center gap-4 uppercase tracking-widest" style={{ color: dim }}>
-                        <span className="w-8 h-[1px] bg-white/20" />
+                      <div className="text-[12px] flex items-center gap-4 uppercase tracking-widest" style={{ color: dim }}>
+                        <span className="w-6 h-[1px] bg-white/10" />
                         {block.author}
                       </div>
                     </div>
                   )}
 
-                  {/* Insight */}
+                  {/* Insight — компактный и акцентный */}
                   {block.type === 'insight' && (
-                    <div className="bg-white/[0.03] border-l-2 border-white/20 p-10 md:p-16 my-16 rounded-r-3xl">
+                    <div className="bg-white/[0.03] border-l-2 border-white/20 p-8 md:p-10 mt-12 mb-0 rounded-r-2xl">
                       <div
-                        className="text-[11px] uppercase tracking-[0.15em] mb-10 font-medium"
-                        style={{ color: project.accent }} // Используем акцентный цвет проекта
+                        className="text-[14px] uppercase tracking-[0.15em] mb-6 font-medium"
+                        style={{ color: project.accent }} 
                       >
                         {block.title}
                       </div>
 
-                      <div className="text-[18px] md:text-[22px] font-light italic leading-relaxed text-text/95">
+                      <div className="text-[14px] md:text-[16px] font-light italic leading-relaxed text-text/90">
                         {parseContent(block.content || '')}
                       </div>
                     </div>
@@ -185,11 +179,11 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
 
                   {/* Card */}
                   {block.type === 'card' && (
-                    <div className="bg-white/[0.03] border rounded-3xl p-10 md:p-16 my-12" style={{ borderColor: line }}>
-                      <div className="text-[11px] uppercase tracking-widest mb-8" style={{ color: dim }}>
+                    <div className="bg-white/[0.03] border rounded-3xl p-8 md:p-10 mt-12 mb-0" style={{ borderColor: line }}>
+                      <div className="text-[14px] uppercase tracking-widest mb-5" style={{ color: dim }}>
                         {block.title}
                       </div>
-                      <div className="text-[17px] md:text-[19px] font-light leading-relaxed space-y-6" style={{ color: sub }}>
+                      <div className="text-[14px] font-light leading-relaxed space-y-4" style={{ color: sub }}>
                         {block.content?.split('\n\n').map((paragraph, i) => (
                           <p key={i}>{parseContent(paragraph)}</p>
                         ))}
@@ -201,7 +195,6 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
                   {block.type === 'metrics' && (
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-12">
                       {block.items?.map((s, idx) => {
-                        // Список проектов, где первые 3 метрики получают акцентный цвет
                         const accentRequired = ['ifreq', 'cryptoswift', 'xgo', 'p3marine'].includes(project.slug);
 
                         const metricColor = (accentRequired && idx < 3) ? project.accent : '#F2F0EC';
@@ -289,7 +282,7 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
 
                   {/* Grid Images */}
                   {block.type === 'gridImages' && (
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 my-12">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mt-12 mb-0">
                       {block.images?.map((img, i) => (
                         <div key={i}>
                           <div className="rounded-2xl overflow-hidden border" style={{ borderColor: line }}>

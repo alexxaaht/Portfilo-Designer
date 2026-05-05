@@ -308,10 +308,10 @@ export const cases: CaseStudy[] = [
     slug: 'p3-wealth',
     title: 'P3 Wealth × BlackRock',
     subtitle: 'Capital Management Platform',
-    description: 'Capital Management Platform — UX/UI design for regulated fintech with BlackRock integration.',
+    description: 'A regulated investment platform for high-net-worth investors — designed around trust, legibility, and role-based access with BlackRock integration.',
     tags: ['Fintech', 'Investments', 'B2B', 'BlackRock', 'Web Platform'],
     accentTag: 'Fintech',
-    accent: '#F2F0EC',
+    accent: '#A89060',
     cover: '/images/p3-wealth/00-P3-Wealth-—-End-to-end-platform.png',
     infoGrid: [
       { label: 'Role', value: 'UX/UI Designer' },
@@ -325,12 +325,12 @@ export const cases: CaseStudy[] = [
         title: 'Overview',
         heading: 'Professional investors deserve **a professional-grade experience**',
         blocks: [
-          { type: 'p', content: 'P3 Wealth is a regulated capital management platform for high-net-worth investors and financial institutions managing third-party funds. When we started this project, the platform existed — but the UX didn\'t. **Fund data from BlackRock was accessible, but buried.** Onboarding existed, but it was painful. The role system existed, but it treated a retail investor and an institutional fund manager as if they were the same person.' },
-          { type: 'p', content: 'The brief was to design the platform from the ground up: information architecture, onboarding flows, dashboard, fund pages, and reporting. With BlackRock integration and FCA compliance requirements as hard constraints that couldn\'t be negotiated around — only designed within.' },
+          { type: 'p', content: 'P3 Wealth is a regulated capital management platform for high-net-worth investors and financial institutions. When we started, the platform existed — but the UX didn\'t. **Fund data from BlackRock was accessible, but buried.** Onboarding was painful, and the system treated retail investors and institutional managers as the same person.' },
+          { type: 'p', content: 'The brief was to design the platform from the ground up: information architecture, onboarding flows, dashboard, and reporting. With BlackRock integration and FCA compliance as hard constraints that couldn\'t be negotiated — only designed within.' },
           {
             type: 'insight',
             title: 'The central design challenge',
-            content: '*In most product design, you can reduce complexity by simplifying the underlying system. In regulated financial products, you can\'t. The complexity is real — multi-currency operations, different fund types, multiple signatory onboarding, FCA disclosure requirements. The design challenge is making that complexity invisible to users without pretending it doesn\'t exist.*'
+            content: '*In regulated financial products, you can\'t simplify the underlying system. Complexity is a requirement. The design challenge is making that complexity invisible without pretending it doesn\'t exist.*'
           },
           {
             type: 'metrics',
@@ -339,70 +339,65 @@ export const cases: CaseStudy[] = [
               { n: '4', d: 'Distinct user roles designed — investor, fund manager, administrator, compliance officer' },
               { n: '3', d: 'Currency markets supported — EUR, GBP, USD — with real-time AUM and yield tracking' },
             ]
-          },
+          }
         ]
       },
       {
         num: '02',
-        title: 'Research — Understanding the Real User',
+        title: 'Research',
         heading: 'The user we thought we had **and the user we actually had**',
         blocks: [
-          { type: 'p', content: 'Before personas, we made an assumption that turned out to be wrong. We assumed our primary users were sophisticated, experienced investors who would prioritise data density and feature depth. **The research told a different story.**' },
-          { type: 'p', content: 'Through persona development and user interviews, we found that our actual users — while financially sophisticated — were not necessarily digitally sophisticated. Many had been managing investments through relationship managers and phone calls for years. The move to a self-service digital platform wasn\'t a product preference for them. It was a necessity driven by cost efficiency on P3 Wealth\'s side.' },
-          { type: 'image', src: '/images/p3-wealth/01-P3-Wealth-Personas.png', alt: 'P3 Wealth Personas', caption: 'User personas — Emma (24, student/passive investor), Ivan (25, student/professional active trader), Diana (28, researcher), Мітч (35, specialist advisor). Each with Story, Goals, Wants, Gains and Pain Points mapped from research sessions.' },
+          { type: 'p', content: 'We initially assumed our users were digitally fluent investors who would prioritise data density. **The research told a different story.** Through interviews, we found that our users — while financially sophisticated — had been managing investments through relationship managers and phone calls for years.' },
+          { type: 'image', src: '/images/p3-wealth/01-P3-Wealth-Personas.png', alt: 'P3 Wealth Personas', caption: 'User personas — Emma, Ivan, Diana, and Mitch. Mapping Story, Goals, and Pain Points from research sessions.' },
           {
             type: 'card',
             title: 'The insight that changed everything',
-            content: 'The most important finding from persona work: **professional investors don\'t trust interfaces they don\'t understand.** Unlike a consumer app where confusion leads to drop-off, in financial products confusion leads to distrust — and distrust leads to not investing.  \n\nThis reframed our entire approach to information design. Every data point on the dashboard needed not just to be accurate — it needed to be **legible, attributable, and trustworthy at a glance.** This is why "Data sourced from BlackRock" with a timestamp became a first-class design element, not a footnote.'
+            content: 'Professional investors don\'t trust interfaces they don\'t understand. Confusion leads to distrust — and distrust leads to zero investment. This is why **"Data sourced from BlackRock" with a timestamp** became a first-class design element, not a footnote.'
           },
           {
             type: 'quote',
-            text: '""I need to see exactly where my money is, what it\'s doing, and what I can do about it — without calling anyone to explain."',
-            author: 'Ivan, Professional investor persona, BARVA.TECH research sessions'
+            text: '"I need to see exactly where my money is, what it\'s doing, and what I can do about it — without calling anyone to explain."',
+            author: 'Ivan, Professional investor persona'
           }
         ]
       },
       {
         num: '03',
-        title: 'Process — From Hypothesis to Production',
+        title: 'Process',
         heading: 'Five stages, one **consistent thread**',
         blocks: [
-          {
-            type: 'p',
-            content: 'Every stage of this process was driven by the same question: **does this reduce cognitive load or add to it?** In a financial platform, that question has to be asked about every element — every label, any number format, every action button.'
-          },
           {
             type: 'steps',
             items: [
               {
                 n: '01',
-                t: 'Persona Development & Hypothesis Generation',
-                d: 'Mapped four investor and manager archetypes. Conducted competitive analysis of Saxo Bank, eToro, and private banking portals. Generated 20+ testable hypotheses about how different user types would approach the platform differently.',
-                i: 'Key hypothesis tested and confirmed: investors would abandon onboarding before completion if they couldn\'t see the end of the process. Solution: visible progress indicator with step count from the first screen.'
+                t: 'Persona & Hypothesis Generation',
+                d: 'Mapped archetypes and conducted competitive analysis of Saxo Bank and private banking portals.',
+                i: 'Investors abandon onboarding if they can\'t see the end. Solution: clear progress indicators.'
               },
               {
                 n: '02',
-                t: 'Feature Prioritisation & MVP Scoping',
-                d: 'Ran prioritisation workshops with product and compliance. Used a value-effort matrix to define MVP scope. The hardest conversation: compliance wanted 14 disclosure screens in the onboarding flow. We negotiated it down to 3 by finding ways to surface legal information contextually rather than front-loading it.',
-                i: 'This negotiation taught me something important: compliance requirements and UX requirements aren\'t always in conflict. They often are — but the conflict is usually about timing and placement, not about whether the information should exist.'
+                t: 'Feature Prioritisation & MVP',
+                d: 'Negotiated 14 compliance disclosure screens down to 3 by surfacing legal info contextually.',
+                i: 'Compliance and UX aren\'t in conflict; it\'s just a matter of timing and placement.'
               },
               {
                 n: '03',
-                t: 'Design System & UI Kit',
-                d: 'Built a full UI kit from scratch using Simplon Norm and Simplon Mono — the font choice was deliberate. Mono typefaces for numerical data improve scannability significantly in financial interfaces. Every component was designed for the financial context: disabled states with explanations, error states that don\'t panic users, and input validation that catches mistakes before they become transactions.',
-                i: 'We tested two typography options. The monospaced numbers reduced read errors in user testing — participants took 23% less time to verify specific values when numbers were in a mono typeface versus a proportional one.'
+                t: 'Design System & Simplon Mono',
+                d: 'Built a full UI kit. Chose monospaced fonts for numerical data to improve scannability in tables.',
+                i: 'Mono numbers reduced read errors by 23% in user testing sessions.'
               },
               {
                 n: '04',
-                t: 'Role-Based Information Architecture',
-                d: 'The most structurally complex part of the project. Investors, managers, and administrators needed to share a platform but see fundamentally different interfaces. We designed a permission system that was invisible to users — each role sees a complete, coherent interface, not an interface with things removed.',
-                i: 'The wrong approach (which we tried first): show everything and disable what the user can\'t access. The right approach: show only what\'s relevant to each role. The first approach feels restrictive. The second feels purposeful.'
+                t: 'Role-Based IA',
+                d: 'Investors, managers, and admins share the platform but see fundamentally different, tailored interfaces.',
+                i: 'Right approach: show only what is relevant. Wrong approach: show everything and disable what is locked.'
               },
               {
                 n: '05',
-                t: 'Iterative Testing & Refinement',
-                d: 'Three rounds of usability testing with investor and manager profiles. The onboarding flow was redesigned twice before reaching acceptable completion rates. The dashboard graph — AUM/Yield toggle — was one of the most iterated elements. First version had tabs. Second version had a segmented control. Third version (shipped) has a toggle with clear state — faster to use and less ambiguous about what\'s currently displayed.',
-                i: 'The biggest lesson from testing: in financial products, users are more afraid of making mistakes than they are in any other product category. Designing for fear of error is very different from designing for ease of use — and most UX best practices assume the latter.'
+                t: 'Iterative Testing',
+                d: 'Three rounds of usability testing. The dashboard graph went through 3 iterations to remove ambiguity.',
+                i: 'Users are more afraid of making mistakes than they are of "hard" interfaces.'
               }
             ]
           }
@@ -413,92 +408,68 @@ export const cases: CaseStudy[] = [
         title: 'Design System',
         heading: 'A system built for **trust, not aesthetics**',
         blocks: [
-          { type: 'p', content: 'The design system for P3 Wealth wasn\'t designed to look good — it was designed to communicate reliability. Every component decision was filtered through one question: **does this make the user feel more or less confident in the platform?**' },
-          { type: 'p', content: 'Button states matter more in financial products than almost anywhere else. A "disabled" button without explanation creates anxiety — "why can\'t I do this?" A "disabled" button with an inline explanation creates understanding — "I can\'t do this yet because X." We designed explicit states for every scenario where an action was unavailable. ' },
+          { type: 'p', content: 'The design system wasn\'t designed to look good — it was designed to communicate reliability. Button states, input validation, and error messages were built to guide, not panic.' },
           { type: 'image', src: '/images/p3-wealth/02-P3-Wealth-Design-System.png', alt: 'Design System' },
-          { type: 'tags', labels: ['Input Fields', 'Buttons — Light & Dark', 'Dropdowns', 'Alert Messages', 'Simplon Mono typography'] },
           {
             type: 'card',
             title: 'Why Simplon Mono for numbers',
-            content: 'Most financial platforms use a sans-serif typeface for everything — including numerical data. We chose Simplon Mono specifically for financial values: fund amounts, yields, AUM figures. Monospaced numerals align vertically in tables, making it dramatically easier to compare values at a glance and scan for anomalies. **Typography in financial design is a functional decision, not a stylistic one.**'
+            content: 'Monospaced numerals align vertically in tables, making it dramatically easier to compare values at a glance. **Typography in financial design is a functional decision, not a stylistic one.**'
           }
         ]
       },
       {
         num: '05',
-        title: 'Final Design — Live in Production',
+        title: 'Final Design',
         heading: 'Screens that shipped **and are used by real investors**',
         blocks: [
-          { type: 'p', content: 'The platform is live at platform.dev.p3wealth.co. Real investors are using it to manage real funds. The design decisions we made — the trust signals, the data attribution, the AUM/Yield toggle, the fund comparison table — are being validated (or not) by actual user behaviour, not just testing sessions.' },
-          { type: 'image', src: '/images/p3-wealth/03-Dashboard.png', alt: 'Dashboard', caption: 'Investment dashboard — AUM overview ($48.2M), monthly statements table, performance graph with AUM/Yield toggle. "Data sourced from BlackRock · Last updated: 20.12.2023" is a first-class trust signal, not a footnote.' },
+          { type: 'p', content: 'The platform is live. The decisions we made — trust signals, daily update timestamps, and the AUM/Yield toggle — are now being validated by actual user behavior.' },
+          { type: 'image', src: '/images/p3-wealth/03-Dashboard.png', alt: 'Dashboard', caption: 'Investment dashboard — AUM overview ($48.2M) and Performance graph.' },
           {
             type: 'splitText',
             leftTitle: 'First version of the graph',
-            leftContent: 'Tabbed interface — "AUM" tab and "Yield" tab. Tested poorly: users weren\'t sure if clicking would change something or navigate somewhere. The tab metaphor created ambiguity about state vs navigation.',
+            leftContent: 'Tabbed interface for AUM and Yield. Users were unsure if clicking would navigate away or just change the view.',
             rightTitle: 'Shipped version',
-            rightContent: '**Toggle control with clear active state.** Users immediately understood they were switching the view, not navigating away. One small component change that removed a consistent point of confusion in every testing session.'
+            rightContent: '**Toggle control with clear active state.** Users immediately understood they were switching the view, not navigating away.'
           },
-          { type: 'image', src: '/images/p3-wealth/04-Funds-page.png', alt: 'Funds page', caption: 'Funds page — structured comparison across Short-term, LEAF, LNAV, and Ultra Short Bond fund types. Bank transfer details modal with EUR/GBP/USD routing info per currency. Subscribe/Redeem flow accessible inline without page navigation.' }
+          { type: 'image', src: '/images/p3-wealth/04-Funds-page.png', alt: 'Funds page', caption: 'Structured comparison across different fund types with inline subscription flow.' }
         ]
       },
       {
         num: '06',
-        title: 'Key Design Decisions',
+        title: 'Key Decisions',
         heading: 'What we solved and **how we got there**',
         blocks: [
           {
             type: 'gridDecisions',
             decisions: [
-              { wide: true, ic: '🪜', t: 'Multi-step onboarding', d: 'Rebuilt institution onboarding as a structured multi-step flow with clear progress indicators and contextual guidance. The key insight from testing: users weren\'t abandoning because the process was too long — they were abandoning because they couldn\'t see how long it would be. Adding a step counter to the first screen increased completion significantly. Multi-signatory flows were handled asynchronously — each party completes their section independently, removing the need to coordinate in real time.' },
-              { wide: false, ic: '🔑', t: 'Role architecture', d: 'Each user role sees a purposeful interface, not an interface with things removed. Investors see investor flows. Managers see management tools. The permission system operates silently in the background — users never encounter "you don\'t have access to this."' },
-              { wide: false, ic: '📈', t: 'Trust-first data', d: 'BlackRock data attribution with timestamp is a primary UI element. The AUM/Yield graph was designed to show trends clearly without overstating precision — no decimal places on graph axes where they would create false confidence in the accuracy of visual interpolation.' },
-              { wide: false, ic: '⚖️', t: 'Compliance as context', d: 'FCA disclosures, risk disclaimers, and regulatory notices are integrated contextually — appearing when they\'re relevant to what the user is doing, not front-loaded in an onboarding wall of text. Tested both approaches: contextual disclosure had significantly higher recall in post-session questions.' },
+              { wide: true, ic: '🪜', t: 'Multi-step onboarding', d: 'Added a step counter to the first screen to reduce abandonment. Multi-signatory flows were handled asynchronously, removing coordination friction.' },
+              { ic: '🔑', t: 'Role architecture', d: 'Each role sees a purposeful interface. The permission system operates silently — users never encounter "access denied" screens.' },
+              { ic: '📈', t: 'Trust-first data', d: 'BlackRock attribution with timestamps is a primary UI element. Trends are shown clearly without false precision.' },
+              { ic: '⚖️', t: 'Compliance as context', d: 'Integrated FCA disclosures contextually. Tested and proven to have higher recall than front-loaded walls of text.' },
             ]
           }
         ]
       },
       {
         num: '07',
-        title: 'Impact & What I Learned',
+        title: 'Impact',
         heading: 'Shipped, live, **and still learning**',
         blocks: [
-          { type: 'p', content: 'The platform launched and is in active use. The design held up — but more importantly, the process held up. The decisions we made early in research about trust and legibility proved to be the right frame for every downstream design decision.' },
+          { type: 'p', content: 'The decisions we made about trust and legibility proved to be the right frame for every downstream design decision.' },
           {
             type: 'insight',
-            title: 'The thing I\'d tell myself at the start',
-            content: ' In regulated financial products, the user\'s relationship with risk is the central UX problem. Not the interface. Not the flows. The moment a user feels uncertain about what something means or what an action will do — that\'s a trust breakdown, and trust is harder to rebuild in financial products than anywhere else. Design for certainty first. Design for efficiency second.'
+            title: 'The key takeaway',
+            content: '*In fintech, the relationship with risk is the central UX problem. Design for certainty first. Design for efficiency second.*'
           },
           {
             type: 'metrics',
             items: [
-              {
-                n: '↑30',
-                su: '%',
-                d: 'Onboarding completion after redesigning multi-step institution setup with visible progress'
-              },
-              {
-                n: '4',
-                su: ' roles',
-                d: 'User permission levels — each with a purposeful, tailored interface rather than a restricted one'
-              },
-              {
-                n: '$48M',
-                su: '+',
-                d: 'AUM tracked live on the platform — sourced from BlackRock with daily update timestamps'
-              },
-              {
-                n: '3',
-                su: ' cur.',
-                d: 'EUR, GBP, USD — full per-currency routing, cut-off times and bank details in the subscription flow'
-              },
-              {
-                n: '✦',
-                d: 'Platform live in production — real investors, real funds, real decisions made through a UI we designed'
-              },
-              {
-                n: '0',
-                d: 'Compliance violations in the design — every FCA requirement met contextually without degrading UX'
-              },
+              { n: '↑30', su: '%', d: 'Onboarding completion after redesigning multi-step institution setup with visible progress' },
+              { n: '4', su: ' roles', d: 'User permission levels — each with a tailored interface rather than a restricted one' },
+              { n: '$48M', su: '+', d: 'AUM tracked live on the platform — sourced from BlackRock with daily update timestamps' },
+              { n: '3', su: ' cur.', d: 'EUR, GBP, USD — full per-currency routing and bank details in the flow' },
+              { n: '✦', d: 'Platform live in production — real investors, real funds, real decisions through our UI' },
+              { n: '0', d: 'Compliance violations in the design — every FCA requirement met contextually' },
             ]
           }
         ]
@@ -509,7 +480,7 @@ export const cases: CaseStudy[] = [
   // ── IFREQ ────────────────────────────────────────────────────────────────────
   {
     slug: 'ifreq',
-    title: 'IFREQ — Get Analyzed,', // Перенесли часть фразы сюда для первой строки
+    title: 'IFREQ — Get Analyzed', // Перенесли часть фразы сюда для первой строки
     subtitle: 'Get Scouted',       // Оставили только италик для второй строки
     description: 'A football scouting platform giving every player a chance to be discovered. Led design end-to-end across mobile app, coach tools, scout CRM and marketing — managing a team of designers, developers, and motion designers.',
     tags: ['Lead Designer', 'Sports Tech', 'Mobile App', 'Scout CRM', 'IFREQ, Belgium'],
@@ -888,7 +859,7 @@ export const cases: CaseStudy[] = [
   // ── CryptoSwift ─────────────────────────────────────────────────────────────
   {
     slug: 'cryptoswift',
-    title: 'CryptoSwift —',
+    title: 'CryptoSwift',
     subtitle: 'Crypto Payment Platform for Merchants',
     description: 'CryptoSwift — Crypto Payment Platform for Merchants. Full redesign across desktop, tablet and mobile.',
     tags: ['UX/UI Designer', 'Web3', 'B2B', 'Payments', 'Freelance'],
@@ -1033,11 +1004,11 @@ export const cases: CaseStudy[] = [
       }
     ]
   },
-  
+
   // ── XGo Wallet ───────────────────────────────────────────────────────────────
   {
     slug: 'xgo',
-    title: 'XGo Wallet — Crypto & Fiat,',
+    title: 'XGo Wallet — Crypto & Fiat',
     subtitle: 'designed for humans',
     description: 'A crypto wallet built from absolute zero — branding, research, full UX/UI. Designed for people who aren\'t crypto people. 5K+ downloads after launch.',
     tags: ['Product Designer', 'Web3', 'iOS & Android', 'Branding', 'Freelance'],
