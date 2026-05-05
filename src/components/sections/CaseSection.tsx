@@ -6,7 +6,8 @@ interface CaseSectionProps {
 }
 
 export default function CaseSection({ section }: CaseSectionProps) {
-  const { num, title, lead, blocks } = section
+  // Удалили 'lead', так как его нет в типе CaseSection
+  const { num, title, blocks } = section
 
   return (
     <section className="px-4 md:px-[52px] py-[80px] max-w-content mx-auto border-b border-line">
@@ -19,19 +20,11 @@ export default function CaseSection({ section }: CaseSectionProps) {
         {num} · {title}
       </div>
 
-      {/* Lead */}
-      {lead && (
-        <h2
-          className="text-[26px] font-semibold leading-snug mb-5 max-w-[680px]"
-          style={{ letterSpacing: '-0.03em', color: 'var(--text)' }}
-        >
-          {lead}
-        </h2>
-      )}
+      {/* Блок Lead удален, так как свойство больше не существует */}
 
       {/* Blocks */}
       <div className="space-y-8">
-        {blocks.map((block, i) => {
+        {blocks.map((block: any, i: number) => {
           if (block.type === 'text') {
             return (
               <p
@@ -78,7 +71,7 @@ export default function CaseSection({ section }: CaseSectionProps) {
                 className="grid gap-0 border border-line rounded-[14px] overflow-hidden"
                 style={{ gridTemplateColumns: `repeat(${block.items.length}, 1fr)` }}
               >
-                {block.items.map((stat, j) => (
+                {block.items.map((stat: { value: string; label: string }, j: number) => (
                   <div
                     key={j}
                     className="px-5 py-5"
@@ -110,7 +103,7 @@ export default function CaseSection({ section }: CaseSectionProps) {
           if (block.type === 'list') {
             return (
               <ul key={i} className="space-y-3 max-w-[640px]">
-                {block.items.map((item, j) => (
+                {block.items.map((item: string, j: number) => (
                   <li
                     key={j}
                     className="flex gap-3 text-[15px] font-light leading-[1.7]"
@@ -127,7 +120,7 @@ export default function CaseSection({ section }: CaseSectionProps) {
           if (block.type === 'image') {
             return (
               <figure key={i} className="space-y-3">
-                <div className="relative w-full  p-4 overflow-hidden rounded-xl bg-surface">
+                <div className="relative w-full p-4 overflow-hidden rounded-xl bg-surface">
                   <Image
                     src={block.src}
                     alt={block.alt}
