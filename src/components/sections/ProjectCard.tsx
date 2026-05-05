@@ -28,7 +28,13 @@ export default function ProjectCard({ project, total }: ProjectCardProps) {
     >
       {/* Number */}
       <div className="flex items-start gap-3 md:gap-0 md:flex-col">
-        <span className="text-[11px] text-dim font-medium" style={{ letterSpacing: '0.06em' }}>
+        <span
+          className="text-[11px] font-medium"
+          style={{
+            letterSpacing: '0.06em',
+            color: '#FFFFF' 
+          }}
+        >
           {project.num} / {String(total).padStart(2, '0')}
         </span>
       </div>
