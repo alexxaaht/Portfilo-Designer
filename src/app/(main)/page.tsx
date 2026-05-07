@@ -4,6 +4,8 @@ import Image from 'next/image'
 import FadeIn from '@/components/animations/FadeIn'
 import HeroPhoto from '@/components/sections/HeroPhoto'
 import StackingCards from '@/components/sections/StackingCards'
+import LogoMarquee from '@/components/sections/LogoMarquee'
+import TypewriterEffect from '@/components/animations/TypewriterEffect'
 import Link from 'next/link'
 import { projects } from '@/lib/projects'
 import { useEffect, useRef } from 'react'
@@ -34,7 +36,7 @@ export default function HomePage() {
 
       const timer = setTimeout(() => {
         element.scrollIntoView({ behavior: 'smooth' });
-      }, 0); 
+      }, 0);
 
       return () => clearTimeout(timer);
     }
@@ -42,124 +44,135 @@ export default function HomePage() {
 
 
   return (
-    <>
-      {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="min-h-screen px-8 md:px-14 pt-[120px] pb-16 relative flex flex-col justify-center overflow-hidden">
-        {/* Photo — absolute right, bigger, with hover animation */}
-        <HeroPhoto />
+    <main className="w-full bg-bg">
+      <div className="max-w-[1444px] mx-auto relative min-h-screen">
 
-        {/* Name — full row */}
-        <FadeIn delay={0.05}>
-          <span
-            className="block font-bold uppercase leading-[0.88]"
+        {/* ── Hero ──────────────────────────────────────────────── */}
+        <section className="relative min-h-screen md:min-h-[800px] px-8 md:px-14 flex flex-col pt-60 pb-24">
+          <HeroPhoto />
+
+          {/* Name */}
+          <FadeIn delay={0.05}>
+            <h1
+              className="block font-bold uppercase leading-[0.88]"
+              style={{
+                fontSize: 'clamp(68px, 9.8vw, 138px)',
+                letterSpacing: '-0.04em',
+                color: 'var(--text)',
+              }}
+            >
+              Elvin Garaev
+            </h1>
+          </FadeIn>
+
+          {/* Role */}
+          <FadeIn delay={0.12}>
+            <span
+              className="block font-bold uppercase leading-[0.88] mb-12"
+              style={{
+                fontSize: 'clamp(68px, 9.8vw, 138px)',
+                letterSpacing: '-0.04em',
+                color: 'rgba(178, 174, 168, 0.40)',
+              }}
+            >
+              <TypewriterEffect
+                text="Product Designer"
+                delay={0.8}
+                speed={0.06}
+              />
+            </span>
+          </FadeIn>
+
+          {/* Bio */}
+          <FadeIn delay={0.22}>
+            <div className="max-w-[1300px]">
+              <p className="text-[clamp(15px,1.25vw,18px)] font-light text-sub leading-[1.7]">
+                <strong className="text-text font-medium">Lead Product Designer</strong> with 5+ years building digital products for{' '}
+                <strong className="text-text font-medium whitespace-nowrap">2M+ users</strong> across Fintech, SaaS, CRM, Crypto, AI and marketplace.
+              </p>
+              <p className="text-[clamp(15px,1.25vw,18px)] font-light text-sub leading-[1.7] mt-0.5">
+                Collaborated with <strong className="text-text font-medium">BlackRock</strong> and{' '}
+                <strong className="text-text font-medium">BNP Paribas Group</strong>. Lead teams end-to-end — from research to final handoff.
+              </p>
+            </div>
+          </FadeIn>
+
+          {/* Кнопка скролла */}
+          <Link
+            href="#work"
+            className="absolute bottom-12 left-1/2 -translate-x-1/2 w-14 h-14 rounded-full border border-white/20 bg-white/10 flex items-center justify-center text-[#F2F0EC]/70 no-underline transition-all duration-200 hover:border-white/40 hover:text-[#F2F0EC] hover:-translate-y-1 z-10"
+          >
+            <svg width="20" height="20" viewBox="0 0 16 16" fill="none">
+              <path
+                d="M8 3v10M3.5 9l4.5 4 4.5-4"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </Link>
+        </section>
+
+        {/* ── Block with a carousel ──────────── */}
+        <section className="pt-24 pb-44">
+          <LogoMarquee />
+        </section>
+
+        {/* ── Work list ─────────────────────────────────────────── */}
+        <section id="work" className="scroll-mt-20 relative">
+          {/* Section header */}
+          <div className="flex items-center justify-between px-8 md:px-14 py-5 border-t border-line">          <span className="text-[12px] uppercase text-dim" style={{ letterSpacing: '0.1em' }}>
+            Selected Work
+          </span>
+            <span className="text-[12px] text-dim" style={{ letterSpacing: '0.04em' }}>
+              7 projects · 2021–2026
+            </span>
+          </div>
+
+          {/* Stacking cards */}
+          <StackingCards projects={projects} />
+        </section>
+
+        {/* ── Contact ───────────────────────────────────────────── */}
+        <section className="py-28 px-6 text-center border-t border-line">
+          <h2
+            className="font-bold uppercase leading-[0.9] mb-7"
             style={{
-              fontSize: 'clamp(68px, 9.8vw, 138px)',
-              letterSpacing: '-0.04em',
+              fontSize: 'clamp(40px, 6.5vw, 96px)',
+              letterSpacing: '-0.03em',
               color: 'var(--text)',
             }}
           >
-            Elvin Garaev
-          </span>
-        </FadeIn>
+            Let&apos;s build <br /> something great
+          </h2>
 
-        {/* Role — full width, can slightly overlap photo */}
-        <FadeIn delay={0.12}>
-          <span
-            className="block font-bold uppercase leading-[0.88] mb-12"
-            style={{
-              fontSize: 'clamp(68px, 9.8vw, 138px)',
-              letterSpacing: '-0.04em',
-              color: 'rgba(178, 174, 168, 0.40)',
-            }}
-          >
-            Product Designer
-          </span>
-        </FadeIn>
-
-        {/* Bio */}
-        <FadeIn delay={0.22}>
-          <div className="max-w-[1300px]">
-            <p className="text-[clamp(15px,1.25vw,18px)] font-light text-sub leading-[1.7]">
-              <strong className="text-text font-medium">Lead Product Designer</strong> with 5+ years building digital products for{' '}
-              <strong className="text-text font-medium">2M+ users</strong>across Fintech, SaaS, CRM, Crypto, AI and marketplace.
-            </p>
-            <p className="text-[clamp(15px,1.25vw,18px)] font-light text-sub leading-[1.7] mt-0.5">
-              Collaborated with <strong className="text-text font-medium">BlackRock</strong> and{' '}
-              <strong className="text-text font-medium">BNP Paribas Group</strong>. Lead teams end-to-end — from research to final handoff.
-            </p>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <a
+              href="mailto:e.garaev.dg55@gmail.com"
+              className="text-[14px] font-medium text-bg bg-text hover:opacity-90 transition-opacity rounded-full px-6 py-3"
+            >
+              e.garaev.dg55@gmail.com ↗
+            </a>
+            <a
+              href="https://www.linkedin.com/in/elvin-garaev-4798ba255/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[14px] text-sub hover:text-text transition-colors border border-line hover:border-line2 rounded-full px-6 py-3"
+            >
+              LinkedIn ↗
+            </a>
+            <a
+              href="https://t.me/el13xx"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[14px] text-sub hover:text-text transition-colors border border-line hover:border-line2 rounded-full px-6 py-3"
+            >
+              Telegram ↗
+            </a>
           </div>
-        </FadeIn>
-
-        <Link
-          href="#work"
-          className="absolute bottom-16 left-1/2 -translate-x-1/2 w-14 h-14 rounded-full border border-white/20 bg-white/10 flex items-center justify-center text-[#F2F0EC]/70 no-underline transition-all duration-200 hover:border-white/40 hover:text-[#F2F0EC] hover:-translate-x-1/2 hover:translate-y-1 z-10"
-        >
-          <svg width="20" height="20" viewBox="0 0 16 16" fill="none">
-            <path
-              d="M8 3v10M3.5 9l4.5 4 4.5-4"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </Link>
-      </section>
-
-      {/* ── Work list ─────────────────────────────────────────── */}
-      <section id="work" className="scroll-mt-20 relative">
-        {/* Section header */}
-        <div className="flex items-center justify-between px-8 md:px-14 py-5 border-y border-line">
-          <span className="text-[12px] uppercase text-dim" style={{ letterSpacing: '0.1em' }}>
-            Selected Work
-          </span>
-          <span className="text-[12px] text-dim" style={{ letterSpacing: '0.04em' }}>
-            7 projects · 2021–2026
-          </span>
-        </div>
-
-        {/* Stacking cards */}
-        <StackingCards projects={projects} />
-      </section>
-
-      {/* ── Contact ───────────────────────────────────────────── */}
-      <section className="py-28 px-6 text-center border-t border-line">
-        <h2
-          className="font-bold uppercase leading-[0.9] mb-7"
-          style={{
-            fontSize: 'clamp(40px, 6.5vw, 96px)',
-            letterSpacing: '-0.03em',
-            color: 'var(--text)',
-          }}
-        >
-          Let&apos;s build <br /> something great
-        </h2>
-
-        <div className="flex flex-wrap gap-3 justify-center">
-          <a
-            href="mailto:e.garaev.dg55@gmail.com"
-            className="text-[14px] font-medium text-bg bg-text hover:opacity-90 transition-opacity rounded-full px-6 py-3"
-          >
-            e.garaev.dg55@gmail.com ↗
-          </a>
-          <a
-            href="https://www.linkedin.com/in/elvin-garaev-4798ba255/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[14px] text-sub hover:text-text transition-colors border border-line hover:border-line2 rounded-full px-6 py-3"
-          >
-            LinkedIn ↗
-          </a>
-          <a
-            href="https://t.me/el13xx"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[14px] text-sub hover:text-text transition-colors border border-line hover:border-line2 rounded-full px-6 py-3"
-          >
-            Telegram ↗
-          </a>
-        </div>
-      </section>
-    </>
+        </section>
+      </div>
+    </main>
   )
 }
