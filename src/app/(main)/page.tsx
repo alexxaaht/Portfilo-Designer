@@ -100,6 +100,15 @@ export default function HomePage() {
           {/* Кнопка скролла */}
           <Link
             href="#work"
+            onClick={(e) => {
+              e.preventDefault(); // Предотвращаем стандартное поведение ссылки
+              const element = document.getElementById('work');
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                // Опционально: обновляем хэш в URL без перезагрузки
+                window.history.pushState(null, '', '#work');
+              }
+            }}
             className="absolute bottom-12 left-1/2 -translate-x-1/2 w-14 h-14 rounded-full border border-white/20 bg-white/10 flex items-center justify-center text-[#F2F0EC]/70 no-underline transition-all duration-200 hover:border-white/40 hover:text-[#F2F0EC] hover:-translate-y-1 z-10"
           >
             <svg width="20" height="20" viewBox="0 0 16 16" fill="none">
