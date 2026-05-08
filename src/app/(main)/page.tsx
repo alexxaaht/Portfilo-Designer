@@ -68,11 +68,11 @@ export default function HomePage() {
           {/* Role */}
           <FadeIn delay={0.12}>
             <span
-              className="block font-bold uppercase leading-[0.88] mb-12"
+              className="block font-bold uppercase leading-[0.88] mb-12 transition-colors duration-500"
               style={{
                 fontSize: 'clamp(68px, 9.8vw, 138px)',
                 letterSpacing: '-0.04em',
-                color: 'rgba(178, 174, 168, 0.40)',
+                color: 'var(--hero-role)',
               }}
             >
               <TypewriterEffect
@@ -101,11 +101,10 @@ export default function HomePage() {
           <Link
             href="#work"
             onClick={(e) => {
-              e.preventDefault(); // Предотвращаем стандартное поведение ссылки
+              e.preventDefault();
               const element = document.getElementById('work');
               if (element) {
                 element.scrollIntoView({ behavior: 'smooth' });
-                // Опционально: обновляем хэш в URL без перезагрузки
                 window.history.pushState(null, '', '#work');
               }
             }}
@@ -128,13 +127,15 @@ export default function HomePage() {
           <LogoMarquee />
         </section>
 
-        {/* ── Work list ─────────────────────────────────────────── */}
+        {/* ── Work list ───────────── */}
         <section id="work" className="scroll-mt-20 relative">
           {/* Section header */}
-          <div className="flex items-center justify-between px-8 md:px-14 py-5 border-t border-line">          <span className="text-[12px] uppercase text-dim" style={{ letterSpacing: '0.1em' }}>
-            Selected Work
-          </span>
-            <span className="text-[12px] text-dim" style={{ letterSpacing: '0.04em' }}>
+          <div className="flex items-center justify-between px-8 md:px-14 py-5 border-t border-line">
+            {/* Заменили text-dim на text-sub для лучшей видимости */}
+            <span className="text-[12px] uppercase text-sub" style={{ letterSpacing: '0.1em' }}>
+              Selected Work
+            </span>
+            <span className="text-[12px] text-sub" style={{ letterSpacing: '0.04em' }}>
               7 projects · 2021–2026
             </span>
           </div>

@@ -1,42 +1,128 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
-import { motion, useScroll, useSpring } from 'framer-motion'
+import { usePathname } from 'next/navigation'
+import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion'
+import ThemeToggle from './ThemeToggle'
 
-interface CaseNavbarProps {
-  title: string
-}
+export default function CaseNavbar() {
+  const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname()
 
-export default function CaseNavbar({ title }: CaseNavbarProps) {
   const { scrollYProgress } = useScroll()
-
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
     restDelta: 0.001
   })
 
+  const links = [
+    { name: 'LinkedIn ↗', href: 'https://www.linkedin.com/in/elvin-garaev-4798ba255/' },
+    { name: 'Telegram ↗', href: 'https://t.me/el13xx' },
+    { name: 'Email ↗', href: 'mailto:e.garaev.dg55@gmail.com' },
+  ]
+
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 h-[60px] border-b border-line"
-      style={{ background: 'rgba(19,19,18,0.92)', backdropFilter: 'blur(18px)' }}
+      className="fixed top-0 left-0 right-0 z-50 h-14 border-b border-line transition-colors duration-300"
+      style={{
+        background: 'var(--bg)',
+        opacity: 0.94,
+        backdropFilter: 'blur(20px)'
+      }}
     >
-      {/* Внутренний контейнер только для кнопок и текста */}
-      <div className="max-w-[1440px] mx-auto w-full h-full px-4 md:px-[52px] flex items-center justify-between relative">
+      <div className="max-w-[1440px] mx-auto px-8 md:px-14 h-full flex items-center justify-between relative z-[60]">
+
+        {/*  All cases  */}
         <a href="/#work"
           className="text-[14px] text-sub hover:text-text transition-colors duration-200 flex items-center gap-1.5"
         >
           ← All cases
         </a>
 
-        <span className="text-[14px] font-medium text-text">{title}</span>
+        {/* Правая часть: Ссылки + Переключатель */}
+        <div className="flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-8">
+            <ThemeToggle />
+
+            <div className="h-6 w-[1px] bg-line" />
+
+            <ul className="flex gap-7 list-none items-center">
+              {links.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    target={link.href.startsWith('mailto:') ? undefined : "_blank"}
+                    rel={link.href.startsWith('mailto:') ? undefined : "noopener noreferrer"}
+                    className="text-[16px] text-sub hover:text-text transition-colors duration-200"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Группа для Мобильных устройств (md:hidden) */}
+          <div className="flex items-center gap-4 md:hidden">
+            <ThemeToggle />
+
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="flex flex-col gap-1.5 p-2"
+              aria-label="Toggle menu"
+            >
+              <motion.span
+                animate={isOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
+                className="w-6 h-0.5 bg-text block"
+              />
+              <motion.span
+                animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
+                className="w-6 h-0.5 bg-text block"
+              />
+              <motion.span
+                animate={isOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
+                className="w-6 h-0.5 bg-text block"
+              />
+            </button>
+          </div>
+        </div>
       </div>
 
-      {/* Полоска прогресса — теперь ВНЕ контейнера, поэтому она на всю ширину экрана */}
+      {/* Полоска прогресса */}
       <motion.div
-        className="absolute bottom-[-1px] left-0 right-0 h-[2px] bg-zinc-600 origin-left"
+        className="absolute bottom-[-1px] left-0 right-0 h-[2px] bg-[#7f7f7f] opacity-80 origin-left z-[70]"
         style={{ scaleX }}
       />
+
+      {/* Мобильное меню */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="absolute top-0 left-0 w-full h-screen bg-bg flex flex-col pt-24 px-8 md:hidden z-[55]"
+          >
+            <ul className="flex flex-col gap-8 list-none">
+              {links.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsOpen(false)}
+                    className="text-[28px] font-medium text-text"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   )
 }

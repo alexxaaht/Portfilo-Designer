@@ -5,18 +5,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Базовые цвета проекта
-        bg: '#111110',
-        surface: '#1A1A18',
-
-        // Типографика (основана на твоем светлом тексте #F2F0EC)
-        text: '#F2F0EC',                            // 100% яркость (основные заголовки)
-        sub: 'rgba(242, 240, 236, 0.80)',          // 80% яркость (текст 14px)
-        dim: 'rgba(242, 240, 236, 0.55)',          // 55% яркость (служебный 12px)
-
-        // Линии и границы
-        line: 'rgba(255,255,255,0.08)',
-        line2: 'rgba(255,255,255,0.16)',
+        bg: 'var(--bg)',
+        surface: 'var(--bg2)',
+        text: 'var(--text)',
+        sub: 'var(--sub)',
+        dim: 'var(--dim)',
+        line: 'var(--line)',
+        line2: 'var(--line2)',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
