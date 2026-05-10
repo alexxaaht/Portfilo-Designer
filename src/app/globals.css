@@ -11,6 +11,18 @@
   --dim:   #6E6B65;
   --line:  rgba(255,255,255,0.08);
   --line2: rgba(255,255,255,0.16);
+--hero-role: rgba(178, 174, 168, 0.40);
+}
+
+.light {
+  --bg:    #F9F9F7; 
+  --bg2:   #F1F1EE; 
+  --text:  #000000; 
+  --sub:   #3A3A38; 
+  --dim:   #72726F; 
+  --line:  rgba(0, 0, 0, 0.12);
+  --line2: rgba(0, 0, 0, 0.20);
+  --hero-role: rgba(13, 13, 13, 0.409);
 }
 
 * {
@@ -26,6 +38,7 @@ html {
 body {
   background: var(--bg);
   color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
   font-family: 'Inter', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;

@@ -35,7 +35,7 @@ export default function HomePage() {
       if (!element) return;
 
       const timer = setTimeout(() => {
-        element.scrollIntoView({ behavior: 'smooth' });
+        element.scrollIntoView({ behavior: 'auto' });
       }, 0);
 
       return () => clearTimeout(timer);
@@ -59,6 +59,7 @@ export default function HomePage() {
                 fontSize: 'clamp(68px, 9.8vw, 138px)',
                 letterSpacing: '-0.04em',
                 color: 'var(--text)',
+                maxWidth: '100%'
               }}
             >
               Elvin Garaev
@@ -66,29 +67,30 @@ export default function HomePage() {
           </FadeIn>
 
           {/* Role */}
-          <FadeIn delay={0.12}>
-            <span
-              className="block font-bold uppercase leading-[0.88] mb-12"
+          <FadeIn delay={0.12} y={0}>
+            <div
+              className="relative font-bold uppercase leading-[0.88] mb-8 md:mb-12 transition-colors duration-500"
               style={{
-                fontSize: 'clamp(68px, 9.8vw, 138px)',
+                fontSize: 'clamp(28px, 8.5vw, 138px)',
                 letterSpacing: '-0.04em',
-                color: 'rgba(178, 174, 168, 0.40)',
+                color: 'var(--hero-role)',
               }}
             >
-              <TypewriterEffect
-                text="Product Designer"
-                delay={0.8}
-                speed={0.06}
-              />
-            </span>
+              <span className="invisible block pointer-events-none select-none whitespace-nowrap" aria-hidden="true">
+                Product Designer
+              </span>
+              <div className="absolute inset-0 flex justify-start items-center">
+                <TypewriterEffect text="Product Designer" delay={0.8} speed={0.06} />
+              </div>
+            </div>
           </FadeIn>
 
           {/* Bio */}
           <FadeIn delay={0.22}>
-            <div className="max-w-[1300px]">
+            <div className="max-w-[1300px] min-h-[80px] md:min-h-[56px]">
               <p className="text-[clamp(15px,1.25vw,18px)] font-light text-sub leading-[1.7]">
                 <strong className="text-text font-medium">Lead Product Designer</strong> with 5+ years building digital products for{' '}
-                <strong className="text-text font-medium whitespace-nowrap">2M+ users</strong> across Fintech, SaaS, CRM, Crypto, AI and marketplace.
+                <strong className="text-text font-medium">2M+ users</strong> across Fintech, SaaS, CRM, Crypto, AI and marketplace.
               </p>
               <p className="text-[clamp(15px,1.25vw,18px)] font-light text-sub leading-[1.7] mt-0.5">
                 Collaborated with <strong className="text-text font-medium">BlackRock</strong> and{' '}
@@ -101,15 +103,17 @@ export default function HomePage() {
           <Link
             href="#work"
             onClick={(e) => {
-              e.preventDefault(); // Предотвращаем стандартное поведение ссылки
+              e.preventDefault();
               const element = document.getElementById('work');
               if (element) {
                 element.scrollIntoView({ behavior: 'smooth' });
-                // Опционально: обновляем хэш в URL без перезагрузки
                 window.history.pushState(null, '', '#work');
               }
             }}
-            className="absolute bottom-12 left-1/2 -translate-x-1/2 w-14 h-14 rounded-full border border-white/20 bg-white/10 flex items-center justify-center text-[#F2F0EC]/70 no-underline transition-all duration-200 hover:border-white/40 hover:text-[#F2F0EC] hover:-translate-y-1 z-10"
+            className="absolute bottom-12 left-1/2 -translate-x-1/2 w-14 h-14 rounded-full flex items-center justify-center no-underline transition-all duration-200 hover:-translate-y-1 z-10
+    border border-white/20 bg-white/10 text-[#F2F0EC]/70 hover:border-white/40 hover:text-[#F2F0EC]
+    [.light_&]:border-black [.light_&]:bg-black/5 [.light_&]:text-black/60 
+    [.light_&]:hover:border-black [.light_&]:hover:text-black"
           >
             <svg width="20" height="20" viewBox="0 0 16 16" fill="none">
               <path
@@ -128,13 +132,15 @@ export default function HomePage() {
           <LogoMarquee />
         </section>
 
-        {/* ── Work list ─────────────────────────────────────────── */}
+        {/* ── Work list ───────────── */}
         <section id="work" className="scroll-mt-20 relative">
           {/* Section header */}
-          <div className="flex items-center justify-between px-8 md:px-14 py-5 border-t border-line">          <span className="text-[12px] uppercase text-dim" style={{ letterSpacing: '0.1em' }}>
-            Selected Work
-          </span>
-            <span className="text-[12px] text-dim" style={{ letterSpacing: '0.04em' }}>
+          <div className="flex items-center justify-between px-8 md:px-14 py-5 border-t border-line">
+            {/* Заменили text-dim на text-sub для лучшей видимости */}
+            <span className="text-[12px] uppercase text-sub" style={{ letterSpacing: '0.1em' }}>
+              Selected Work
+            </span>
+            <span className="text-[12px] text-sub" style={{ letterSpacing: '0.04em' }}>
               7 projects · 2021–2026
             </span>
           </div>

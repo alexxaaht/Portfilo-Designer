@@ -55,9 +55,9 @@ function StickyCard({ project, index, total }: { project: Project; index: number
   const inner = (
     <motion.div
       style={{ scale: isDesktop ? scale : 1 }}
-      className="group w-full flex flex-col md:grid md:grid-cols-2 min-h-fit md:min-h-[520px] overflow-hidden bg-[#111110]"
+      className="group w-full flex flex-col md:grid md:grid-cols-2 min-h-fit md:min-h-[520px] overflow-hidden bg-bg transition-colors duration-500"
     >
-      {/* 1. ИЗОБРАЖЕНИЕ: По всей ширине на мобилке, справа на десктопе */}
+      {/* 1. ИЗОБРАЖЕНИЕ */}
       <div className="relative overflow-hidden w-full aspect-video md:aspect-auto md:h-auto md:py-10 md:pl-10">
         {cover ? (
           <div className="relative w-full h-full overflow-hidden rounded-none md:rounded-l-[24px]">
@@ -66,19 +66,14 @@ function StickyCard({ project, index, total }: { project: Project; index: number
               alt={project.title}
               fill
               priority={index === 0}
-              className="
-              object-contain object-top     
-              md:object-contain md:object-center 
-              transition-transform duration-700 ease-out 
-              md:group-hover:scale-[1.03] 
-              -change-transform
-              "
+              className="object-contain object-top md:object-contain md:object-center transition-transform duration-700 ease-out md:group-hover:scale-[1.03]"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
         ) : (
-          <div className="absolute inset-0 flex items-center justify-center bg-white/5">
-            <span className="text-[11px] uppercase text-dim">No preview</span>
+          <div className="absolute inset-0 flex items-center justify-center bg-surface transition-colors">
+            {/* Сделали надпись "No preview" светлее */}
+            <span className="text-[11px] uppercase text-sub opacity-70">No preview</span>
           </div>
         )}
       </div>
@@ -88,48 +83,65 @@ function StickyCard({ project, index, total }: { project: Project; index: number
         <div>
           {/* Header Info */}
           <div className="flex items-center justify-between mb-4">
-            <span className="text-[11px] text-dim font-medium" style={{ letterSpacing: '0.06em' }}>
+            {/* Номер проекта: заменили text-dim на text-sub для яркости */}
+            <span className="text-[11px] text-sub font-medium" style={{ letterSpacing: '0.06em' }}>
               {project.num} / {String(total).padStart(2, '0')}
             </span>
           </div>
 
-          {/* Теги — всегда под счётчиком */}
+          {/* Теги */}
           <div className="flex flex-wrap gap-2 mb-6">
             {project.tags.map((tag) => <Tag key={tag} label={tag} />)}
           </div>
 
-          <h2 className="font-semibold text-text leading-tight mb-3 md:mb-4" style={{ fontSize: 'clamp(24px, 2.4vw, 32px)', letterSpacing: '-0.02em' }}>
+          <h2 className="font-semibold text-text leading-tight mb-3 md:mb-4 transition-colors" style={{ fontSize: 'clamp(24px, 2.4vw, 32px)', letterSpacing: '-0.02em' }}>
             {project.title}
           </h2>
-          <p className="text-[16px] md:text-[18px] font-light text-gray-200 leading-relaxed mb-4 max-w-lg">
+
+          {/* Подзаголовок: text-sub оставляем, он обычно достаточно яркий, но можно добавить opacity если нужно */}
+          <p className="text-[16px] md:text-[18px] font-light text-sub leading-relaxed mb-4 max-w-lg transition-colors">
             {project.subtitle}
           </p>
-          <p className="text-[14px] md:text-[16px] font-light leading-relaxed max-w-lg text-sub mb-10 md:mb-0">
+
+          {/* ОПИСАНИЕ: Заменили text-dim на text-sub, чтобы текст стал светлее и читабельнее */}
+          <p className="text-[14px] md:text-[16px] font-light leading-relaxed max-w-lg text-sub/80 mb-10 md:mb-0 transition-colors">
             {project.desc}
           </p>
         </div>
 
-        {/* НИЖНЯЯ ПАНЕЛЬ (Без полосы на мобилке) */}
-        <div className="mt-auto pt-0 md:pt-6 md:border-t md:border-line flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <p className="text-[11px] md:text-[12px] text-dim uppercase" style={{ letterSpacing: '0.05em' }}>
+        {/* НИЖНЯЯ ПАНЕЛЬ */}
+        <div className="mt-auto pt-0 md:pt-6 md:border-t md:border-line flex flex-col md:flex-row md:items-center justify-between gap-6 transition-colors">
+          {/* Компания и период: Заменили text-dim на text-sub */}
+          <p className="text-[11px] md:text-[12px] text-sub uppercase" style={{ letterSpacing: '0.05em' }}>
             {project.company} · {project.period}
           </p>
 
           {project.hasCase ? (
             <div className="w-full md:w-auto">
               <span className="
-                flex items-center justify-center w-full md:w-auto
-                text-[13px] font-medium text-text px-8 py-4 rounded-full 
-                bg-white/[0.05] border border-white/10 
-                md:bg-transparent md:border-none md:p-0 md:text-sub 
-                group-hover:bg-white/[0.08] md:group-hover:text-text transition-all duration-200
-              ">
-                View case <span className="ml-2">↗</span>
+    flex items-center justify-center w-full md:w-auto
+    text-[13px] font-medium px-8 py-4 rounded-full 
+    bg-surface border border-line 
+    
+    /* 1. Базовый цвет (мобилки) */
+    text-text 
+    
+    /* 2. Стили для десктопа (переопределяем базу) */
+    md:bg-transparent md:border-none md:p-0 
+    md:text-sub 
+    
+    /* 3. Ховер только на десктопе */
+    md:group-hover:text-text 
+    
+    transition-all duration-300
+">
+                View case <span className="ml-2 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
               </span>
             </div>
           ) : (
             <div className="flex justify-center md:justify-end w-full md:w-auto">
-              <span className="text-[12px] text-dim italic opacity-50">Under NDA</span>
+              {/* NDA текст: заменили text-dim на text-sub с низкой прозрачностью */}
+              <span className="text-[12px] text-sub/60 italic">Under NDA</span>
             </div>
           )}
         </div>
@@ -145,7 +157,7 @@ function StickyCard({ project, index, total }: { project: Project; index: number
         top: isDesktop ? STICKY_TOP : 0,
         zIndex: index + 1,
       }}
-      className="border-t border-white/[0.07] pb-24 md:pb-0 bg-[#111110]"
+      className="border-t border-line pb-24 md:pb-0 bg-bg transition-colors duration-500"
     >
       {project.hasCase ? (
         <Link href={`/work/${project.slug}`} className="block focus:outline-none">
