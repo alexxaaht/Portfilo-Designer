@@ -47,8 +47,23 @@ export default function BackToTop() {
           // Чтобы избежать конфликтов при быстром появлении/исчезновении
           transition={{ duration: 0.3, ease: 'easeOut' }}
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 md:bottom-10 md:right-10 w-12 h-12 md:w-14 md:h-14 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm flex items-center justify-center text-[#F2F0EC]/70 transition-colors duration-300 hover:border-white/40 hover:text-[#F2F0EC] z-50 group"
-          aria-label="Scroll to top"
+          className="
+          fixed bottom-6 right-6 md:bottom-10 md:right-10
+          w-12 h-12 md:w-14 md:h-14
+          rounded-full
+          border
+          backdrop-blur-sm
+          flex items-center justify-center
+          transition-colors duration-300
+          z-50 group
+          hover:-translate-y-0.5
+          shadow-lg
+          "
+          style={{
+            borderColor: 'var(--line2)',
+            backgroundColor: 'var(--bg2)',
+            color: 'var(--text)',
+          }} aria-label="Scroll to top"
         >
           <svg
             width="20"

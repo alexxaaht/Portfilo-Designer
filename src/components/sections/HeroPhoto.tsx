@@ -35,7 +35,7 @@ export default function HeroPhoto() {
 
   return (
     <motion.div
-      className="absolute md:top-[12%] right-[140px] z-20 hidden lg:block group"
+      className="absolute md:top-[12%] right-[120px] z-20 hidden lg:block group"
       initial={{ opacity: 0, x: 50, rotate: -15 }}
       animate={{ opacity: 1, x: 0, rotate: -10 }}
       transition={{ duration: 1, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -71,13 +71,13 @@ export default function HeroPhoto() {
         <div className="relative aspect-[4/5] w-full overflow-hidden bg-bg transition-colors duration-500">
           <Image
             src="/images/misc/00-Elvin-Garaev.jpg"
+            priority
             alt="Elvin Garaev"
             fill
             sizes="300px"
             className="object-cover object-top transition-all duration-500"
             // В светлой теме чуть убираем контраст, чтобы фото смотрелось мягче
             style={{ filter: theme === 'dark' ? 'brightness(.9) contrast(1.1)' : 'brightness(1) contrast(1.05)' }}
-            priority
           />
         </div>
 

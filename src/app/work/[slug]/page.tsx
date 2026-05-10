@@ -59,7 +59,7 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
 
   return (
     <div className="min-h-screen transition-colors duration-500" style={{ backgroundColor: 'var(--bg)' }}>
-      <CaseNavbar title="Elvin Garaev" />
+      <CaseNavbar />
 
       {/* ── HERO ── */}
       <section className="max-w-[1160px] mx-auto px-6 md:px-[52px] pt-[100px] md:pt-[120px] pb-10 md:pb-12 border-b" style={{ borderColor: line }}>

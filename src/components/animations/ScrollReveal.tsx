@@ -4,20 +4,20 @@ import { motion, useInView } from 'framer-motion'
 import { ReactNode, useRef } from 'react'
 
 interface ScrollRevealProps {
-  children:  ReactNode
-  delay?:    number
-  y?:        number
+  children: ReactNode
+  delay?: number
+  y?: number
   className?: string
 }
 
 export default function ScrollReveal({
   children,
-  delay    = 0,
-  y        = 24,
+  delay = 0,
+  y = 32, 
   className,
 }: ScrollRevealProps) {
-  const ref    = useRef<HTMLDivElement>(null)
-  const inView = useInView(ref, { once: true, margin: '-80px' })
+  const ref = useRef<HTMLDivElement>(null)
+  const inView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
     <motion.div
@@ -25,7 +25,11 @@ export default function ScrollReveal({
       className={className}
       initial={{ opacity: 0, y }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y }}
-      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
+      transition={{
+        duration: 1.4,  // Скорость анимации (задержка)
+        delay,
+        ease: [0.16, 1, 0.3, 1] 
+      }}
     >
       {children}
     </motion.div>
