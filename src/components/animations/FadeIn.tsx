@@ -6,7 +6,7 @@ import { ReactNode } from 'react'
 interface FadeInProps {
   children: ReactNode
   delay?: number
-  duration?: number // Мы сделаем его больше
+  duration?: number
   y?: number
   className?: string
 }
@@ -14,8 +14,8 @@ interface FadeInProps {
 export default function FadeIn({
   children,
   delay = 0,
-  duration = 1.2, 
-  y = 30,  // Чуть увеличил смещение по вертикали для большей амплитуды
+  duration = 2.2, // Увеличил здесь (было 1.2). Чем выше число, тем медленнее анимация.
+  y = 30,
   className,
 }: FadeInProps) {
   return (
@@ -26,7 +26,7 @@ export default function FadeIn({
       transition={{
         duration,
         delay,
-        ease: [0.16, 1, 0.3, 1]
+        ease: [0.16, 1, 0.3, 1] // Эта кривая делает конец анимации очень плавным
       }}
     >
       {children}

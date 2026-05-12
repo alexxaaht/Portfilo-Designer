@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="border-t border-line w-full">
+    <footer className="border-t border-line w-full transition-colors duration-300">
       <div className="max-w-[1440px] mx-auto w-full">
         <div className="
           px-8 md:px-14 py-7 

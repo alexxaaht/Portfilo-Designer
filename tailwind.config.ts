@@ -17,19 +17,11 @@ const config: Config = {
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       fontSize: {
-        /** 
-         * ПРАВИЛА ТИПОГРАФИКИ:
-         * case-p:   16px на десктопе -> 14px на мобилке (через clamp)
-         * case-sub: строго 14px
-         * case-dim: строго 12px (минимум)
-         */
         'case-p': ['clamp(14px, 1.2vw, 16px)', { lineHeight: '1.7', letterSpacing: '-0.01em' }],
         'case-sub': ['14px', { lineHeight: '1.6', letterSpacing: '0' }],
         'case-dim': ['12px', { lineHeight: '1.4', letterSpacing: '0.02em' }],
-
-        // Оставляем старые для совместимости, если они где-то используются в старых частях
-        '11': '12px', // Автоматический редирект с 11 на 12, чтобы не нарушать правило
-        '13': '14px', // Автоматический редирект с 13 на 14
+        '11': '12px', 
+        '13': '14px', 
       },
       letterSpacing: {
         wider: '0.08em',

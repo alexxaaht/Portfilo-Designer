@@ -7,7 +7,7 @@ export const projects: Project[] = [
     slug: 'ukrsibbank',
     num: '01',
     tags: ['Fintech', 'B2B', 'CRM'],
-    title: 'UkrSibBank — Omnichannel CRM',
+    title: 'UKRSIBBANK — Omnichannel CRM',
     subtitle: 'Unified interface for 3,000+ bank employees',
     desc: 'Consolidated all communication channels, reduced response times and manual workload. Design system covering 5+ digital platforms.',
     company: 'BNP Paribas Group',
@@ -46,7 +46,7 @@ export const projects: Project[] = [
     title: 'Safe — Goal-Based Savings',
     subtitle: 'Named savings jars tied to personal goals inside Ukrsib Online',
     desc: '7 research sprints, A/B testing, competitor analysis. Projected +38% savings deposits, 3× habit improvement.',
-    company: 'UkrSibBank',
+    company: 'UKRSIBBANK',
     period: '2024–2026',
     accent: '#1DB954',
     hasCase: true,
@@ -97,9 +97,9 @@ export const cases: CaseStudy[] = [
   {
     slug: 'ukrsibbank',
     title: 'Manager Workplace',
-    subtitle: 'Communication Platform',
+    subtitle: 'Communication\u00A0Platform',
     description: 'Manager Workplace — Communication Platform. Omnichannel CRM for 3,000+ bank employees.',
-    tags: ['Fintech', 'B2B', 'CRM', 'Service Design', 'UkrSibBank'],
+    tags: ['Fintech', 'B2B', 'CRM', 'Service Design', 'UKRSIBBANK'],
     accentTag: 'Fintech',
     accent: '#6B8CBA',
     cover: '/images/ukrsibbank/11-UkrSibBank-Business-final-design.png',
@@ -165,7 +165,7 @@ export const cases: CaseStudy[] = [
           },
           {
             type: 'p',
-            content: '**Василь, 25 — the Manager.** He\'s measured by sales plan execution. His bonus depends on client satisfaction scores and product cross-sells. He handles 550+ clients and switches tools constantly. He wants speed, templates, and to never have to leave one screen mid-conversation. His problem is fragmentation.'
+            content: '**Василь, 25 — the Manager.** He\'s measured by sales plan execution. His bonus depends on client satisfaction scores and product cross-sells. He handles 550+ clients and switches tools constantly. He wants speed, templates, and to never have to leave one screen mid-conversation. His problem is tool\u00A0fragmentation.'
           },
           {
             type: 'p',
@@ -222,7 +222,7 @@ export const cases: CaseStudy[] = [
           {
             type: 'splitText',
             leftTitle: 'What we originally tried',
-            leftContent: 'Chat-first layout with client details in a sidebar. Felt natural — like Slack. But in testing, managers kept switching back and forth, losing context mid-conversation.',
+            leftContent: 'Chat-first layout with client details in a sidebar. Felt natural — like Slack. But in testing, managers kept switching back and forth, losing context\u00A0mid-conversation.',
             rightTitle: 'What we shipped instead',
             rightContent: '**Client-first layout.** The active conversation is always visible — but it\'s framed within the client record.  Account data, transaction history, and conversation live on the same screen.'
           },
@@ -245,17 +245,17 @@ export const cases: CaseStudy[] = [
           {
             type: 'card',
             title: 'What changed between round 1 and round 2',
-            content: 'In round 1, we had a two-column layout. Managers found it clean. But they kept going back to SAP to check account details mid-conversation.\n\nRound 2 introduced the three-column layout. The insight: **density looks complex but feels simple when the density is contextually relevant.**'
+            content: 'In round 1, we had a two-column layout. Managers found it clean. But they kept going back to SAP to check account details\u00A0mid-conversation.\n\nRound 2 introduced the three-column layout. The insight: **density looks complex but feels simple when the density is contextually relevant.**'
           }
         ]
       },
       {
         num: '07',
         title: 'Final Design',
-        heading: 'The UkrSibBank digital ecosystem',
+        heading: 'The UKRSIBBANK digital ecosystem',
         blocks: [
-          { type: 'p', content: 'The Manager Workplace doesn\'t exist in isolation — it\'s part of a broader UkrSibBank digital ecosystem. **One of our core design principles was navigation consistency.**' },
-          { type: 'image', src: '/images/ukrsibbank/11-UkrSibBank-Business-final-design.png', alt: 'Final Design', caption: 'UkrSibBank Business — final design showing the shared navigation system.' },
+          { type: 'p', content: 'The Manager Workplace doesn\'t exist in isolation — it\'s part of a broader UKRSIBBANK digital ecosystem. **One of our core design principles was navigation consistency.**' },
+          { type: 'image', src: '/images/ukrsibbank/11-UkrSibBank-Business-final-design.png', alt: 'Final Design', caption: 'UKRSIBBANK Business — final design showing the shared navigation system.' },
           { type: 'image', src: '/images/ukrsibbank/12-App-switcher.png', alt: 'App switcher', caption: 'Unified app switcher designed to reduce cognitive load.' }
         ]
       },
@@ -281,7 +281,7 @@ export const cases: CaseStudy[] = [
         title: 'Impact & Reflection',
         heading: 'What we shipped, what we learned',
         blocks: [
-          { type: 'p', content: 'Looking back, the most valuable part of this project wasn\'t the interface — it was the research. **We found a problem that looked like a tooling problem but was actually a systemic problem.** Managers werent struggling because they lacked a chat tool, but because of a lack of designed internal experience.' },
+          { type: 'p', content: 'Looking back, the most valuable part of this project wasn\'t the interface — it was the research. **We found a problem that looked like a tooling problem but was actually a systemic problem.** Managers weren\'t struggling because they lacked a chat tool, but because of a lack of designed internal experience.' },
           {
             type: 'card',
             title: 'What I\'d do differently',
@@ -307,7 +307,7 @@ export const cases: CaseStudy[] = [
   {
     slug: 'p3-wealth',
     title: 'P3 Wealth × BlackRock',
-    subtitle: 'Capital Management Platform',
+    subtitle: 'Capital Management\u00A0Platform',
     description: 'A regulated investment platform for high-net-worth investors — designed around trust, legibility, and role-based access with BlackRock integration.',
     tags: ['Fintech', 'Investments', 'B2B', 'BlackRock', 'Web Platform'],
     accentTag: 'Fintech',
@@ -323,7 +323,7 @@ export const cases: CaseStudy[] = [
       {
         num: '01',
         title: 'Overview',
-        heading: 'Professional investors deserve **a professional-grade experience**',
+        heading: 'Premium experience for **professional investors**',
         blocks: [
           { type: 'p', content: 'P3 Wealth is a regulated capital management platform for high-net-worth investors and financial institutions. When we started, the platform existed — but the UX didn\'t. **Fund data from BlackRock was accessible, but buried.** Onboarding was painful, and the system treated retail investors and institutional managers as the same person.' },
           { type: 'p', content: 'The brief was to design the platform from the ground up: information architecture, onboarding flows, dashboard, and reporting. With BlackRock integration and FCA compliance as hard constraints that couldn\'t be negotiated — only designed within.' },
@@ -480,8 +480,8 @@ export const cases: CaseStudy[] = [
   // ── IFREQ ────────────────────────────────────────────────────────────────────
   {
     slug: 'ifreq',
-    title: 'IFREQ — Get Analyzed', // Перенесли часть фразы сюда для первой строки
-    subtitle: 'Get Scouted',       // Оставили только италик для второй строки
+    title: 'IFREQ — Get Analyzed', 
+    subtitle: 'Get Scouted',      
     description: 'A football scouting platform giving every player a chance to be discovered. Led design end-to-end across mobile app, coach tools, scout CRM and marketing — managing a team of designers, developers, and motion designers.',
     tags: ['Lead Designer', 'Sports Tech', 'Mobile App', 'Scout CRM', 'IFREQ, Belgium'],
     accent: '#C8F135',
@@ -516,7 +516,7 @@ export const cases: CaseStudy[] = [
             items: [
               { n: '50', su: '+', d: 'Players on pro trials at clubs like PSG, Bayern Munich, FC Porto. 20+ officially signed.' },
               { n: '+32', su: '%', d: 'User activation after onboarding redesign — validated through Mixpanel funnel analysis' },
-              { n: '−27', su: '%', d: 'Churn reduction through improved user journey and AI-driven training personalisation' },
+              { n: '−27', su: '%', d: 'Churn reduction through improved user journey and AI-driven training\u00A0personalisation' },
             ]
           }
         ]
@@ -561,7 +561,7 @@ export const cases: CaseStudy[] = [
           {
             type: 'splitText',
             leftTitle: 'Original onboarding problem',
-            leftContent: 'Generic welcome screens with no clear value statement. Email-only registration. No progress indicator. Players dropped off mid-flow.',
+            leftContent: 'Generic welcome screens with no clear value statement. Email-only registration. No progress indicator. Players dropped off\u00A0mid-flow.',
             rightTitle: 'What we changed',
             rightContent: '**Three emotionally resonant welcome screens** — Social login added. Progress indicator from screen 1. Result: +32% activation.'
           },
@@ -587,7 +587,7 @@ export const cases: CaseStudy[] = [
             type: 'image',
             src: '/images/ifreq/07-Test-Flow.png',
             alt: 'Test Flow',
-            caption: 'Test Flow — coach captures profile photo using AI face-framing tool.'
+            caption: 'Test Flow — coach captures profile photo using AI face-framing\u00A0tool.'
           }
         ]
       },
@@ -709,15 +709,15 @@ export const cases: CaseStudy[] = [
     title: 'Safe — Goal-Based Savings',
     subtitle: 'inside Ukrsib Online',
     description: 'A savings feature that transforms banking deposits into personal goals — named jars, visual progress, automatic top-ups. Designed with 7 research sprints.',
-    tags: ['Senior Designer', 'Fintech', 'Mobile', 'Feature Design', 'UkrSibBank'],
-    accent: '#1DB954',
+    tags: ['Senior Designer', 'Fintech', 'Mobile', 'Feature Design', 'UKRSIBBANK'],
+    accent: '#006400',
     accentTag: 'Senior Designer',
     cover: '/images/safe/00-Safe-—-all-screens-overview.png',
     infoGrid: [
       { label: 'Role', value: 'Senior Product Designer' },
       { label: 'Timeline', value: '2024–2026' },
       { label: 'Platform', value: 'iOS · Android' },
-      { label: 'Company', value: 'UkrSibBank BNP Paribas' },
+      { label: 'Company', value: 'UKRSIBBANK BNP Paribas' },
     ],
     sections: [
       {
@@ -747,14 +747,14 @@ export const cases: CaseStudy[] = [
         title: 'Research Process',
         heading: 'Seven stages before **a single screen was drawn**',
         blocks: [
-          { type: 'p', content: 'This was one of the most research-heavy projects I\'ve worked on at UkrSibBank. The process was deliberately structured. **Savings behaviour is deeply personal and often irrational, and designing without understanding the psychology would have meant designing the wrong thing.**' },
+          { type: 'p', content: 'This was one of the most research-heavy projects I\'ve worked on at UKRSIBBANK. The process was deliberately structured. **Savings behaviour is deeply personal and often irrational, and designing without understanding the psychology would have meant designing the wrong thing.**' },
           { type: 'image', src: '/images/safe/01-Research-process-board-—-Service.so-for-.png', alt: 'Research process', caption: 'Full research process board — Kickoff meeting documentation, timeline schedule, team structure, competitive analysis.' },
           {
             type: 'steps',
             items: [
               { n: '01', t: 'Stakeholder & Business Goals Alignment', d: 'Started with a kickoff mapping business objectives against motivations. **The tension we found: the bank wants users to lock money away longer. Users want flexibility.**', i: 'Key output: we had to design a fundamentally different relationship with saving.' },
               { n: '02', t: 'Competitive Analysis — Ukraine & Global', d: 'Analysed Ukrainian competitors and international references. **The market gap wasn\'t about interest rates — it was about UX.**', i: 'Monobank\'s "jar" was the closest reference — we studied why it worked and where it fell short.' },
-              { n: '03', t: 'Question Generation & Grouping', d: 'Generated 80+ research questions across the team to identify the most important unknowns. **Good research starts with good questions.**', i: '' },
+              { n: '03', t: 'Question Generation & Grouping', d: 'Generated 80+ research questions across the team to identify the most important unknowns. **Good research starts with good\u00A0questions.**', i: '' },
               { n: '04', t: 'User Interviews', d: 'Conducted interviews with active and occasional savers. Goal: understand **why their saving behaviour broke down**.', i: 'Pattern: people set goals in their head but had no system to track them.' },
               { n: '05', t: 'Hypothesis Generation', d: 'Translated research findings into testable hypotheses prioritised by impact and feasibility.', i: '' },
               { n: '06', t: 'Wireframing', d: 'Turned hypotheses into a feature list, then mapped them to high-level wireframes for validation.', i: '' },
@@ -804,7 +804,7 @@ export const cases: CaseStudy[] = [
         blocks: [
           { type: 'p', content: 'After interviews we synthesised findings using affinity mapping. **Users had more than one goal simultaneously**, but their tools forced them to track everything in one account.' },
           { type: 'image', src: '/images/safe/04-Interview-question-grouping-—-affinity-m.png', alt: 'Affinity mapping', caption: '80+ interview questions grouped into thematic clusters.' },
-          { type: 'quote', text: '"I have one account for savings but I\'m actually saving for a car, a vacation, and my kid\'s education at the same time."', author: 'UkrSibBank client interview' }
+          { type: 'quote', text: '"I have one account for savings but I\'m actually saving for a car, a vacation, and my kid\'s education at the same time."', author: 'UKRSIBBANK client interview' }
         ]
       },
       {
@@ -860,7 +860,7 @@ export const cases: CaseStudy[] = [
   {
     slug: 'cryptoswift',
     title: 'CryptoSwift',
-    subtitle: 'Crypto Payment Platform for Merchants',
+    subtitle: 'Crypto Payment Platform for\u00A0Merchants',
     description: 'CryptoSwift — Crypto Payment Platform for Merchants. Full redesign across desktop, tablet and mobile.',
     tags: ['UX/UI Designer', 'Web3', 'B2B', 'Payments', 'Freelance'],
     accentTag: 'UX/UI Designer',
@@ -905,7 +905,7 @@ export const cases: CaseStudy[] = [
             type: 'gridDecisions',
             decisions: [
               { wide: true, ic: '🧩', t: 'Complex onboarding with no guidance', d: 'New merchants were dropped into a dashboard with no onboarding flow. Most couldn\'t complete their first transaction without calling support.' },
-              { ic: '📉', t: 'Price volatility with no transparency', d: 'The existing interface showed a crypto amount with no real-time fiat equivalent and no exchange rate display.' },
+              { ic: '📉', t: 'Price volatility with no\u00A0transparency', d: 'The existing interface showed a crypto amount with no real-time fiat equivalent and no exchange rate display.' },
               { ic: '🖥️', t: 'No responsive design', d: 'The platform was desktop-only in practice. On a tablet or phone, the interface broke completely.' },
               { ic: '📊', t: 'Inconsistent UI across all screens', d: 'Built iteratively by multiple engineers without a design system. Inconsistency created high cognitive load.' },
               { ic: '📄', t: 'No invoice issuance or analytics', d: 'Merchants couldn\'t send payment requests or understand their revenue trends and conversion rates.' }
@@ -935,12 +935,12 @@ export const cases: CaseStudy[] = [
           {
             type: 'steps',
             items: [
-              { n: '01', t: 'Platform Audit & Merchant Interviews', d: 'Full audit catalogued **over 60 UI inconsistencies**. Parallel interviews helped us understand real pain points.', i: 'The inconsistency was not just visual — it was structural.' },
+              { n: '01', t: 'Platform Audit & Merchant Interviews', d: 'Full audit catalogued over 60 UI inconsistencies. Parallel interviews helped us understand real pain points.', i: 'The inconsistency was not just visual — it was structural.' },
               { n: '02', t: 'Competitive Analysis', d: 'Analysed BitPay, CoinGate, Coinbase Commerce. Key finding: all failed at the human interface layer.', i: '' },
-              { n: '03', t: 'Design System from Scratch', d: 'Built a complete system — tokens, typography, component library. **Clean visual language**: white and navy accents.', i: 'Merchants are running businesses, not trading crypto.' },
+              { n: '03', t: 'Design System from Scratch', d: 'Built a complete system — tokens, typography, component library. Clean visual language: white and navy accents.', i: 'Merchants are running businesses, not trading crypto.' },
               { n: '04', t: 'Core Flow Redesign', d: 'Redesigned New Sale as the primary action. Added real-time fiat equivalent as a persistent element.', i: '' },
               { n: '05', t: 'Responsive Design', d: 'Designed adaptive layouts for 5 breakpoints. Tablet layout was optimised for point-of-sale context.', i: '' },
-              { n: '06', t: 'Usability Testing', d: 'Tested blockchain details vs merchant-relevant outcomes. **Simplified version had dramatically better comprehension.**', i: 'Showing less can create more trust if it is the right info.' }
+              { n: '06', t: 'Usability Testing', d: 'Tested blockchain details vs merchant-relevant outcomes. Simplified version had dramatically better comprehension.', i: 'Showing less can create more trust if it is the right info.' }
             ]
           }
         ]
@@ -987,13 +987,13 @@ export const cases: CaseStudy[] = [
           {
             type: 'insight',
             title: 'What I\'d do differently',
-            content: '*We underinvested in the analytics dashboard. Merchants wanted deeper insights — conversion rates by crypto type and peak sale periods.*'
+            content: '*We underinvested in the analytics dashboard. Merchants wanted deeper insights — conversion rates by crypto type and peak \nsale periods.*'
           },
           {
             type: 'metrics',
             items: [
               { n: '−40', su: '%', d: 'Reduction in merchant support requests related to currency conversions' },
-              { n: '5', d: 'Device breakpoints — each with a purpose-designed layout' },
+              { n: '5', d: 'Device breakpoints — each with a custom responsive layout' },
               { n: '+28', su: '%', d: 'Merchant onboarding completion rate after simplifying the sale flow' },
               { n: '60', su: '+', d: 'UI inconsistencies resolved through the new design system' },
               { n: '2', d: 'New features shipped — invoice issuance and advanced analytics' },
@@ -1085,8 +1085,8 @@ export const cases: CaseStudy[] = [
             type: 'steps',
             items: [
               { n: '01', t: 'Market Research & Web3 Landscape Analysis', d: 'Full audit of MetaMask, Trust Wallet, Rainbow, Coinbase Wallet, and Phantom.', i: 'The most technically capable wallets had the worst onboarding.' },
-              { n: '02', t: 'User Interviews & Persona Development', d: 'Interviewed users across three profiles: the Crypto Native, the Curious Newcomer, and the Fiat-First User.', i: 'The Curious Newcomer would use XGo only if the UX removed their anxiety entirely.' },
-              { n: '03', t: 'Information Architecture & Wallet ID Concept', d: 'Defined the core IA. Developed the Wallet ID concept — replacing 0x-style addresses with human-readable identifiers.', i: 'Every single non-crypto user cited the same fear: "What if I type the wrong address?"' },
+              { n: '02', t: 'User Interviews & Persona Development', d: 'Interviewed users across three profiles: the Crypto Native, the Curious Newcomer, and the Fiat-First\u00A0User.', i: 'The Curious Newcomer would use XGo only if the UX removed their anxiety entirely.' },
+              { n: '03', t: 'Information Architecture & Wallet ID Concept', d: 'Defined the core IA. Developed the Wallet ID concept — replacing 0x-style addresses with readable Wallet IDs.', i: 'Every single non-crypto user cited the same fear: "What if I type the wrong address?"' },
               { n: '04', t: 'Design System & Brand Identity', d: 'Built a complete design system covering colour tokens, typography, and component library.', i: '' },
               { n: '05', t: 'A/B Testing & Onboarding Optimisation', d: 'Tested two onboarding approaches. The feature-first flow had 34% higher completion rates.', i: 'Show the card first. Then the seed phrase.' },
               { n: '06', t: 'Launch & Growth Design', d: 'Designed the full App Store presence — screenshots, preview video frame.', i: '' }
@@ -1162,7 +1162,7 @@ export const cases: CaseStudy[] = [
   {
     slug: 'p3marine',
     title: 'P3 Marine',
-    subtitle: 'Yacht Management Platform from Scratch',
+    subtitle: 'Yacht Management Platform from\u00A0Scratch',
     description: 'A financial and operational management platform for the marine industry — 300+ screens, 5 user roles, multi-currency, built from zero.',
     tags: ['UX/UI Designer', 'SaaS', 'CRM', 'MVP', 'BARVA.TECH'],
     accentTag: 'UX/UI Designer',
@@ -1191,7 +1191,7 @@ export const cases: CaseStudy[] = [
             type: 'metrics',
             items: [
               { n: '300', su: '+', d: 'Screens designed across all platforms — desktop, tablet, and mobile resolutions' },
-              { n: '5', d: 'Distinct user roles — Owner, Manager, Accountant, Captain, Crew — with purpose-built interfaces' },
+              { n: '5', d: 'Distinct user roles — Owner, Manager, Accountant, Captain, Crew — with purpose-built\u00A0interfaces' },
               { n: '20', su: '+', d: 'Team members collaborated across the project — developers, PMs, and QA' },
             ]
           }
@@ -1256,7 +1256,7 @@ export const cases: CaseStudy[] = [
             items: [
               { n: '01', t: 'User Role Profiling', d: 'Defined five primary user types. Owners wanted summary-level data with drill-down on demand — not detailed transaction logs by default.', i: 'This simplified the owner dashboard design significantly.' },
               { n: '02', t: 'Competitive Analysis', d: 'Audited Yachtspot, Dockmaster, and Siren. Existing tools were built by maritime professionals, assuming too much domain expertise.', i: '' },
-              { n: '03', t: 'Design System', d: 'Built the system before any screens. Navy and white visual language. **Users managing $50M yachts expect premium software.**', i: 'Typographic decision: used a 16px base size for legibility in bright sunlight.' },
+              { n: '03', t: 'Design System', d: 'Built the system before any screens. Navy and white visual language. Users managing $50M yachts expect premium software.', i: 'Typographic decision: used a 16px base size for legibility in bright sunlight.' },
               { n: '04', t: 'Screen Design', d: 'Designed every screen across 5 breakpoints. Mobile was critical for Captain and Crew — designed for one-hand use.', i: '' },
               { n: '05', t: 'Iterative Testing', d: 'Redesigned validation and error messaging three times. Failure states were designed to maintain the premium feel.', i: '' }
             ]
@@ -1301,7 +1301,7 @@ export const cases: CaseStudy[] = [
         blocks: [
           {
             type: 'p',
-            content: 'P3 Marine launched and is actively used by yacht management companies to manage their client portfolios, replacing the spreadsheet-and-WhatsApp model.'
+            content: 'P3 Marine launched and is actively used by yacht management companies to manage their client portfolios, moving teams off spreadsheets and WhatsApp.'
           },
           {
             type: 'insight',

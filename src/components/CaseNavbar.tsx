@@ -92,7 +92,7 @@ export default function CaseNavbar() {
 
       {/* Полоска прогресса */}
       <motion.div
-        className="absolute bottom-[-1px] left-0 right-0 h-[2px] bg-[#7f7f7f] opacity-80 origin-left z-[70]"
+        className="absolute bottom-[-1px] left-0 right-0 h-[2px] bg-sub opacity-70 origin-left z-[70]"
         style={{ scaleX }}
       />
 

@@ -5,6 +5,7 @@ import { getCaseBySlug, cases } from '@/lib/projects'
 import CaseNavbar from '@/components/CaseNavbar'
 import CaseFooter from '@/components/CaseFooter'
 import ScrollReveal from '@/components/animations/ScrollReveal'
+import type { CSSProperties } from 'react'
 
 // ── 1. ДИНАМИЧЕСКИЕ КОНСТАНТЫ ───────────────────────────────────
 const T = 'var(--text)'
@@ -54,26 +55,30 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
   if (!project) notFound()
 
   const currentIndex = cases.findIndex(c => c.slug === slug)
+  const previousProject = currentIndex > 0 ? cases[currentIndex - 1] : null
   const isLast = currentIndex === cases.length - 1
   const nextProject = isLast ? null : cases[currentIndex + 1]
 
   return (
-    <div className="min-h-screen transition-colors duration-500" style={{ backgroundColor: 'var(--bg)' }}>
+    <div
+      className="case-page min-h-screen transition-colors duration-300"
+      style={{ backgroundColor: 'var(--bg)', '--case-accent': project.accent } as CSSProperties}
+    >
       <CaseNavbar />
 
       {/* ── HERO ── */}
-      <section className="max-w-[1160px] mx-auto px-6 md:px-[52px] pt-[100px] md:pt-[120px] pb-10 md:pb-12 border-b" style={{ borderColor: line }}>
+      <section className="max-w-[1190px] mx-auto px-6 md:px-[52px] pt-[100px] md:pt-[120px] pb-10 md:pb-12 border-b" style={{ borderColor: line }}>
         <div className="flex flex-wrap gap-2.5 mb-8">
           {project.tags.map(t => {
             const isAccent = t === project.accentTag;
             return (
               <span
                 key={t}
-                className="text-[11px] md:text-[12px] uppercase tracking-wider rounded-full px-3.5 py-1.5 border transition-all"
-                style={{
-                  color: isAccent ? project.accent : sub,
-                  background: isAccent ? `${project.accent}15` : 'var(--line)',
-                  borderColor: isAccent ? `${project.accent}40` : line
+                className={`text-[11px] md:text-[12px] uppercase tracking-wider rounded-full px-3.5 py-1.5 border transition-all ${isAccent ? 'case-accent-chip' : ''}`}
+                style={isAccent ? undefined : {
+                  color: sub,
+                  background: 'var(--line)',
+                  borderColor: line
                 }}
               >
                 {t}
@@ -81,10 +86,47 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
             );
           })}
         </div>
+        <h1
+          className="
+    text-[clamp(32px,8vw,68px)] /* Немного уменьшил минимум с 34 до 32 для узких экранов */
+    font-semibold
+    leading-[1.08]
+    md:leading-[1.05]
+    tracking-[-0.02em]
+    md:tracking-[-0.03em]
+    mb-12
+    w-full
+    text-balance
+    /* ПРИНУДИТЕЛЬНЫЙ СБРОС РАЗРЫВОВ */
+    break-normal
+    [overflow-wrap:normal]
+    [word-break:normal]
+    [hyphens:none]
+    [WebkitHyphens:none]
+  "
+          style={{ color: T }}
+        >
+          {project.title}
 
-        <h1 className="text-[36px] md:text-[68px] font-semibold leading-[1.1] md:leading-[1.05] tracking-[-0.03em] mb-12 w-full" style={{ color: T }}>
-          {project.title}<br />
-          <em className="font-light italic" style={{ color: sub }}>{project.subtitle}</em>
+          <br />
+
+          <em
+            className="
+      font-light
+      italic
+      block
+      md:inline
+      /* ТЕ ЖЕ ПРАВИЛА ДЛЯ ПОДЗАГОЛОВКА */
+      break-normal
+      [overflow-wrap:normal]
+      [word-break:normal]
+      [hyphens:none]
+      [WebkitHyphens:none]
+    "
+            style={{ color: sub }}
+          >
+            {project.subtitle}
+          </em>
         </h1>
 
         <p className="text-[17px] md:text-[19px] font-light leading-relaxed mb-12 max-w-[1100px]" style={{ color: sub }}>
@@ -102,13 +144,13 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
       </section>
 
       {/* ── COVER ── */}
-      <div className="max-w-[1160px] mx-auto px-6 md:px-[52px] mt-10">
+      <div className="max-w-[1190px] mx-auto px-6 md:px-[52px] mt-10">
         <Image src={project.cover} alt={project.title} width={1920} height={900} className="w-full h-auto block rounded-2xl border transition-colors" style={{ borderColor: line }} priority />
       </div>
 
       {/* ── SECTIONS ── */}
       {project.sections.map((section, sIdx) => (
-        <section key={sIdx} className="max-w-[1160px] mx-auto px-6 md:px-[52px] py-10 md:py-12 border-b last:border-none" style={{ borderColor: line }}>
+        <section key={sIdx} className="relative max-w-[1190px] mx-auto px-6 md:px-[52px] py-10 md:py-12 border-b last:border-none" style={{ borderColor: line }}>
           <ScrollReveal>
             <SecNum>{section.num} · {section.title}</SecNum>
             <H2>{parseContent(section.heading)}</H2>
@@ -122,7 +164,10 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
                   {/* Quote */}
                   {block.type === 'quote' && (
                     <div className="bg-surface border-l-2 p-8 md:p-10 mt-12 mb-0 rounded-r-2xl transition-colors" style={{ borderColor: line2 }}>
-                      <div className="text-[16px] md:text-[16px] font-light leading-relaxed italic mb-6" style={{ color: T }}>
+                      <div
+                        className="text-[16px] md:text-[16px] font-light leading-relaxed italic mb-6 whitespace-pre-line" // Добавь whitespace-pre-line
+                        style={{ color: T }}
+                      >
                         {block.text}
                       </div>
                       <div className="text-[12px] flex items-center gap-4 uppercase tracking-widest" style={{ color: dim }}>
@@ -130,12 +175,13 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
                         {block.author}
                       </div>
                     </div>
-                  )}
+                  )
+                  }
 
                   {/* Insight */}
                   {block.type === 'insight' && (
-                    <div className="bg-surface/50 border-l-2 p-8 md:p-10 mt-12 mb-0 rounded-r-2xl transition-colors" style={{ borderColor: project.accent }}>
-                      <div className="text-[14px] uppercase tracking-[0.15em] mb-6 font-medium" style={{ color: project.accent }}>
+                    <div className="bg-surface/50 border-l-2 case-accent-border p-8 md:p-10 mt-12 mb-0 rounded-r-2xl transition-colors">
+                      <div className="text-[14px] uppercase tracking-[0.15em] mb-6 font-medium case-accent-text">
                         {block.title}
                       </div>
                       <div className="text-[14px] md:text-[16px] font-light italic leading-relaxed" style={{ color: sub }}>
@@ -181,10 +227,13 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-12">
                       {block.items?.map((s, idx) => {
                         const accentRequired = ['ifreq', 'cryptoswift', 'xgo', 'p3marine'].includes(project.slug);
-                        const metricColor = (accentRequired && idx < 3) ? project.accent : T;
+                        const isAccentMetric = accentRequired && idx < 3;
                         return (
                           <div key={idx} className="border rounded-2xl p-8 bg-surface transition-colors" style={{ borderColor: line }}>
-                            <div className="text-[42px] md:text-[48px] font-semibold tracking-tighter leading-none mb-3" style={{ color: metricColor }}>
+                            <div
+                              className={`text-[42px] md:text-[48px] font-semibold tracking-tighter leading-none mb-3 ${isAccentMetric ? 'case-accent-text' : ''}`}
+                              style={isAccentMetric ? undefined : { color: T }}
+                            >
                               {s.n}<span className="text-[24px] md:text-[32px] ml-0.5">{s.su || ''}</span>
                             </div>
                             <div className="text-[13px] md:text-[14px] font-light leading-relaxed" style={{ color: sub }}>{s.d}</div>
@@ -200,13 +249,13 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
                       {block.plans.map((p, idx) => (
                         <div
                           key={idx}
-                          className="border rounded-[32px] p-8 md:p-10 transition-all duration-300 flex flex-col items-center md:items-start text-center md:text-left"
-                          style={{
-                            background: p.pro ? `${project.accent}10` : 'var(--bg2)',
-                            borderColor: p.pro ? `${project.accent}40` : line
+                          className={`border rounded-[32px] p-8 md:p-10 transition-all duration-300 flex flex-col items-center md:items-start text-center md:text-left ${p.pro ? 'case-accent-panel' : ''}`}
+                          style={p.pro ? undefined : {
+                            background: 'var(--bg2)',
+                            borderColor: line
                           }}
                         >
-                          <div className="inline-block text-[11px] font-bold tracking-wider uppercase rounded-full px-4 py-1.5 mb-8" style={{ background: project.accent, color: 'var(--bg)' }}>
+                          <div className="inline-block text-[11px] font-bold tracking-wider uppercase rounded-full px-4 py-1.5 mb-8 case-accent-fill">
                             {p.badge}
                           </div>
                           <div className="text-[26px] md:text-[28px] font-semibold mb-4 w-full" style={{ color: T }}>{p.name}</div>
@@ -217,7 +266,7 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
                           <ul className="space-y-4 text-left self-center md:self-start">
                             {p.features.map((f, fIdx) => (
                               <li key={fIdx} className="text-[15px] font-light flex items-start gap-3" style={{ color: sub }}>
-                                <span className="mt-1 flex-shrink-0" style={{ color: project.accent }}>✓</span>
+                                <span className="mt-1 flex-shrink-0 case-accent-text">✓</span>
                                 {f}
                               </li>
                             ))}
@@ -266,11 +315,11 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
                   {block.type === 'splitText' && (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-10">
                       <div className="border rounded-2xl p-8 bg-surface transition-colors" style={{ borderColor: line }}>
-                        <div className="text-[11px] uppercase tracking-widest opacity-60 mb-5" style={{ color: project.accent }}>{block.leftTitle}</div>
+                        <div className="text-[11px] uppercase tracking-widest mb-5 font-semibold case-accent-text">{block.leftTitle}</div>
                         <div className="text-[15px] font-light leading-relaxed" style={{ color: sub }}>{parseContent(block.leftContent || '')}</div>
                       </div>
                       <div className="border rounded-2xl p-8 bg-surface transition-colors" style={{ borderColor: line }}>
-                        <div className="text-[11px] uppercase tracking-widest opacity-60 mb-5" style={{ color: project.accent }}>{block.rightTitle}</div>
+                        <div className="text-[11px] uppercase tracking-widest mb-5 font-semibold case-accent-text">{block.rightTitle}</div>
                         <div className="text-[15px] font-light leading-relaxed" style={{ color: sub }}>{parseContent(block.rightContent || '')}</div>
                       </div>
                     </div>
@@ -297,6 +346,9 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
       ))}
 
       <CaseFooter
+        previousTitle={previousProject?.title}
+        previousSubtitle={previousProject?.subtitle}
+        previousHref={previousProject ? `/work/${previousProject.slug}` : undefined}
         nextTitle={nextProject?.title}
         nextSubtitle={nextProject?.subtitle}
         nextHref={nextProject ? `/work/${nextProject.slug}` : undefined}

@@ -26,7 +26,7 @@ export default function ScrollReveal({
       initial={{ opacity: 0, y }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y }}
       transition={{
-        duration: 1.4,  // Скорость анимации (задержка)
+        duration: 3.5,  // Скорость анимации (задержка)
         delay,
         ease: [0.16, 1, 0.3, 1] 
       }}
