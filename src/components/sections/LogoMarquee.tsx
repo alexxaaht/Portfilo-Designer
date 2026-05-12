@@ -12,7 +12,7 @@ interface Logo {
 
 const LOGOS: Logo[] = [
   { name: 'ukrisib', src: '/images/logos/ukrsib-logo.svg', scale: 1.3 },
-  { name: 'p3w', src: '/images/logos/p3w-logo.svg', scale: 1.3 },
+  { name: 'p3w', src: '/images/logos/p3w-logo.svg', scale: 1.35 },
   { name: 'cryptoswift', src: '/images/logos/cryptoswift-logo.svg', scale: 1.25 },
   { name: 'factum', src: '/images/logos/factum-logo.svg' },
   { name: 'ifreq', src: '/images/logos/ifreq-logo.svg' },
@@ -68,8 +68,19 @@ export default function LogoMarquee() {
                 transform: `scale(${logo.scale || 1})`,
                 transformOrigin: 'center center',
               }}
-              className="opacity-60 grayscale  hover:opacity-100 transition-opacity duration-300"
-              priority
+              className="
+  grayscale
+  transition-all
+  duration-300
+
+  dark:opacity-80
+  dark:brightness-[1.8]
+
+  light:opacity-70
+  light:brightness-[0.1]
+
+  hover:opacity-100
+"              priority
             />
           </div>
         ))}

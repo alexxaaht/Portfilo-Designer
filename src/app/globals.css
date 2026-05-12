@@ -11,18 +11,124 @@
   --dim:   #6E6B65;
   --line:  rgba(255,255,255,0.08);
   --line2: rgba(255,255,255,0.16);
---hero-role: rgba(178, 174, 168, 0.40);
+--cursor-color: #F2F0EC;
+  --hero-role: rgba(178, 174, 168, 0.611);
+  --selection-bg: rgba(242,240,236,0.15);
 }
 
 .light {
-  --bg:    #F9F9F7; 
-  --bg2:   #F1F1EE; 
-  --text:  #000000; 
-  --sub:   #3A3A38; 
-  --dim:   #72726F; 
-  --line:  rgba(0, 0, 0, 0.12);
-  --line2: rgba(0, 0, 0, 0.20);
-  --hero-role: rgba(13, 13, 13, 0.409);
+  --bg:    #FFFFFF;
+  --bg2:   #F6F8FB;
+  --text:  #000000;
+  --sub:   #050505;
+  --dim:   #0B0B0B;
+  --cursor-color: #000000;
+  --line:  rgba(0, 0, 0, 0.1);
+  --line2: rgba(0, 0, 0, 0.18);
+  --hero-role: rgba(77, 76, 76, 0.687);
+  --selection-bg: rgba(0, 0, 0, 0.18);
+}
+
+.case-accent-text {
+  color: var(--case-accent);
+}
+
+.case-accent-border {
+  border-color: var(--case-accent);
+}
+
+.case-accent-chip {
+  color: var(--case-accent);
+  background: color-mix(in srgb, var(--case-accent) 15%, transparent);
+  border-color: color-mix(in srgb, var(--case-accent) 40%, transparent);
+}
+
+.case-accent-fill {
+  background: var(--case-accent);
+  color: var(--bg);
+}
+
+.case-accent-panel {
+  background: color-mix(in srgb, var(--case-accent) 10%, var(--bg2));
+  border-color: color-mix(in srgb, var(--case-accent) 40%, transparent);
+}
+
+.light .case-accent-text {
+  color: color-mix(in srgb, var(--case-accent) 48%, #000000);
+}
+
+.light .case-accent-border {
+  border-color: color-mix(in srgb, var(--case-accent) 52%, #000000);
+}
+
+.light .case-accent-chip {
+  color: color-mix(in srgb, var(--case-accent) 48%, #000000);
+  background: color-mix(in srgb, var(--case-accent) 10%, #FFFFFF);
+  border-color: color-mix(in srgb, var(--case-accent) 52%, #000000);
+}
+
+.light .case-accent-fill {
+  background: color-mix(in srgb, var(--case-accent) 48%, #000000);
+  color: #FFFFFF;
+}
+
+.light .case-accent-panel {
+  background: color-mix(in srgb, var(--case-accent) 8%, #FFFFFF);
+  border-color: color-mix(in srgb, var(--case-accent) 52%, #000000);
+}
+
+.case-nav-card {
+  background: color-mix(in srgb, var(--case-accent, #F2F0EC) 12%, var(--bg2));
+  border-color: color-mix(in srgb, var(--case-accent, #F2F0EC) 36%, var(--line));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.case-nav-card:hover {
+  background: color-mix(in srgb, var(--case-accent, #F2F0EC) 18%, var(--bg2));
+  border-color: color-mix(in srgb, var(--case-accent, #F2F0EC) 52%, var(--line2));
+}
+
+.case-nav-arrow {
+  background: color-mix(in srgb, var(--case-accent, #F2F0EC) 12%, var(--bg));
+  border-color: color-mix(in srgb, var(--case-accent, #F2F0EC) 30%, var(--line));
+}
+
+.case-nav-card:hover .case-nav-arrow {
+  background: color-mix(in srgb, var(--case-accent, #F2F0EC) 18%, var(--bg2));
+  border-color: color-mix(in srgb, var(--case-accent, #F2F0EC) 46%, var(--line2));
+}
+
+.light .case-nav-card {
+  background: color-mix(in srgb, var(--case-accent, #000000) 10%, #FFFFFF);
+  border-color: color-mix(in srgb, var(--case-accent, #000000) 28%, rgba(0,0,0,0.12));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.85), 0 16px 40px rgba(0,0,0,0.04);
+}
+
+.light .case-nav-card:hover {
+  background: color-mix(in srgb, var(--case-accent, #000000) 16%, #FFFFFF);
+  border-color: color-mix(in srgb, var(--case-accent, #000000) 40%, rgba(0,0,0,0.18));
+}
+
+.light .case-nav-arrow {
+  background: color-mix(in srgb, var(--case-accent, #000000) 8%, #FFFFFF);
+  border-color: color-mix(in srgb, var(--case-accent, #000000) 24%, rgba(0,0,0,0.12));
+}
+
+.light .case-nav-card:hover .case-nav-arrow {
+  background: color-mix(in srgb, var(--case-accent, #000000) 14%, #FFFFFF);
+  border-color: color-mix(in srgb, var(--case-accent, #000000) 36%, rgba(0,0,0,0.18));
+}
+
+.case-page :where(h1, h2, h3) {
+  text-wrap: balance;
+}
+
+.case-page :where(p, li, div, a) {
+  text-wrap: pretty;
+}
+
+.case-page :where([class*="uppercase"], [class*="font-semibold"], [class*="font-medium"]) {
+  text-wrap: balance;
 }
 
 * {
@@ -73,6 +179,6 @@ img {
 
 /* ── Selection ────────────────────────────────────────── */
 ::selection {
-  background: rgba(242,240,236,0.15);
+  background: var(--selection-bg);
   color: var(--text);
 }

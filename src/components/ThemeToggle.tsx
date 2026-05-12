@@ -19,18 +19,11 @@ export default function ThemeToggle() {
     <div
       className={`
         relative flex items-center rounded-full w-[72px] h-8 cursor-none transition-all duration-500
-        ${isDark ? 'bg-[#525252]' : 'bg-[#d1d1d1]'}
+        ${isDark ? 'bg-[#525252]' : 'bg-[#525252c6]'}
       `}
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
     >
-      {/* 
-         НОВАЯ МАТЕМАТИКА ДЛЯ w-[72px]:
-         1. Половина ширины = 36px.
-         2. Центр левой иконки = 18px. Центр правой = 54px.
-         3. Капелька (w-6 = 24px). Чтобы ее центр (12px) совпал с иконкой:
-            Лево: 18 - 12 = 6.
-            Право: 54 - 12 = 42.
-      */}
+
       <motion.div
         className="absolute w-6 h-6 bg-[#F5F5F5] rounded-full shadow-sm z-0"
         initial={false}
@@ -44,7 +37,7 @@ export default function ThemeToggle() {
       <div className="relative z-10 w-1/2 flex justify-center items-center pointer-events-none">
         <svg
           width="15" height="15" viewBox="0 0 24 24" fill="none"
-          stroke={isDark ? '#AAAAAA' : '#4A4A4A'}
+          stroke={isDark ? '#AAAAAA' : '#050505'}
           strokeWidth="2.5"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -59,7 +52,7 @@ export default function ThemeToggle() {
       <div className="relative z-10 w-1/2 flex justify-center items-center pointer-events-none">
         <svg
           width="13" height="13" viewBox="0 0 24 24" fill="none"
-          stroke={isDark ? '#000000' : '#4A4A4A'}
+          stroke={isDark ? '#000000' : '#FFFFFF'}
           strokeWidth="2.5"
           strokeLinecap="round"
           strokeLinejoin="round"

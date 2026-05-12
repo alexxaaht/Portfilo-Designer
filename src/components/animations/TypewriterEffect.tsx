@@ -15,7 +15,8 @@ export default function TypewriterEffect({
   delay = 0,
   speed = 0.05,
 }: TypewriterProps) {
-  const letters = Array.from(text)
+  // Разбиваем текст на слова, чтобы контролировать перенос
+  const words = text.split(' ')
 
   const container = {
     hidden: {},
@@ -29,10 +30,10 @@ export default function TypewriterEffect({
 
   const letterVariants = {
     hidden: {
-      display: 'none', // Буква не занимает места вообще
+      display: 'none',
     },
     visible: {
-      display: 'inline', // Буква появляется и "расталкивает" строку
+      display: 'inline',
       transition: {
         duration: 0
       }
@@ -41,21 +42,32 @@ export default function TypewriterEffect({
 
   return (
     <motion.span
-      // Используем inline-flex, чтобы курсор всегда был в одной строке с текстом
+      // flex-wrap позволяет словам падать на новую строку
       className={`inline-flex items-center flex-wrap ${className}`}
       variants={container}
       initial="hidden"
       animate="visible"
       custom={delay}
     >
-      {letters.map((letter, index) => (
-        <motion.span
-          key={index}
-          variants={letterVariants}
-          style={{ whiteSpace: 'pre' }}
-        >
-          {letter}
-        </motion.span>
+      {words.map((word, wordIndex) => (
+        // whitespace-nowrap гарантирует, что слово не разорвется внутри
+        <span key={wordIndex} className="whitespace-nowrap">
+          {Array.from(word).map((letter, letterIndex) => (
+            <motion.span
+              key={`${wordIndex}-${letterIndex}`}
+              variants={letterVariants}
+            >
+              {letter}
+            </motion.span>
+          ))}
+
+          {/* Добавляем пробел после слова (кроме последнего), который тоже анимируется */}
+          {wordIndex < words.length - 1 && (
+            <motion.span variants={letterVariants} style={{ whiteSpace: 'pre' }}>
+              {' '}
+            </motion.span>
+          )}
+        </span>
       ))}
 
       {/* Каретка (курсор) */}
@@ -69,7 +81,7 @@ export default function TypewriterEffect({
         }}
         className="inline-block w-[0.04em] h-[0.9em] ml-[2px] align-middle"
         style={{
-          backgroundColor: 'rgba(178, 174, 168, 0.40)',
+          backgroundColor: 'var(--hero-role)',
           minWidth: '2px'
         }}
       />

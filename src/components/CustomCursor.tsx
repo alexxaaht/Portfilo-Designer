@@ -73,14 +73,14 @@ export default function CustomCursor() {
           left: 0,
           width: 6,
           height: 6,
-          borderRadius: '50%',
-          background: '#FFFFFF', // Чистый белый для корректной инверсии
+          borderRadius: '60%',
+          background: 'var(--cursor-color)',
           pointerEvents: 'none',
           zIndex: 9999,
           opacity: visible ? 1 : 0,
           transition: 'opacity 0.3s, width 0.2s, height 0.2s',
           willChange: 'transform',
-          mixBlendMode: 'difference', // Магия адаптивности
+          mixBlendMode: 'normal', // Магия адаптивности
         }}
       />
 
@@ -98,13 +98,13 @@ export default function CustomCursor() {
           marginLeft: hover ? -6 : 0,
           borderRadius: '50%',
           // Белая граница с инверсией станет черной на светлом фоне
-          border: '1px solid #FFFFFF',
+          border: '1px solid var(--cursor-color)',
           pointerEvents: 'none',
           zIndex: 9998,
-          opacity: visible ? (hover ? 1 : 0.4) : 0,
+          opacity: visible ? (hover ? 0.8 : 0.4) : 0,
           transition: 'width 0.35s cubic-bezier(.23,1,.32,1), height 0.35s cubic-bezier(.23,1,.32,1), opacity 0.3s, margin 0.35s cubic-bezier(.23,1,.32,1)',
           willChange: 'transform',
-          mixBlendMode: 'difference', // Кольцо тоже инвертируется
+          mixBlendMode: 'normal', 
           // Размытие оставляем только для эффекта наслоения
           backdropFilter: hover ? 'blur(1px)' : 'none',
         }}

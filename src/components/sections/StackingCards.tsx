@@ -55,7 +55,7 @@ function StickyCard({ project, index, total }: { project: Project; index: number
   const inner = (
     <motion.div
       style={{ scale: isDesktop ? scale : 1 }}
-      className="group w-full flex flex-col md:grid md:grid-cols-2 min-h-fit md:min-h-[520px] overflow-hidden bg-bg transition-colors duration-500"
+      className="group w-full flex flex-col md:grid md:grid-cols-2 min-h-fit md:min-h-[520px] overflow-hidden bg-bg transition-colors duration-300"
     >
       {/* 1. ИЗОБРАЖЕНИЕ */}
       <div className="relative overflow-hidden w-full aspect-video md:aspect-auto md:h-auto md:py-10 md:pl-10">
@@ -99,12 +99,12 @@ function StickyCard({ project, index, total }: { project: Project; index: number
           </h2>
 
           {/* Подзаголовок: text-sub оставляем, он обычно достаточно яркий, но можно добавить opacity если нужно */}
-          <p className="text-[16px] md:text-[18px] font-light text-sub leading-relaxed mb-4 max-w-lg transition-colors">
+          <p className="text-[16px] md:text-[18px] font-light text-sub leading-relaxed mb-4 max-w-lg">
             {project.subtitle}
           </p>
 
           {/* ОПИСАНИЕ: Заменили text-dim на text-sub, чтобы текст стал светлее и читабельнее */}
-          <p className="text-[14px] md:text-[16px] font-light leading-relaxed max-w-lg text-sub/80 mb-10 md:mb-0 transition-colors">
+          <p className="text-[14px] md:text-[16px] font-light leading-relaxed max-w-lg text-sub opacity-80 mb-10 md:mb-0">
             {project.desc}
           </p>
         </div>
@@ -122,17 +122,10 @@ function StickyCard({ project, index, total }: { project: Project; index: number
     flex items-center justify-center w-full md:w-auto
     text-[13px] font-medium px-8 py-4 rounded-full 
     bg-surface border border-line 
-    
-    /* 1. Базовый цвет (мобилки) */
     text-text 
-    
-    /* 2. Стили для десктопа (переопределяем базу) */
     md:bg-transparent md:border-none md:p-0 
     md:text-sub 
-    
-    /* 3. Ховер только на десктопе */
     md:group-hover:text-text 
-    
     transition-all duration-300
 ">
                 View case <span className="ml-2 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
@@ -157,7 +150,7 @@ function StickyCard({ project, index, total }: { project: Project; index: number
         top: isDesktop ? STICKY_TOP : 0,
         zIndex: index + 1,
       }}
-      className="border-t border-line pb-24 md:pb-0 bg-bg transition-colors duration-500"
+      className="border-t border-line pb-24 md:pb-0 bg-bg transition-colors duration-300"
     >
       {project.hasCase ? (
         <Link href={`/work/${project.slug}`} className="block focus:outline-none">
