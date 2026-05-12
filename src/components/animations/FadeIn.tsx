@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { ReactNode } from 'react'
 
 interface FadeInProps {
@@ -14,22 +14,22 @@ interface FadeInProps {
 export default function FadeIn({
   children,
   delay = 0,
-  duration = 2.2, // Увеличил здесь (было 1.2). Чем выше число, тем медленнее анимация.
+  duration = 2.2,
   y = 30,
   className,
 }: FadeInProps) {
   return (
-    <motion.div
+    <m.div
       className={className}
       initial={{ opacity: 0, y }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
         duration,
         delay,
-        ease: [0.16, 1, 0.3, 1] // Эта кривая делает конец анимации очень плавным
+        ease: [0.16, 1, 0.3, 1],
       }}
     >
       {children}
-    </motion.div>
+    </m.div>
   )
 }

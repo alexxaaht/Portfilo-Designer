@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion'
+import { m, AnimatePresence, useScroll, useSpring } from 'framer-motion'
 import ThemeToggle from './ThemeToggle'
 
 export default function Navbar() {
@@ -72,7 +72,7 @@ const [isOpen, setIsOpen] = useState(false)
                     rel={link.href.startsWith('mailto:') ? undefined : "noopener noreferrer"}
                     className="text-[16px] text-sub hover:text-text transition-colors duration-200"
                   >
-                    {link.name}
+                    {link.name.replace(' ↗', '')}<span className="arrow-icon text-[0.8em] ml-0.5 align-middle leading-none">↗</span>
                   </a>
                 </li>
               ))}
@@ -88,15 +88,15 @@ const [isOpen, setIsOpen] = useState(false)
               className="flex flex-col gap-1.5 p-2"
               aria-label="Toggle menu"
             >
-              <motion.span
+              <m.span
                 animate={isOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
                 className="w-6 h-0.5 bg-text block"
               />
-              <motion.span
+              <m.span
                 animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
                 className="w-6 h-0.5 bg-text block"
               />
-              <motion.span
+              <m.span
                 animate={isOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
                 className="w-6 h-0.5 bg-text block"
               />
@@ -106,7 +106,7 @@ const [isOpen, setIsOpen] = useState(false)
       </div>
 
       {/* Полоска прогресса */}
-      <motion.div
+      <m.div
         className="absolute bottom-[-1px] left-0 right-0 h-[2px] bg-sub opacity-70 origin-left z-[70]"
         style={{ scaleX }}
       />
@@ -114,7 +114,7 @@ const [isOpen, setIsOpen] = useState(false)
       {/* Мобильное меню */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -130,12 +130,12 @@ const [isOpen, setIsOpen] = useState(false)
                     onClick={() => setIsOpen(false)}
                     className="text-[28px] font-medium text-text"
                   >
-                    {link.name}
+                    {link.name.replace(' ↗', '')}<span className="arrow-icon text-[0.8em] ml-0.5 align-middle leading-none">↗</span>
                   </a>
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </nav>

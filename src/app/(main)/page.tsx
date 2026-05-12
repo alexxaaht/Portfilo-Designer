@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import FadeIn from '@/components/animations/FadeIn'
 import HeroPhoto from '@/components/sections/HeroPhoto'
 import StackingCards from '@/components/sections/StackingCards'
@@ -8,10 +7,9 @@ import LogoMarquee from '@/components/sections/LogoMarquee'
 import TypewriterEffect from '@/components/animations/TypewriterEffect'
 import Link from 'next/link'
 import { projects } from '@/lib/projects'
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 
 export default function HomePage() {
-  const heroRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
@@ -76,9 +74,9 @@ export default function HomePage() {
               <h1
                 className="
           block
-          text-[66px]
+          text-[64px]
           min-[390px]:text-[76px]
-          md:text-[clamp(68px,9.8vw,138px)]
+          md:text-[clamp(68px,9.6vw,138px)]
           font-bold
           uppercase
           leading-[0.86]
@@ -105,7 +103,7 @@ export default function HomePage() {
           overflow-hidden
           text-[56px]
           min-[390px]:text-[64px]
-          md:text-[clamp(38px,9.8vw,138px)]
+          md:text-[clamp(38px,9.3vw,138px)]
           font-bold
           uppercase
           leading-[0.9]
@@ -210,10 +208,9 @@ export default function HomePage() {
               }
             }}
             className="
-  absolute
+  scroll-hint-btn
   bottom-8
   left-1/2
-  -translate-x-1/2
   w-12
   h-12
   md:w-14
@@ -223,21 +220,24 @@ export default function HomePage() {
   items-center
   justify-center
   no-underline
-  transition-all
+  transition-colors
   duration-200
-  hover:-translate-y-1
+  hover:[animation-play-state:paused]
   z-10
   border
   border-white/20
   bg-white/10
   text-[#F2F0EC]/70
   hover:border-white/40
+  hover:bg-white/20
   hover:text-[#F2F0EC]
   /* Light Theme */
-  [.light_&]:border-black
+  [.light_&]:border-black/20
   [.light_&]:bg-[#F1F1EE]
   [.light_&]:text-black
   [.light_&]:hover:bg-[#E5E5E2]
+  [.light_&]:hover:border-black/40
+  absolute
 "
           >
             <svg
@@ -297,24 +297,24 @@ export default function HomePage() {
               href="mailto:e.garaev.dg55@gmail.com"
               className="w-full md:w-auto text-center text-[14px] font-medium text-bg bg-text hover:opacity-90 transition-opacity rounded-full px-8 py-4"
             >
-              e.garaev.dg55@gmail.com ↗
+              e.garaev.dg55@gmail.com <span className="arrow-icon text-[0.8em] align-middle leading-none">↗</span>
             </a>
             <div className="flex md:contents gap-3 w-full md:w-auto">
               <a
                 href="https://www.linkedin.com/in/elvin-garaev-4798ba255/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 md:flex-none text-center text-[14px] text-sub hover:text-text transition-colors border border-line hover:border-line2 rounded-full px-6 py-4"
+                className="flex-1 md:flex-none text-center text-[14px] font-medium text-text border border-line2 hover:bg-surface transition-all duration-300 rounded-full px-6 py-4 hover:-translate-y-0.5 active:translate-y-0"
               >
-                LinkedIn ↗
+                LinkedIn <span className="arrow-icon text-[0.8em] align-middle leading-none">↗</span>
               </a>
               <a
                 href="https://t.me/el13xx"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 md:flex-none text-center text-[14px] text-sub hover:text-text transition-colors border border-line hover:border-line2 rounded-full px-6 py-4"
+                className="flex-1 md:flex-none text-center text-[14px] font-medium text-text border border-line2 hover:bg-surface transition-all duration-300 rounded-full px-6 py-4 hover:-translate-y-0.5 active:translate-y-0"
               >
-                Telegram ↗
+                Telegram <span className="arrow-icon text-[0.8em] align-middle leading-none">↗</span>
               </a>
             </div>
           </div>

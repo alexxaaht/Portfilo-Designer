@@ -36,12 +36,15 @@ const P = ({ children, mt }: { children: React.ReactNode; mt?: boolean }) => (
 )
 
 const parseContent = (content: string) => {
-  return content.split(/(\*\*.*?\*\*|\*.*?\*)/g).map((part, i) => {
+  return content.split(/(\*\*.*?\*\*|\*.*?\*|\n)/g).map((part, i) => {
     if (part.startsWith('**') && part.endsWith('**')) {
       return <strong key={i} className="font-medium" style={{ color: T }}>{part.slice(2, -2)}</strong>
     }
     if (part.startsWith('*') && part.endsWith('*')) {
       return <em key={i} className="font-light italic" style={{ color: dim }}>{part.slice(1, -1)}</em>
+    }
+    if (part === '\n') {
+      return <br key={i} />
     }
     return part
   })

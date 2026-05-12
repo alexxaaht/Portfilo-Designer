@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { m, AnimatePresence } from 'framer-motion'
 
 export default function BackToTop() {
   const [isVisible, setIsVisible] = useState(false)
@@ -39,7 +39,7 @@ export default function BackToTop() {
   return (
     <AnimatePresence>
       {isVisible && (
-        <motion.button
+        <m.button
           key="back-to-top" // Добавляем ключ для AnimatePresence
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -80,7 +80,7 @@ export default function BackToTop() {
               strokeLinejoin="round"
             />
           </svg>
-        </motion.button>
+        </m.button>
       )}
     </AnimatePresence>
   )

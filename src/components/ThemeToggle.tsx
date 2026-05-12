@@ -2,7 +2,7 @@
 
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 
 export default function ThemeToggle() {
   const { theme, setTheme } = useTheme()
@@ -24,7 +24,7 @@ export default function ThemeToggle() {
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
     >
 
-      <motion.div
+      <m.div
         className="absolute w-6 h-6 bg-[#F5F5F5] rounded-full shadow-sm z-0"
         initial={false}
         animate={{
