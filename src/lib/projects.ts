@@ -144,7 +144,7 @@ export const cases: CaseStudy[] = [
           {
             type: 'card',
             title: 'What we found that surprised us',
-            content: 'We expected to find tool overload. What we didn\'t expect was how much **invisible emotional load** managers were carrying. They weren\'t just managing tasks — they were managing relationships, urgency, and anxiety across 550+ clients with no system to help them prioritise. A manager in Kharkiv told us she woke up at 2am to check if a client had replied. That\'s not a tool problem. That\'s a mental health problem disguised as a UX problem.\n\nThis reframed our whole approach. We weren\'t just building a chat tool. We were building a system that **gives managers back a sense of control** over their workday.'
+            content: 'We expected to find tool overload. What we didn\'t expect was how much **invisible emotional load** managers were carrying. They weren\'t just managing tasks — they were managing relationships, urgency, and anxiety across 550+ clients with no system to help them prioritise. A manager in Kharkiv told us she woke up at 2am to check if a client had replied. That\'s not a tool problem. That\'s a mental health problem disguised as a UX problem.\n\nThis reframed our whole approach. We weren\'t just building a chat tool. We were building a system that **gives managers back a sense of control** \nover their workday.'
           },
           {
             type: 'quote',
@@ -352,7 +352,7 @@ export const cases: CaseStudy[] = [
           {
             type: 'card',
             title: 'The insight that changed everything',
-            content: 'Professional investors don\'t trust interfaces they don\'t understand. Confusion leads to distrust — and distrust leads to zero investment. This is why **"Data sourced from BlackRock" with a timestamp** became a first-class design element, not a footnote.'
+            content: 'Professional investors don\'t trust interfaces they don\'t understand. Confusion leads to distrust — and distrust leads to zero investment. This is why \n**"Data sourced from BlackRock" with a timestamp** became a first-class design element, not a footnote.'
           },
           {
             type: 'quote',
@@ -508,7 +508,7 @@ export const cases: CaseStudy[] = [
         title: 'Overview',
         heading: 'Talent is everywhere. **Opportunity isn\'t.**',
         blocks: [
-          { type: 'p', content: 'Every year thousands of talented footballers go unnoticed — not because they lack skill, but because no one with the right connections is watching. The traditional scouting system favours players who are already in academies, in the right cities, with the right parents. **IFREQ was built to change the odds.**' },
+          { type: 'p', content: 'Every year thousands of talented footballers go unnoticed — not because they lack skill, but because no one with the right connections is watching. The traditional scouting system favours players who are already in academies, in the right cities, with the right parents.\n**IFREQ was built to change the odds.**' },
           { type: 'p', content: 'The platform gives players a standardised evaluation — tested at real events, assessed across 5 dimensions, assigned a card with a global ranking. Professional clubs access a live database of rated players. **If you standardise the data, you democratise the opportunity.**' },
           { type: 'insight', title: 'Why this is a hard design problem', content: '*IFREQ isn\'t one product — it\'s three. A player app, a coach app, and a scout CRM. Each serves a completely different user type with different mental models, different contexts of use, and different definitions of success.*' },
           {
@@ -532,7 +532,7 @@ export const cases: CaseStudy[] = [
           {
             type: 'gridDecisions',
             decisions: [
-              { ic: '⚽', t: 'Player App', d: 'Players register, attend test events, get evaluated, receive their performance card. Track rankings, view video replays, share profile with clubs.' },
+              { ic: '⚽', t: 'Player App', d: 'Players register, attend test events, get evaluated, receive their performance card. Track rankings, view video replays, \nshare profile with clubs.' },
               { ic: '🎯', t: 'Coach App', d: 'Coaches manage test events on the pitch in real time — create sessions, confirm players, capture profile photos with AI alignment.' },
               { ic: '📊', t: 'Scout Dashboard', d: 'Professional clubs browse rated players, filter by age/position/score, compare candidates, export data. Used in offices by decision makers.' },
             ]
@@ -549,7 +549,7 @@ export const cases: CaseStudy[] = [
           { type: 'image', src: '/images/ifreq/03-Customer-Journey-Map.png', alt: 'CJM', caption: 'Customer Journey Map — 9 stages from Onboarding to Payment. Steps, Actions, Goals, Emotions, Pains and Opportunities.' },
           { type: 'image', src: '/images/ifreq/04-User-Flow.png', alt: 'User Flow', caption: 'User flow diagram — complete registration and test booking flow.' },
           { type: 'card', title: 'What the CJM revealed', content: 'The CJM showed something we didn\'t expect: the biggest emotional low point in the player journey wasn\'t the test itself. It was the payment screen. Players felt **stress and "fear of mistake"** about whether they were registering correctly.' },
-          { type: 'quote', text: '"I\'ve been paying for 12 years and never had anyone evaluate me properly. IFREQ gave me a number, a card, and now a trial at a real club."', author: 'Player interview, IFREQ research session' }
+          { type: 'quote', text: '"I\'ve been paying for 12 years and never had anyone evaluate me properly. IFREQ gave me a number, a card, and now \na trial at a real club."', author: 'Player interview, IFREQ research session' }
         ]
       },
       {
@@ -575,7 +575,7 @@ export const cases: CaseStudy[] = [
         blocks: [
           {
             type: 'p',
-            content: "The player profile is the product's emotional centrepiece. The moment a player sees their card for the first time needs to feel significant. **This is a player's digital identity in football.**"
+            content: "The player profile is the product's emotional centrepiece. The moment a player sees their card for the first time needs to feel significant. \n**This is a player's digital identity in football.**"
           },
           {
             type: 'image',
@@ -598,7 +598,7 @@ export const cases: CaseStudy[] = [
         blocks: [
           {
             type: 'p',
-            content: 'We redesigned the checkout flow specifically around "fear of mistake". **Every step before payment is a confirmation, not a form.** The Order Preview screen was added explicitly to give players one complete view before any money moves.'
+            content: 'We redesigned the checkout flow specifically around "fear of mistake". **Every step before payment is a confirmation, not a form.** \nThe Order Preview screen was added explicitly to give players one complete view before any money moves.'
           },
           {
             type: 'image',
@@ -685,7 +685,7 @@ export const cases: CaseStudy[] = [
         blocks: [
           {
             type: 'p',
-            content: "The metrics are good, but I'm most proud of the 20+ players who officially signed with professional clubs. **That's the outcome this product was built for.**"
+            content: "The metrics are good, but I'm most proud of the 20+ players who officially signed with professional clubs. \n**That's the outcome this product was built for.**"
           },
           {
             type: 'metrics',
@@ -950,7 +950,7 @@ export const cases: CaseStudy[] = [
         title: 'Final Design',
         heading: 'Screens that work at the **point of sale**',
         blocks: [
-          { type: 'p', content: 'The final design of CryptoSwift is built around one primary action: making a sale. Everything else is secondary. **Every screen needed to be readable at a glance.**' },
+          { type: 'p', content: 'The final design of CryptoSwift is built around one primary action: making a sale. Everything else is secondary. \n**Every screen needed to be readable at a glance.**' },
           {
             type: 'gridImages',
             images: [
@@ -1027,7 +1027,7 @@ export const cases: CaseStudy[] = [
         title: 'Overview',
         heading: 'A crypto wallet built for people **who aren\'t crypto people**',
         blocks: [
-          { type: 'p', content: 'XGo Wallet is a mobile-first crypto and fiat wallet — built from absolute zero. No existing design, no existing brand, no existing user research. The gap: a wallet that felt as intuitive as Revolut but worked natively in Web3. **MetaMask is powerful but technical. Trust Wallet is functional but dense. Coinbase Wallet has brand recognition but a cluttered interface.**' },
+          { type: 'p', content: 'XGo Wallet is a mobile-first crypto and fiat wallet — built from absolute zero. No existing design, no existing brand, no existing user research. \nThe gap: a wallet that felt as intuitive as Revolut but worked natively in Web3. **MetaMask is powerful but technical. Trust Wallet is functional but dense. Coinbase Wallet has brand recognition but a cluttered interface.**' },
           { type: 'p', content: 'The most important design question: how do you make a crypto wallet feel as natural as a bank app, without hiding what makes crypto different? The answer required a complete rethink of how wallets present information — starting not from the blockchain, but from the user.' },
           { type: 'insight', title: 'The most distinctive feature', content: '*The wallet-first card design — pink to gold gradient with the XGo wordmark — was the centrepiece of the identity. It became the most shared visual element post-launch. **When users see the card, they think "I want that" before they think "how does blockchain work."** That distinction was intentional.*' },
           {
@@ -1205,7 +1205,7 @@ export const cases: CaseStudy[] = [
           { type: 'p', content: 'Before designing P3 Marine, we understood how yacht management companies actually operated: **most used a combination of Excel, PDF documents, WhatsApp groups, and phone calls.**' },
           { type: 'p', content: 'Financial reporting had to satisfy multiple stakeholders with different levels of authority. Crew needed mobile access in environments with unreliable connectivity. **Every one of these constraints shaped a design decision.**' },
           { type: 'image', src: '/images/p3marine/01-P3-Marine-—-How-it-works.png', alt: 'How it works', caption: 'P3 Marine platform overview — Expense Management, Invoicing, Analytics, and Card Management.' },
-          { type: 'quote', text: 'We manage seven yachts... every one of them uses a different spreadsheet. When a client asks for a summary, it takes us two days to compile.', author: 'Yacht management company interview' }
+          { type: 'quote', text: 'We manage seven luxury yachts; every one of them uses a completely different spreadsheet. When a client asks for a comprehensive summary, it takes us two full days to compile.', author: 'Yacht management company interview' }
         ]
       },
       {
@@ -1234,7 +1234,7 @@ export const cases: CaseStudy[] = [
         title: 'Research & IA',
         heading: 'Mapping a complex domain **before designing it**',
         blocks: [
-          { type: 'p', content: 'P3 Marine operates in a genuinely complex domain. **You cannot design the information architecture of a financial platform by intuition.** We built a full entity model before touching UI.' },
+          { type: 'p', content: 'P3 Marine operates in a genuinely complex domain. **You cannot design the information architecture of a financial platform by intuition.** \nWe built a full entity model before touching UI.' },
           { type: 'image', src: '/images/p3marine/03-P3-Marine-system-map-—-Mria-CRM.png', alt: 'System map', caption: 'System architecture map — from communication channels to core CRM modules.' },
           { type: 'card', title: 'From entity model to screens', content: 'We spent two weeks building the entity model. Is a "Charter" the same as a "Client"? Answering these in a diagram is much cheaper than in a shipped interface.' },
           {
@@ -1301,7 +1301,7 @@ export const cases: CaseStudy[] = [
         blocks: [
           {
             type: 'p',
-            content: 'P3 Marine launched and is actively used by yacht management companies to manage their client portfolios, moving teams off spreadsheets and WhatsApp.'
+            content: 'P3 Marine launched and is actively used by yacht management companies to manage their client portfolios, \nmoving teams off spreadsheets and WhatsApp.'
           },
           {
             type: 'insight',

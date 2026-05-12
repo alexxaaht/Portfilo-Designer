@@ -74,9 +74,9 @@ export default function HomePage() {
               <h1
                 className="
           block
-          text-[66px]
+          text-[64px]
           min-[390px]:text-[76px]
-          md:text-[clamp(68px,9.8vw,138px)]
+          md:text-[clamp(68px,9.6vw,138px)]
           font-bold
           uppercase
           leading-[0.86]
@@ -103,7 +103,7 @@ export default function HomePage() {
           overflow-hidden
           text-[56px]
           min-[390px]:text-[64px]
-          md:text-[clamp(38px,9.8vw,138px)]
+          md:text-[clamp(38px,9.3vw,138px)]
           font-bold
           uppercase
           leading-[0.9]
@@ -208,10 +208,9 @@ export default function HomePage() {
               }
             }}
             className="
-  absolute
+  scroll-hint-btn
   bottom-8
   left-1/2
-  -translate-x-1/2
   w-12
   h-12
   md:w-14
@@ -221,21 +220,24 @@ export default function HomePage() {
   items-center
   justify-center
   no-underline
-  transition-all
+  transition-colors
   duration-200
-  hover:-translate-y-1
+  hover:[animation-play-state:paused]
   z-10
   border
   border-white/20
   bg-white/10
   text-[#F2F0EC]/70
   hover:border-white/40
+  hover:bg-white/20
   hover:text-[#F2F0EC]
   /* Light Theme */
-  [.light_&]:border-black
+  [.light_&]:border-black/20
   [.light_&]:bg-[#F1F1EE]
   [.light_&]:text-black
   [.light_&]:hover:bg-[#E5E5E2]
+  [.light_&]:hover:border-black/40
+  absolute
 "
           >
             <svg

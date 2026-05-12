@@ -206,6 +206,18 @@ img {
   }
 }
 
+/* ── Scroll hint bounce ───────────────────────────────── */
+@keyframes scroll-hint {
+  0%, 65%, 100% { transform: translateX(-50%) translateY(0); }
+  75%            { transform: translateX(-50%) translateY(-18px); }
+  85%            { transform: translateX(-50%) translateY(5px); }
+  93%            { transform: translateX(-50%) translateY(-7px); }
+}
+
+.scroll-hint-btn {
+  animation: scroll-hint 4s ease-in-out infinite;
+}
+
 /* ── Reduce motion for accessibility ─────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
