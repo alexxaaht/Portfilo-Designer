@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 
 interface TypewriterProps {
   text: string
@@ -41,7 +41,7 @@ export default function TypewriterEffect({
   }
 
   return (
-    <motion.span
+    <m.span
       // flex-wrap позволяет словам падать на новую строку
       className={`inline-flex items-center flex-wrap ${className}`}
       variants={container}
@@ -53,25 +53,25 @@ export default function TypewriterEffect({
         // whitespace-nowrap гарантирует, что слово не разорвется внутри
         <span key={wordIndex} className="whitespace-nowrap">
           {Array.from(word).map((letter, letterIndex) => (
-            <motion.span
+            <m.span
               key={`${wordIndex}-${letterIndex}`}
               variants={letterVariants}
             >
               {letter}
-            </motion.span>
+            </m.span>
           ))}
 
           {/* Добавляем пробел после слова (кроме последнего), который тоже анимируется */}
           {wordIndex < words.length - 1 && (
-            <motion.span variants={letterVariants} style={{ whiteSpace: 'pre' }}>
+            <m.span variants={letterVariants} style={{ whiteSpace: 'pre' }}>
               {' '}
-            </motion.span>
+            </m.span>
           )}
         </span>
       ))}
 
       {/* Каретка (курсор) */}
-      <motion.span
+      <m.span
         animate={{ opacity: [0, 1] }}
         transition={{
           duration: 0.7,
@@ -85,6 +85,6 @@ export default function TypewriterEffect({
           minWidth: '2px'
         }}
       />
-    </motion.span>
+    </m.span>
   )
 }

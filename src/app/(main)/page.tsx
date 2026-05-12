@@ -297,7 +297,7 @@ export default function HomePage() {
               href="mailto:e.garaev.dg55@gmail.com"
               className="w-full md:w-auto text-center text-[14px] font-medium text-bg bg-text hover:opacity-90 transition-opacity rounded-full px-8 py-4"
             >
-              e.garaev.dg55@gmail.com ↗
+              e.garaev.dg55@gmail.com <span className="arrow-icon text-[0.8em] align-middle leading-none">↗</span>
             </a>
             <div className="flex md:contents gap-3 w-full md:w-auto">
               <a
@@ -306,7 +306,7 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 className="flex-1 md:flex-none text-center text-[14px] font-medium text-text border border-line2 hover:bg-surface transition-all duration-300 rounded-full px-6 py-4 hover:-translate-y-0.5 active:translate-y-0"
               >
-                LinkedIn ↗
+                LinkedIn <span className="arrow-icon text-[0.8em] align-middle leading-none">↗</span>
               </a>
               <a
                 href="https://t.me/el13xx"
@@ -314,7 +314,7 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 className="flex-1 md:flex-none text-center text-[14px] font-medium text-text border border-line2 hover:bg-surface transition-all duration-300 rounded-full px-6 py-4 hover:-translate-y-0.5 active:translate-y-0"
               >
-                Telegram ↗
+                Telegram <span className="arrow-icon text-[0.8em] align-middle leading-none">↗</span>
               </a>
             </div>
           </div>

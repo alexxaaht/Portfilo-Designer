@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import Image from 'next/image'
 
 interface Logo {
@@ -48,7 +48,7 @@ export default function LogoMarquee() {
         style={{ background: 'linear-gradient(to left, var(--bg) 0%, var(--bg) 10%, rgba(0,0,0,0) 100%)' }}
       />
 
-      <motion.div
+      <m.div
         className="flex items-center w-max"
         animate={{ x: ['0%', '-50%'] }}
         transition={{ duration: 35, ease: 'linear', repeat: Infinity, repeatType: 'loop' }}
@@ -95,7 +95,7 @@ export default function LogoMarquee() {
             )}
           </div>
         ))}
-      </motion.div>
+      </m.div>
     </div>
   )
 }

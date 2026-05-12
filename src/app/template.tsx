@@ -1,7 +1,7 @@
 // src/app/template.tsx
 'use client'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { usePathname } from 'next/navigation'
 import { useEffect } from 'react'
 import BackToTop from '@/components/ui/BackToTop'
@@ -19,7 +19,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
   }, [pathname])
 
   return (
-    <motion.div
+    <m.div
       key={pathname}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -29,6 +29,6 @@ export default function Template({ children }: { children: React.ReactNode }) {
 
       {/* Рендерим кнопку только если это НЕ главная страница */}
       {!isHomePage && <BackToTop />}
-    </motion.div>
+    </m.div>
   )
 }

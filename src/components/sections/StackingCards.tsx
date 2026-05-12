@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef, useState, useEffect } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { m, useScroll, useTransform } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
 import Tag from '@/components/ui/Tag'
@@ -53,8 +53,8 @@ function StickyCard({ project, index, total }: { project: Project; index: number
   const scale = useTransform(scrollYProgress, [0.6, 1], [1, 0.96])
 
   const inner = (
-    <motion.div
-      style={{ scale: isDesktop ? scale : 1 }}
+    <m.div
+      style={{ scale: isDesktop ? scale : 1, willChange: 'transform' }}
       className="group w-full flex flex-col md:grid md:grid-cols-2 min-h-fit md:min-h-[580px] overflow-hidden bg-bg transition-colors duration-300"
     >
       {/* 1. ИЗОБРАЖЕНИЕ (Сверху на мобайле, справа на десктопе) */}
@@ -103,11 +103,11 @@ function StickyCard({ project, index, total }: { project: Project; index: number
             {project.title}
           </h2>
 
-          <p className="text-[16px] md:text-[20px] font-light text-sub leading-relaxed mb-4 md:mb-6 max-w-lg">
+          <p className="text-[16px] md:text-[20px] font-light text-sub leading-relaxed mb-4 md:mb-6 max-w-xl">
             {project.subtitle}
           </p>
 
-          <p className="text-[14px] md:text-[16px] font-light leading-relaxed max-w-lg text-sub opacity-80 mb-10 md:mb-0">
+          <p className="text-[14px] md:text-[16px] font-light leading-relaxed max-w-xl text-sub opacity-80 mb-10 md:mb-0">
             {project.desc}
           </p>
         </div>
@@ -132,7 +132,7 @@ function StickyCard({ project, index, total }: { project: Project; index: number
             md:group-hover:text-text 
             transition-all duration-300
           ">
-                View case <span className="ml-2 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+                View case <span className="arrow-icon text-[0.8em] ml-1.5 align-top leading-none transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
               </span>
             </div>
           ) : (
@@ -142,7 +142,7 @@ function StickyCard({ project, index, total }: { project: Project; index: number
           )}
         </div>
       </div>
-    </motion.div>
+    </m.div>
   )
 
   return (

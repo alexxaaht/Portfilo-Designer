@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
+import { m, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 
@@ -34,7 +34,7 @@ export default function HeroPhoto() {
   if (!mounted) return null
 
   return (
-    <motion.div
+    <m.div
       className="absolute md:top-[12%] right-[120px] z-20 hidden lg:block group"
       initial={{ opacity: 0, x: 50, rotate: -15 }}
       animate={{ opacity: 1, x: 0, rotate: -10 }}
@@ -57,7 +57,7 @@ export default function HeroPhoto() {
       </div>
 
       {/* ── 3. КАРТОЧКА ──────────────────────────────────────── */}
-      <motion.div
+      <m.div
         className="relative bg-surface p-[10px] pb-7 z-10 rounded-sm transition-all duration-500"
         style={{
           width: 210,
@@ -94,7 +94,7 @@ export default function HeroPhoto() {
             ? 'bg-gradient-to-tr from-white/[0.03] to-transparent opacity-100'
             : 'bg-gradient-to-tr from-black/[0.01] to-transparent opacity-50'}`}
         />
-      </motion.div>
-    </motion.div>
+      </m.div>
+    </m.div>
   )
 }
