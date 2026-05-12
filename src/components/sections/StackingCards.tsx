@@ -60,7 +60,14 @@ function StickyCard({ project, index, total }: { project: Project; index: number
       {/* 1. ИЗОБРАЖЕНИЕ */}
       <div className="relative overflow-hidden w-full aspect-video md:aspect-auto md:h-auto md:py-10 md:pl-10">
         {cover ? (
-          <div className="relative w-full h-full overflow-hidden rounded-none md:rounded-l-[24px]">
+          <div
+            className="relative w-full h-full overflow-hidden rounded-[16px] md:rounded-[24px] md:rounded-tr-none md:rounded-br-none"
+            style={{
+              // WebKit fix: forces proper clipping of transformed children through border-radius
+              WebkitMaskImage: '-webkit-radial-gradient(white, black)',
+              isolation: 'isolate',
+            }}
+          >
             <Image
               src={cover}
               alt={project.title}

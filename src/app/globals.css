@@ -139,14 +139,18 @@
 
 html {
   scroll-behavior: smooth;
+  /* Prevent layout shift from scrollbar appearing */
+  scrollbar-gutter: stable;
 }
 
 body {
   background: var(--bg);
   color: var(--text);
   transition: background 0.3s ease, color 0.3s ease;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   overflow-x: hidden;
   /* Hide default cursor — our custom cursor takes over */
   cursor: none;
@@ -155,6 +159,7 @@ body {
 /* Hide cursor on touch devices */
 @media (hover: none) {
   body { cursor: auto; }
+  a, button { cursor: auto; }
 }
 
 a {
@@ -172,13 +177,41 @@ img {
   display: block;
 }
 
-/* ── Custom scrollbar ─────────────────────────────────── */
+/* ── Fallback for browsers without 100svh support ─────── */
+@supports not (min-height: 100svh) {
+  .min-h-\[100svh\] { min-height: 100vh; }
+}
+
+/* ── Custom scrollbar (WebKit) ────────────────────────── */
 ::-webkit-scrollbar       { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--dim); border-radius: 2px; }
+
+/* ── Custom scrollbar (Firefox) ──────────────────────── */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--dim) transparent;
+}
 
 /* ── Selection ────────────────────────────────────────── */
 ::selection {
   background: var(--selection-bg);
   color: var(--text);
+}
+
+/* ── Touch devices: momentum scrolling ───────────────── */
+@media (hover: none) and (pointer: coarse) {
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* ── Reduce motion for accessibility ─────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

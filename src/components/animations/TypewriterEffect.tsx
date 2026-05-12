@@ -74,10 +74,10 @@ export default function TypewriterEffect({
       <motion.span
         animate={{ opacity: [0, 1] }}
         transition={{
-          duration: 0.5,
+          duration: 0.7,
           repeat: Infinity,
           repeatType: "reverse",
-          ease: "linear"
+          ease: "easeInOut",
         }}
         className="inline-block w-[0.04em] h-[0.9em] ml-[2px] align-middle"
         style={{

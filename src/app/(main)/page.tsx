@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import FadeIn from '@/components/animations/FadeIn'
 import HeroPhoto from '@/components/sections/HeroPhoto'
 import StackingCards from '@/components/sections/StackingCards'
@@ -8,10 +7,9 @@ import LogoMarquee from '@/components/sections/LogoMarquee'
 import TypewriterEffect from '@/components/animations/TypewriterEffect'
 import Link from 'next/link'
 import { projects } from '@/lib/projects'
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 
 export default function HomePage() {
-  const heroRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
@@ -304,7 +302,7 @@ export default function HomePage() {
                 href="https://www.linkedin.com/in/elvin-garaev-4798ba255/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 md:flex-none text-center text-[14px] text-sub hover:text-text transition-colors border border-line hover:border-line2 rounded-full px-6 py-4"
+                className="flex-1 md:flex-none text-center text-[14px] font-medium text-text border border-line2 hover:bg-surface transition-all duration-300 rounded-full px-6 py-4 hover:-translate-y-0.5 active:translate-y-0"
               >
                 LinkedIn ↗
               </a>
@@ -312,7 +310,7 @@ export default function HomePage() {
                 href="https://t.me/el13xx"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 md:flex-none text-center text-[14px] text-sub hover:text-text transition-colors border border-line hover:border-line2 rounded-full px-6 py-4"
+                className="flex-1 md:flex-none text-center text-[14px] font-medium text-text border border-line2 hover:bg-surface transition-all duration-300 rounded-full px-6 py-4 hover:-translate-y-0.5 active:translate-y-0"
               >
                 Telegram ↗
               </a>

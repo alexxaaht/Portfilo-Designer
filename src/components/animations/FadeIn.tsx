@@ -14,7 +14,7 @@ interface FadeInProps {
 export default function FadeIn({
   children,
   delay = 0,
-  duration = 2.2, // Увеличил здесь (было 1.2). Чем выше число, тем медленнее анимация.
+  duration = 2.2,
   y = 30,
   className,
 }: FadeInProps) {
@@ -26,7 +26,7 @@ export default function FadeIn({
       transition={{
         duration,
         delay,
-        ease: [0.16, 1, 0.3, 1] // Эта кривая делает конец анимации очень плавным
+        ease: [0.16, 1, 0.3, 1],
       }}
     >
       {children}

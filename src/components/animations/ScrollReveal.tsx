@@ -13,7 +13,7 @@ interface ScrollRevealProps {
 export default function ScrollReveal({
   children,
   delay = 0,
-  y = 32, 
+  y = 32,
   className,
 }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null)
@@ -26,9 +26,9 @@ export default function ScrollReveal({
       initial={{ opacity: 0, y }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y }}
       transition={{
-        duration: 3.5,  // Скорость анимации (задержка)
+        duration: 3.5,
         delay,
-        ease: [0.16, 1, 0.3, 1] 
+        ease: [0.16, 1, 0.3, 1],
       }}
     >
       {children}

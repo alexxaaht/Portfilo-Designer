@@ -53,7 +53,7 @@ export default function LogoMarquee() {
           <div
             key={i}
             className="flex items-center justify-center shrink-0"
-            style={{ height: 48, paddingRight: '80px' }}
+            style={{ height: 50, paddingRight: '80px' }}
           >
             <Image
               src={logo.src}
