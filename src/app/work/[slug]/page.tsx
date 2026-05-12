@@ -86,10 +86,47 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
             );
           })}
         </div>
+        <h1
+          className="
+    text-[clamp(32px,8vw,68px)] /* Немного уменьшил минимум с 34 до 32 для узких экранов */
+    font-semibold
+    leading-[1.08]
+    md:leading-[1.05]
+    tracking-[-0.02em]
+    md:tracking-[-0.03em]
+    mb-12
+    w-full
+    text-balance
+    /* ПРИНУДИТЕЛЬНЫЙ СБРОС РАЗРЫВОВ */
+    break-normal
+    [overflow-wrap:normal]
+    [word-break:normal]
+    [hyphens:none]
+    [WebkitHyphens:none]
+  "
+          style={{ color: T }}
+        >
+          {project.title}
 
-        <h1 className="text-[36px] md:text-[68px] font-semibold leading-[1.1] md:leading-[1.05] tracking-[-0.03em] mb-12 w-full" style={{ color: T }}>
-          {project.title}<br />
-          <em className="font-light italic" style={{ color: sub }}>{project.subtitle}</em>
+          <br />
+
+          <em
+            className="
+      font-light
+      italic
+      block
+      md:inline
+      /* ТЕ ЖЕ ПРАВИЛА ДЛЯ ПОДЗАГОЛОВКА */
+      break-normal
+      [overflow-wrap:normal]
+      [word-break:normal]
+      [hyphens:none]
+      [WebkitHyphens:none]
+    "
+            style={{ color: sub }}
+          >
+            {project.subtitle}
+          </em>
         </h1>
 
         <p className="text-[17px] md:text-[19px] font-light leading-relaxed mb-12 max-w-[1100px]" style={{ color: sub }}>
