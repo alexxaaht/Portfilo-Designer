@@ -89,7 +89,7 @@ export default function LogoMarquee() {
                 width={200}
                 height={48}
                 style={imgStyle(logo.scale || 1)}
-                className={`${baseClass} opacity-40 brightness-[0.2] dark:opacity-75 dark:brightness-[1.8] [.light_&]:opacity-55 [.light_&]:brightness-[0.1]`}
+                className={`${baseClass} opacity-75 brightness-[1.8] [.light_&]:opacity-55 [.light_&]:brightness-[0.1]`}
                 priority
               />
             )}
