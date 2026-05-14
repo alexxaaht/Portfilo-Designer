@@ -186,7 +186,7 @@ export default function HomePage() {
                 <strong className="text-text font-medium">
                   BNP Paribas Group
                 </strong>
-                . Lead teams end-to-end — from research to final handoff.
+                . Lead teams end-to-end – from research to final handoff.
               </p>
             </div>
           </div>

@@ -58,7 +58,7 @@ export default function CaseSection({ section }: CaseSectionProps) {
                   className="text-[12px] not-italic"
                   style={{ color: 'var(--dim)', letterSpacing: '0.04em' }}
                 >
-                  — {block.author}
+                  – {block.author}
                 </cite>
               </blockquote>
             )

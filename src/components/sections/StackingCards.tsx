@@ -58,7 +58,7 @@ function StickyCard({ project, index, total }: { project: Project; index: number
       className="group w-full flex flex-col md:grid md:grid-cols-2 min-h-fit md:min-h-[580px] overflow-hidden bg-bg transition-colors duration-300"
     >
       {/* 1. ИЗОБРАЖЕНИЕ (Сверху на мобайле, справа на десктопе) */}
-      <div className="relative overflow-hidden w-full aspect-video md:aspect-auto md:h-full md:py-16 md:pl-4 md:pr-14">
+      <div className="relative overflow-hidden w-full aspect-video md:aspect-auto md:h-[580px] md:self-start md:py-16 md:pl-4 md:pr-14">
         {cover ? (
           <div
             className="relative w-full h-full overflow-hidden rounded-none md:rounded-[24px]"
@@ -114,7 +114,7 @@ function StickyCard({ project, index, total }: { project: Project; index: number
 
         {/* НИЖНЯЯ ПАНЕЛЬ */}
         <div className="mt-auto pt-0 md:pt-6 md:border-t md:border-white/[0.08] flex flex-col md:flex-row md:items-center justify-between gap-6 transition-colors">
-          {/* md:border-white/[0.08] — та самая "почти невидимая" серая полоска */}
+          {/* md:border-white/[0.08] – та самая "почти невидимая" серая полоска */}
 
           <p className="text-[11px] md:text-[12px] text-sub uppercase" style={{ letterSpacing: '0.05em' }}>
             {project.company} · {project.period}

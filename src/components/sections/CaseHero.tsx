@@ -27,7 +27,7 @@ export default function CaseHero({ caseStudy }: CaseHeroProps) {
         className="text-[clamp(36px,5vw,60px)] font-semibold leading-[1.05] mb-10 max-w-[820px]"
         style={{ letterSpacing: '-0.03em', color: 'var(--text)' }}
       >
-        {title} —{' '}
+        {title} –{' '}
         <em className="italic font-light" style={{ color: 'var(--sub)' }}>
           {subtitle}
         </em>
