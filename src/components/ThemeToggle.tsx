@@ -5,15 +5,14 @@ import { useEffect, useState } from 'react'
 import { m } from 'framer-motion'
 
 export default function ThemeToggle() {
-  const { theme, setTheme } = useTheme()
+  const { resolvedTheme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => setMounted(true), [])
 
-  // Уменьшенная ширина заглушки до 72px
   if (!mounted) return <div className="w-[72px] h-8" />
 
-  const isDark = theme === 'dark'
+  const isDark = resolvedTheme === 'dark'
 
   return (
     <div
@@ -33,7 +32,7 @@ export default function ThemeToggle() {
         transition={{ type: 'spring', stiffness: 400, damping: 30 }}
       />
 
-      {/* Иконка Солнца — контейнер w-1/2 (36px) центрирует иконку на 18px */}
+      {/* Иконка Солнца – контейнер w-1/2 (36px) центрирует иконку на 18px */}
       <div className="relative z-10 w-1/2 flex justify-center items-center pointer-events-none">
         <svg
           width="15" height="15" viewBox="0 0 24 24" fill="none"
@@ -48,7 +47,7 @@ export default function ThemeToggle() {
         </svg>
       </div>
 
-      {/* Иконка Луны — контейнер w-1/2 (36px) центрирует иконку на 54px (36+18) */}
+      {/* Иконка Луны – контейнер w-1/2 (36px) центрирует иконку на 54px (36+18) */}
       <div className="relative z-10 w-1/2 flex justify-center items-center pointer-events-none">
         <svg
           width="13" height="13" viewBox="0 0 24 24" fill="none"

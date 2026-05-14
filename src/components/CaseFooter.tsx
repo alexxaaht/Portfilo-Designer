@@ -21,13 +21,13 @@ export default function CaseFooter({
     <footer className="transition-colors duration-300 border-t border-line">
       <div className="max-w-[1160px] mx-auto px-6 md:px-[52px] py-14 md:py-24">
 
-        {/* На десктопі items-stretch — Next кнопка тягнеться на повну висоту лівої колонки */}
+        {/* На десктопі items-stretch – Next кнопка тягнеться на повну висоту лівої колонки */}
         <div className="flex flex-col-reverse md:flex-row md:justify-between md:items-stretch gap-4 md:gap-6">
 
           {/* Ліва колонка: All cases (зверху) → Previous (знизу) */}
           <div className="flex flex-row md:flex-col md:justify-between gap-2 w-full md:w-auto">
 
-            {/* All cases — тепер перша */}
+            {/* All cases – тепер перша */}
             <a
               href="/#work"
               className="flex-1 md:flex-none md:w-[210px] text-center text-[14px] font-medium text-text border border-white/20 [.light_&]:border-black/20 hover:bg-surface hover:border-white/40 [.light_&]:hover:border-black/40 transition-all duration-200 rounded-full px-8 py-5 hover:-translate-y-1 active:translate-y-0 active:scale-[0.97] inline-flex items-center justify-center gap-2"
@@ -38,7 +38,7 @@ export default function CaseFooter({
               All cases
             </a>
 
-            {/* Previous — тепер друга, з заповненим фоном як у Next */}
+            {/* Previous – тепер друга, з заповненим фоном як у Next */}
             {hasCaseNav && (
               <a
                 href={previousHref || '#'}

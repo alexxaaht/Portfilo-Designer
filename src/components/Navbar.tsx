@@ -33,7 +33,7 @@ const [isOpen, setIsOpen] = useState(false)
     { name: 'Email ↗', href: 'mailto:e.garaev.dg55@gmail.com' },
   ]
 
-  // Если мы на странице кейса — ничего не рендерим
+  // Если мы на странице кейса – ничего не рендерим
   if (isCasePage) return null
 
   return (

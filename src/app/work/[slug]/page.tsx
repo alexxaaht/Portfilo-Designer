@@ -201,10 +201,10 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
                           <div className="text-[13px] md:text-[14px] font-medium pt-1" style={{ color: dim }}>{s.n}</div>
                           <div>
                             <div className="text-[19px] md:text-[20px] font-semibold mb-4 tracking-tight" style={{ color: T }}>{s.t}</div>
-                            <div className="text-[16px] md:text-[17px] font-light leading-relaxed mb-6" style={{ color: sub }}>{s.d}</div>
+                            <div className="text-[16px] md:text-[17px] font-light leading-relaxed mb-6" style={{ color: sub }}>{parseContent(s.d)}</div>
                             {s.i && (
                               <div className="pt-6 border-t text-[15px] md:text-[16px] font-light italic leading-relaxed" style={{ borderColor: line, color: dim }}>
-                                {s.i}
+                                {parseContent(s.i)}
                               </div>
                             )}
                           </div>
@@ -335,7 +335,7 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
                         <div key={idx} className={`border rounded-2xl p-8 bg-surface transition-colors ${d.wide ? 'md:col-span-2' : ''}`} style={{ borderColor: line }}>
                           <div className="text-[24px] mb-4">{d.ic}</div>
                           <div className="text-[18px] font-medium mb-2.5" style={{ color: T }}>{d.t}</div>
-                          <div className="text-[14px] font-light leading-relaxed" style={{ color: sub }}>{d.d}</div>
+                          <div className="text-[14px] font-light leading-relaxed" style={{ color: sub }}>{parseContent(d.d)}</div>
                         </div>
                       ))}
                     </div>

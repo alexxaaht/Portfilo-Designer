@@ -30,9 +30,9 @@ const imgStyle = (scale: number) => ({
   transformOrigin: 'center center',
 })
 
-const baseClass = 'grayscale transition-all duration-300 hover:opacity-100'
-const darkClass = `${baseClass} opacity-75 brightness-[1.8]`
-const lightClass = `${baseClass} opacity-55 brightness-[0.1]`
+// srcLight logos: shown as-is, no filters – each file is already designed for its theme
+const darkImgClass = 'transition-all duration-300 hover:opacity-100 opacity-80'
+const lightImgClass = 'transition-all duration-300 hover:opacity-100 opacity-70'
 
 export default function LogoMarquee() {
   const duplicatedLogos = [...LOGOS, ...LOGOS]
@@ -48,8 +48,9 @@ export default function LogoMarquee() {
         style={{ background: 'linear-gradient(to left, var(--bg) 0%, var(--bg) 10%, rgba(0,0,0,0) 100%)' }}
       />
 
+      {/* color drives currentColor for mask-image logos */}
       <m.div
-        className="flex items-center w-max"
+        className="flex items-center w-max gap-[80px] text-[#F2F0EC] [.light_&]:text-[#111110]"
         animate={{ x: ['0%', '-50%'] }}
         transition={{ duration: 35, ease: 'linear', repeat: Infinity, repeatType: 'loop' }}
       >
@@ -57,40 +58,48 @@ export default function LogoMarquee() {
           <div
             key={i}
             className="flex items-center justify-center shrink-0"
-            style={{ height: 50, paddingRight: '80px' }}
+            style={{ height: 50 }}
           >
             {logo.srcLight ? (
               <>
-                {/* Версія для тёмної теми */}
+                {/* Dark theme: brightness lifts #999999 to white */}
                 <Image
                   src={logo.src}
                   alt={logo.name}
                   width={200}
                   height={48}
                   style={imgStyle(logo.scale || 1)}
-                  className={`${darkClass} [.light_&]:hidden`}
+                  className={`${darkImgClass} [.light_&]:hidden`}
                   priority
                 />
-                {/* Версія для світлої теми */}
+                {/* Light theme: no brightness – white knockout fills stay white */}
                 <Image
                   src={logo.srcLight}
                   alt={logo.name}
                   width={200}
                   height={48}
                   style={imgStyle(logo.scale || 1)}
-                  className={`hidden [.light_&]:block ${lightClass}`}
+                  className={`hidden [.light_&]:block ${lightImgClass}`}
                   priority
                 />
               </>
             ) : (
-              <Image
-                src={logo.src}
-                alt={logo.name}
-                width={200}
-                height={48}
-                style={imgStyle(logo.scale || 1)}
-                className={`${baseClass} opacity-75 brightness-[1.8] [.light_&]:opacity-55 [.light_&]:brightness-[0.1]`}
-                priority
+              /* currentColor via CSS mask: SVG shape becomes the mask, bg-color = currentColor */
+              <div
+                className="opacity-75 [.light_&]:opacity-55 transition-all duration-300 hover:opacity-100"
+                style={{
+                  maskImage: `url('${logo.src}')`,
+                  WebkitMaskImage: `url('${logo.src}')`,
+                  maskSize: 'contain',
+                  WebkitMaskSize: 'contain',
+                  maskRepeat: 'no-repeat',
+                  WebkitMaskRepeat: 'no-repeat',
+                  maskPosition: 'center',
+                  WebkitMaskPosition: 'center',
+                  backgroundColor: 'currentColor',
+                  height: '44px',
+                  width: '166px',
+                }}
               />
             )}
           </div>

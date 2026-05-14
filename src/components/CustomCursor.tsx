@@ -63,7 +63,7 @@ export default function CustomCursor() {
 
   return (
     <>
-      {/* Точка — теперь чисто белая с инверсией */}
+      {/* Точка – теперь чисто белая с инверсией */}
       <div
         ref={dotRef}
         aria-hidden="true"
@@ -84,7 +84,7 @@ export default function CustomCursor() {
         }}
       />
 
-      {/* Кольцо — теперь тоже с инверсией */}
+      {/* Кольцо – теперь тоже с инверсией */}
       <div
         ref={ringRef}
         aria-hidden="true"
