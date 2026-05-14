@@ -180,7 +180,7 @@ export const cases: CaseStudy[] = [
           {
             type: 'card',
             title: 'The design implication',
-            content: 'Designing for Василь and Анна in the same interface required a fundamentally different approach чем большинство чатов. **We weren\'t building a single product – we were building two overlapping products that share a data layer.** Василь needs speed and context within conversations. Анна needs visibility across conversations. Getting the information architecture right to serve both without cluttering either was the central design challenge of the entire project.'
+            content: 'Designing for Vasyl and Anna in the same interface required a fundamentally different approach than most chat products. **We weren\'t building a single product – we were building two overlapping products that share a data layer and communication logic.** Vasyl needs speed and context within conversations. Anna needs visibility across conversations. Getting the information architecture right to serve both without cluttering either was the central design challenge of the entire project.'
           }
         ]
       },
@@ -209,7 +209,7 @@ export const cases: CaseStudy[] = [
           {
             type: 'insight',
             title: 'THE KEY PATTERN WE FOUND',
-            content: '*Across all 4 scenarios, the same three failures appeared repeatedly: the manager didn\'t have client context at hand, the client didn\'t know what was happening, and handoffs between systems generated manual work. These three patterns became the three design principles.*'
+            content: '*Across all 4 scenarios, the same three failures appeared repeatedly: the manager didn\'t have client context at hand, the client didn\'t know what was happening, and handoffs between systems generated unnecessary manual work and communication delays. These three patterns became the three design principles.*'
           }
         ]
       },
@@ -254,7 +254,7 @@ export const cases: CaseStudy[] = [
         title: 'Final Design',
         heading: 'The UKRSIBBANK digital ecosystem',
         blocks: [
-          { type: 'p', content: 'The Manager Workplace doesn\'t exist in isolation – it\'s part of a broader UKRSIBBANK digital ecosystem. **One of our core design principles was navigation consistency.**' },
+          { type: 'p', content: 'The Manager Workplace doesn\'t exist in isolation – it\'s part of a broader UKRSIBBANK digital ecosystem. **One of our core design principles was navigation consistency across all internal banking products and workflows.**' },
           { type: 'image', src: '/images/ukrsibbank/11-UkrSibBank-Business-final-design.png', alt: 'Final Design', caption: 'UKRSIBBANK Business – final design showing the shared navigation system.' },
           { type: 'image', src: '/images/ukrsibbank/12-App-switcher.png', alt: 'App switcher', caption: 'Unified app switcher designed to reduce cognitive load.' }
         ]
@@ -347,7 +347,7 @@ export const cases: CaseStudy[] = [
         title: 'Research',
         heading: 'The user we thought we had **and the user we actually had**',
         blocks: [
-          { type: 'p', content: 'We initially assumed our users were digitally fluent investors who would prioritise data density. **The research told a different story.** Through interviews, we found that our users – while financially sophisticated – had been managing investments through relationship managers and phone calls for years.' },
+          { type: 'p', content: 'We initially assumed our users were digitally fluent investors who would prioritise data density. The research told a different story. Through interviews, we found that our users – while financially sophisticated – had been managing investments through relationship managers and phone calls for years with very limited direct platform interaction.' },
           { type: 'image', src: '/images/p3-wealth/01-P3-Wealth-Personas.png', alt: 'P3 Wealth Personas', caption: 'User personas – Emma, Ivan, Diana, and Mitch. Mapping Story, Goals, and Pain Points from research sessions.' },
           {
             type: 'card',
@@ -1254,7 +1254,7 @@ export const cases: CaseStudy[] = [
           {
             type: 'steps',
             items: [
-              { n: '01', t: 'User Role Profiling', d: 'Defined five primary user types. Owners wanted summary-level data with drill-down on demand – not detailed transaction logs by default.', i: 'This simplified the owner dashboard design significantly.' },
+              { n: '01', t: 'User Role Profiling', d: 'Defined five primary user types. Owners wanted summary-level data with drill-down on demand – not detailed \ntransaction logs by default.', i: 'This simplified the owner dashboard design significantly.' },
               { n: '02', t: 'Competitive Analysis', d: 'Audited Yachtspot, Dockmaster, and Siren. Existing tools were built by maritime professionals, assuming too much domain expertise.', i: '' },
               { n: '03', t: 'Design System', d: 'Built the system before any screens. Navy and white visual language. Users managing $50M yachts expect premium software.', i: 'Typographic decision: used a 16px base size for legibility in bright sunlight.' },
               { n: '04', t: 'Screen Design', d: 'Designed every screen across 5 breakpoints. Mobile was critical for Captain and Crew – designed for one-hand use.', i: '' },
