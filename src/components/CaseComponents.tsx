@@ -68,7 +68,7 @@ function Stats({ items }: { items: { n: string; d: string }[] }) {
           <div className="text-[40px] md:text-[46px] font-semibold tracking-tighter text-[#F2F0EC] leading-none mb-3">
             {s.n}
           </div>
-          <div className="text-[13px] md:text-[14px] font-light text-[#DCD8D0]/85 leading-relaxed">
+          <div className="text-[13px] md:text-[14px] font-light text-[#DCD8D0]/85 leading-relaxed whitespace-pre-line">
             {s.d}
           </div>
         </div>

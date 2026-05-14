@@ -132,7 +132,7 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
           </em>
         </h1>
 
-        <p className="text-[17px] md:text-[19px] font-light leading-relaxed mb-12 max-w-[1100px]" style={{ color: sub }}>
+        <p className="text-[17px] md:text-[19px] font-light leading-relaxed mb-12 max-w-[1100px] whitespace-pre-line" style={{ color: sub }}>
           {project.description}
         </p>
 
@@ -239,7 +239,7 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
                             >
                               {s.n}<span className="text-[24px] md:text-[32px] ml-0.5">{s.su || ''}</span>
                             </div>
-                            <div className="text-[13px] md:text-[14px] font-light leading-relaxed" style={{ color: sub }}>{s.d}</div>
+                            <div className="text-[13px] md:text-[14px] font-light leading-relaxed whitespace-pre-line" style={{ color: sub }}>{s.d}</div>
                           </div>
                         );
                       })}
@@ -296,7 +296,7 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
                       <div className="rounded-2xl overflow-hidden border transition-colors" style={{ borderColor: line }}>
                         <Image src={block.src!} alt={block.alt || ''} width={1160} height={700} className="w-full h-auto block" />
                       </div>
-                      {block.caption && <div className="text-[13px] md:text-[14px] font-light mt-4 leading-relaxed" style={{ color: dim }}>{block.caption}</div>}
+                      {block.caption && <div className="text-[13px] md:text-[14px] font-light mt-4 leading-relaxed whitespace-pre-line" style={{ color: dim }}>{block.caption}</div>}
                     </div>
                   )}
 
@@ -308,7 +308,7 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
                           <div className="rounded-2xl overflow-hidden border transition-colors" style={{ borderColor: line }}>
                             <Image src={img.src} alt={img.alt} width={580} height={380} className="w-full h-auto block" />
                           </div>
-                          <div className="text-[13px] md:text-[14px] font-light mt-4 leading-relaxed" style={{ color: dim }}>{img.caption}</div>
+                          <div className="text-[13px] md:text-[14px] font-light mt-4 leading-relaxed whitespace-pre-line" style={{ color: dim }}>{img.caption}</div>
                         </div>
                       ))}
                     </div>

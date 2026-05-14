@@ -61,7 +61,7 @@ function StickyCard({ project, index, total }: { project: Project; index: number
       <div className="relative overflow-hidden w-full aspect-video md:aspect-auto md:h-[580px] md:self-start md:py-16 md:pl-4 md:pr-14">
         {cover ? (
           <div
-            className="relative w-full h-full overflow-hidden rounded-none md:rounded-[24px]"
+            className="relative w-full h-full overflow-hidden rounded-none md:rounded-[12px]"
             style={{
               WebkitMaskImage: '-webkit-radial-gradient(white, black)',
               isolation: 'isolate',
@@ -73,7 +73,7 @@ function StickyCard({ project, index, total }: { project: Project; index: number
               fill
               priority={index === 0}
               /* object-cover гарантирует выравнивание по нижней границе текста */
-              className="object-cover object-top transition-transform duration-700 ease-out md:group-hover:scale-[1.03]"
+              className="object-cover object-left-top transition-transform duration-700 ease-out md:group-hover:scale-[1.03] origin-top-left"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
@@ -99,15 +99,15 @@ function StickyCard({ project, index, total }: { project: Project; index: number
             {project.tags.map((tag) => <Tag key={tag} label={tag} />)}
           </div>
 
-          <h2 className="font-semibold text-text leading-tight mb-3 md:mb-6 transition-colors" style={{ fontSize: 'clamp(24px, 3vw, 38px)', letterSpacing: '-0.02em' }}>
+          <h2 className="font-semibold text-text leading-tight mb-3 md:mb-6 transition-colors whitespace-pre-line" style={{ fontSize: 'clamp(24px, 3vw, 38px)', letterSpacing: '-0.02em' }}>
             {project.title}
           </h2>
 
-          <p className="text-[16px] md:text-[20px] font-light text-sub leading-relaxed mb-4 md:mb-6 max-w-xl">
+          <p className="text-[16px] md:text-[20px] font-light text-sub leading-relaxed mb-4 md:mb-6 whitespace-pre-line">
             {project.subtitle}
           </p>
 
-          <p className="text-[14px] md:text-[16px] font-light leading-relaxed max-w-xl text-sub opacity-80 mb-10 md:mb-0">
+          <p className="text-[14px] md:text-[16px] font-light leading-relaxed text-sub opacity-80 mb-10 md:mb-0 whitespace-pre-line">
             {project.desc}
           </p>
         </div>
